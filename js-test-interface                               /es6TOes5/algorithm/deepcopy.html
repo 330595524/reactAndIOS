@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>深拷贝</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			function deepCopy(src, r) {
+				var r = r||{};
+				for (var prop in src) {
+					if(typeof src[prop]  === 'object'){
+						if (src[prop].constructor =='Array') {
+							r[prop] =[];
+						} else{
+							r[prop] = {};
+						}
+						deepCopy(src[prop],r[prop])
+					}else{
+						r[prop] = src[prop];
+					}
+				}
+				return r;
+				
+			}
+
+//			function deepCopy(src, r) {
+//				var r = r || {};
+//				for(var prop in src) {
+//					// console.log(prop)
+//					if(typeof src[prop] === 'object') { // 是对象  需要深拷贝
+//						if(src[prop].constructor === Array) {
+//							// console.log("数组");
+//							r[prop] = [];
+//						} else {
+//							// console.log("对象");
+//							r[prop] = {};
+//						}
+//						deepCopy(src[prop], r[prop]);
+//					} else { // 非对象，直接拷贝
+//						r[prop] = src[prop];
+//					}
+//				}
+//				return r;
+//			}
+
+			var foo = {
+				name: ['1111','3123','999'],
+				age: {nem:'qwe',ages:11231}
+			}
+
+			let obj = deepCopy(foo);
+			console.log(obj)
+		</script>
+	</body>
+
+</html>
