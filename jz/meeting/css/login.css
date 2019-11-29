@@ -1,0 +1,100 @@
+@import 'normalize.css';
+html,body,.jumbotron{
+    height: 100%;
+    width: 100%;
+}
+
+.login_bg{
+    height: 100%;
+    width: 100%;
+    background: url("../img/bj.png") no-repeat ;
+    background-size: cover;
+}
+.login_bg .login_bg_left{
+    width: 384px;
+    height: 384px;
+    background: url("../img/login_left_bg.png") no-repeat ;
+    background-size: cover;
+    position: absolute;
+    top: 15%;
+    left: 20%;
+}
+
+.login_contain{
+    width: 350px;
+    height: 420px;
+    position: absolute;
+    top: 15%;
+    right: 20%;
+    background: #fff;
+    overflow: hidden;
+    text-align: center;
+}
+
+.login_contain h2{
+    color: #3CAAFF;
+    font-size: 30px;
+    padding: 50px 0;
+    margin: 0;
+}
+
+.login_center{
+    padding: 0 30px;
+}
+
+.login_center label{
+    position: relative;
+    width: 100%;
+}
+.login_center input{
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+    text-indent: 20px;
+    font-size: 18px;
+    font-weight: 0;
+}
+
+.login_center input::placeholder{
+    color: #BCBCBC;
+    font-weight: 0;
+}
+
+
+.login_center .user_icon{
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 26px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -13px;
+    background: url("../img/login_user.png") no-repeat;
+}
+
+.login_center .pass_icon{
+    background: url("../img/login_pass.png") no-repeat;
+}
+
+.login_bot{
+    text-align: center;
+    padding: 30px 0;
+    color: #c7c7c7;
+}
+
+
+.btn_login{
+    width: 260px;
+    height: 60px;
+    border-radius: 33px;
+    font-size: 28px;
+    color: #fff;
+    background: #3CAAFF;
+    border: 0;
+}
+
+.mb20{
+    margin-bottom: 20px;
+}

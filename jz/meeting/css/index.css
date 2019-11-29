@@ -1,0 +1,7 @@
+@import 'normalize.css';
+body{
+    padding-top: 0;
+}
+.box{
+    background: red;
+}
