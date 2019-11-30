@@ -1,7 +1,418 @@
 @import 'normalize.css';
+html,body{
+    height: 100%;
+}
 body{
-    padding-top: 0;
+    padding-top: 60px;
+    overflow: hidden;
 }
 .box{
     background: red;
 }
+/*导航*/
+.nav_container{
+    background: #4377c7;
+    color: #fff;
+}
+
+.nav_container .logo{
+    width: 265px;
+    height: 60px;
+    padding-top: 60px;
+    padding-bottom: 0;
+    background: url("../img/index/imgjpg_01.jpg") no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.nav_container .nav_link{
+    font-size: 22px;
+    text-align: center;
+    padding-left: 122px;
+}
+
+.nav_container .nav_link >li>a {
+    color: #B4D2FF;
+    font-size: 22px;
+    padding: 20px 25px;
+}
+
+.nav_container .nav_link .active a{
+    color: #fff;
+    background: #619dfa;
+}
+
+.nav_container .user_cont{
+    width: 300px;
+    padding-top: 10px;
+}
+.user_cont .user_cont_left {
+    border-right: 1px solid #83aff1;
+}
+.user_img{
+    width: 34px;
+    height: 34px;
+    float: left;
+    margin-right: 10px;
+    margin-top: 4px;
+}
+
+.login_name{
+    float: left;
+    width: 40px;
+}
+.login_name p{
+    margin-bottom: 0;
+}
+
+.login_name_top{
+    font-size: 16px;
+}
+.login_name_time{
+    width: 160px;
+}
+.user_cont .off{
+    font-size: 24px;
+    margin-top: 8px;
+    margin-left: 10px;
+}
+/*导航end*/
+
+/*主体*/
+.container_content{
+    height: 100%;
+}
+.container_content .row-fluid{
+    height: 100%;
+}
+.meet_created{
+    /*overflow: hidden;*/
+    position: relative;
+    border: 1px solid #e5e5e5;
+    background: #f9fafc;
+}
+.meet_created h3{
+    height: 50px;
+    line-height: 50px;
+    font-size: 22px;
+    color: #a8a8a8;
+    margin: 0;
+    text-align: center;
+
+}
+.meet_created .add{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -12px;
+    color: #90b5ee;
+    font-size: 24px;
+}
+/*边栏内容*/
+.side_left{
+    background: #f3f6f9;
+    height: 100%;
+    overflow: hidden;
+}
+.meet_hide{
+    display: none;
+}
+.meet_none .meet_none_img{
+    width: 300px;
+    height: 290px;
+    display: block;
+    margin: 160px auto 30px;
+}
+
+.meet_create_btn{
+    display: block;
+    width: 112px;
+    height: 40px;
+    line-height: 1;
+    background: #a4c8ff;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    margin: 0 auto;
+}
+
+/*搜索*/
+.meet_search{
+    position: relative;
+    padding-right: 50px;
+    margin: 10px 9px 10px;
+    border: 1px solid #e5e5e5;
+}
+
+.meet_search_data{
+    width: 100%;
+}
+.meet_search_data .row{
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.startDataLable{
+    padding-top: 5px;
+    padding-right: 0;
+    padding-left: 10px;
+}
+.startEndData{
+    padding-right: 0 ;
+}
+.startEndData i{
+    display: inline-block;
+    margin: 0 10px;
+}
+.startEndData button{
+    display: inline-block;
+    width: 80px;
+    height: 26px;
+    line-height: 1;
+    background: #ededed;
+}
+
+.meet_search_cont{
+    height: 34px;
+
+}
+.meet_search_cont .btn .caret{
+    margin-left: 12px;
+}
+.meet_search_cont .dropdown-menu{
+    background: #f9feff;
+}
+
+.meet_search_cont .dropdown-menu>.active>a, .meet_search_cont .dropdown-menu>.active>a:focus, .meet_search_cont .dropdown-menu>.active>a:hover{
+    background: #3caaff;
+}
+
+.meet_search_btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #3caaff;
+    font-size: 24px;
+    text-align: center;
+    line-height: 1;
+    color: #fff;
+    width: 50px;
+    border: 0;
+}
+
+.meet_search_btn:hover,.meet_search_btn:active{
+    color: #fff;
+    background: #3caaff;
+}
+/*列表*/
+.meet_list_cont{
+    padding: 10px 10px 0px 10px;
+    position: relative;
+    max-height: 580px;
+    overflow-y: scroll;
+}
+.meet_list_cont li{
+    position: relative;
+    margin-bottom: 10px;
+}
+.meet_sign{
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+}
+.meet_sign i{
+    font-size: 16px;
+    font-style: normal;
+    position: absolute;
+    z-index: 3;
+    color: #fff;
+    top: 6px;
+    left: 17px;
+    transform: rotateZ(45deg);
+}
+.meet_sign_bg{
+   border-width: 50px;
+    position: absolute;
+    right: -25px;
+    top: 25px;
+    transform: rotateZ(-90deg);
+    background: #f2bf26;
+}
+.meet_sign_bg_red{
+    background: #cd4f50;
+}
+.meet_sign_bg_orign{
+    background: #ef7d25;
+}
+.meet_sign_bg_green{
+    background: #59d5bb;
+}
+.meet_list_cont h3{
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding-right: 90px;
+    position: relative;
+}
+.meet_tips{
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: #2e94ff;
+    color: #fff;
+    position: absolute;
+    top: 1px;
+    right: 25px;
+    font-size: 12px;
+}
+.meet_item_data{
+    color: #a8a8a8;
+}
+.point{
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 500px;
+    margin: -1px 0.5em 0;/*调整圆点的位置*/
+    background-color: #a8a8a8;
+    vertical-align: middle;
+}
+.meet_status_doing{
+    color: #ff9b46;
+}
+.meet_status_doing .point{
+    background: #ff9b46;
+}
+.meet_status_notStarted{
+    color: #a8a8a8;
+}
+.meet_list_cont .row{
+    margin-left: 0;
+    margin-right: 0px;
+}
+.meet_list_cont .row .col-md-6{
+    padding-left: 0;
+    padding-right: 0;
+}
+.meet_people{
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #e5e5e5;
+    color: #a8a8a8;
+}
+.meet_people i{
+    font-style: normal;
+    color: #666;
+}
+.meet_delect{
+    color: #73baf8;
+}
+.meet_many .pre-scrollable{
+    max-height: 700px;
+    position: relative;
+    padding-bottom: 40px;
+    overflow-y: scroll;
+}
+
+.meet_foot_page{
+    text-align: center;
+    width: 300px;
+}
+.meet_foot_page .total{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.meet_foot_page_num{
+    margin: 0;
+    vertical-align: middle;
+}
+
+/*主体*/
+.main_center{
+    height: 100%;
+    border: 1px solid #e5e5e5;
+}
+.main_center .meet_none_img{
+    width: 700px;
+    height: 530px;
+    margin-top: 120px;
+}
+
+
+.main_center_view h3{
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    padding-right: 90px;
+    overflow: hidden;
+}
+.main_center_view h3 p{
+    float: left;
+}
+.main_center_view .main_center_tips{
+    padding: 2px 8px;
+    color: #f19532;
+    font-size: 14px;
+    float: left;
+}
+.main_center_tips .glyphicon-facetime-video{
+    color: #dfdfdf;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
