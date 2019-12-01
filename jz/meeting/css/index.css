@@ -59,7 +59,7 @@ p{
 .nav_container .nav_link{
     font-size: 22px;
     text-align: center;
-    padding-left: 122px;
+    padding-left: 110px;
 }
 
 .nav_container .nav_link >li>a {
@@ -257,7 +257,7 @@ p{
     color: #fff;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 0px;
     overflow: hidden;
 }
 .meet_sign i{
