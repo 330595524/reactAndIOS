@@ -393,7 +393,7 @@ th {
 .table > thead > tr > td,
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
-    padding: 8px;
+    padding: 5px;
     line-height: 1.42857143;
     vertical-align: top;
     border-top: 1px solid #ddd;
@@ -1075,6 +1075,29 @@ button.close {
 .modal-open .modal {
     overflow-x: hidden;
     overflow-y: auto;
+}
+.open > .dropdown-toggle.btn-warning {
+    color: #fff;
+    background-color: #ec971f;
+    border-color: #d58512;
+}
+.btn-warning:active:hover,
+.btn-warning.active:hover,
+.open > .dropdown-toggle.btn-warning:hover,
+.btn-warning:active:focus,
+.btn-warning.active:focus,
+.open > .dropdown-toggle.btn-warning:focus,
+.btn-warning:active.focus,
+.btn-warning.active.focus,
+.open > .dropdown-toggle.btn-warning.focus {
+    color: #fff;
+    background-color: #d58512;
+    border-color: #985f0d;
+}
+.btn-warning:active,
+.btn-warning.active,
+.open > .dropdown-toggle.btn-warning {
+    background-image: none;
 }
 .modal-dialog {
     position: relative;
@@ -1827,8 +1850,18 @@ textarea.span1,
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
 }
-
-
+textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    overflow: auto;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+textarea.form-control {
+    height: auto;
+}
 
 
 

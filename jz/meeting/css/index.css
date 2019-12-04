@@ -416,7 +416,7 @@ p{
 
 
 .main_center_view_red{
-    border-color: #cd4f50;
+    border-color: #d96565;
 }
 /*.main_center_view_red .meet_sign_bg{*/
 /*    background: #cd4f50;*/
@@ -600,13 +600,13 @@ p{
 }
 .model_cont_head .col-md-3{
     position: relative;
-    padding: 5px 0px 5px 60px;
+    padding: 5px 0px 8px 60px;
 }
 .model_cont_head .col-md-3 i{
      position: absolute;
      left: 30px;
      top: 5px;
-     line-height: 1.5;
+     line-height: 1.3;
      display: inline-block;
      width: 20px;
      height: 20px;
@@ -631,7 +631,7 @@ p{
     background: #3caaff;
 }
 .model_cont_head .col-md-3.active em {
-    top: -1px;
+    top: 0px;
     background: url("../img/index/model_r_01.jpg") no-repeat;
 }
 .model_cont_head .col-md-3.active.oldActive em {
@@ -659,13 +659,17 @@ h3.title{
     padding: 7px 0;
     background: #fbfbfb;
     text-align: center;
+    font-size: 14px;
 }
 .text_input {
     background: #e9e9e9;
     display: inline-block;
-    width: 335px;
+    width: 339px;
     border: 0;
     margin-left: -5px;
+}
+.text_input::placeholder{
+    font-size: 14px;
 }
 .baseInfor table{
     margin-bottom: 0;
@@ -683,6 +687,21 @@ h3.title{
 .fnts{
     font-size: 12px;
 }
+.dropdown_select_cc{
+    display: inline-block;
+    width: 334px;
+}
+.dropdown_select_cc button{
+    width: 100%;
+    margin-top: -1px;
+}
+.dropdown_select_cc .dropdown-menu{
+    background: #f9feff;
+}
+
+.dropdown_select_cc .dropdown-menu>.active>a, .dropdown_select_cc .dropdown-menu>.active>a:focus, .dropdown_select_cc .dropdown-menu>.active>a:hover{
+    background: #3caaff;
+}
 .w300{
     width: 300px;
 }
@@ -693,34 +712,55 @@ h3.title{
 }
 .table_foot textarea{
     display: inline-block;
-    width: 787px;
+    width: 785px;
     vertical-align: middle;
 }
 .btn_table_date{
-    width: 330px;
+    width: 340px;
     background: #f8dcdc;
     text-align: left;
     overflow: hidden;
     margin-top: -2px;
+    margin-left: -6px;
     color: #a8a8a8;
+    position: relative;
 }
-.baseInfor table .btn_table_date span{
-    width: auto;
-    padding: 0;
-    float: right;
-    margin-right: 10px;
+/*.baseInfor table .btn_table_date span{*/
+/*    width: auto;*/
+/*    padding: 0;*/
+/*    !*float: right;*!*/
+/*    !*margin-right: 10px;*!*/
+/*}*/
+.glyphicon-calendar_bg{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 15px;
+    background: url("../img/index/model_icon_01.png") no-repeat;
+    background-size: cover;
 }
 .table_search_box,.table_search_box input{
-    width: 330px;
+    width: 334px;
     margin: 0;
     display: inline-block;
+    position: relative;
 }
-.baseInfor table .table_search_box span{
-    width: auto;
-    padding: 0;
-    background: transparent;
-    right: 10px;
-    color: #bdbaba;
+/*.baseInfor table .table_search_box span{*/
+/*    width: auto;*/
+/*    padding: 0;*/
+/*    background: transparent;*/
+/*    right: 10px;*/
+/*    color: #bdbaba;*/
+/*}*/
+.table_search_box .glyphicon-search_bg{
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    background: url("../img/index/search_icon_02.png") no-repeat;
+    background-size: cover;
 }
 .creat_issues_ul{
     margin-top: 10px;
@@ -746,7 +786,8 @@ h3.title{
 .issues_file p.title{
     display: block;
     padding: 10px 10px;
-    width: 776px;
+    width: 765px;
+    overflow: hidden;
 }
 .issues_file_add{
     margin-left: 10px;
@@ -760,10 +801,12 @@ h3.title{
     width: 205px;
     overflow: hidden;
     margin-right: 10px;
-    padding-bottom: 1px;
+    font-size: 14px;
+    padding: 5px 5px 5px 37px;
 }
 .issues_file_cont_item .main_file_cont_option{
-    margin-top: -4px;
+    /*margin-top: -4px;*/
+    padding: 1px 0;
 }
 .btn_add_issues{
     width: 20px;
@@ -889,7 +932,9 @@ h3.title{
 .main_h150{
     height: 150px;
 }
-
+.close_x{
+    font-size: 24px;
+}
 
 
 
