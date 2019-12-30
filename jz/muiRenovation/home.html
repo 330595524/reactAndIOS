@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>首页</title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+
+		<link href="fonts/iconfont.css" rel="stylesheet" />
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			
+			.title {
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+				padding-bottom: 51px;
+			}
+			.iconfont.font24{
+				font-size: 1.1rem;
+			}
+			.home_head{
+				overflow: hidden;
+				background: #66CCCC;
+			}
+			.home_head .title{
+				font-size: 0.875rem;
+				margin-top: 0.75rem;
+				color: #fff;
+
+			}
+			.search_head{
+				display: inline-block;
+
+			}
+			.home_head .btn_x{
+				display: inline-block;
+				width: 4rem;
+				background: transparent;
+				border: 0;
+				color: #fff;
+				top: 0;
+			}
+			.headView a{
+				padding: 0.625rem;
+			}
+			.headView img{
+				display: block;
+			}
+			.headSlider{
+				height: 8.75rem;
+				margin-top:1rem ;
+			}
+		
+			.mui-grid-view.mui-grid-9.homeCont li.mui-media{
+				background: #fff;  
+			}
+			.homeCont li img{
+				width: 3.375rem;
+				height: 3.375rem;
+			}
+			.telPhone{
+				background: #fff;
+				margin-top: 0.625rem;
+				padding: 0.25rem 0;
+				overflow: hidden;
+			}
+			.telPhone span,.telPhone a{
+				color: #66CCCC;
+				vertical-align: middle;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav home_head">
+			<span class="mui-action-back mui-pull-left title">装修吧</span>
+			<div class="mui-input-row mui-search search_head">
+				<input type="search" class="mui-input-clear" placeholder="">
+			</div>
+			<button id='showCityPicker' class="mui-btn btn_x" type='button'>太原
+			<span class="mui-icon mui-icon-arrowdown"></span>
+			</button>
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider headSlider" >
+			  <div class="mui-slider-group mui-slider-loop">
+				<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate headView">
+				  <a href="#">
+					<img src="images/home/viewImg.png">
+				  </a>
+				</div>
+				<!-- 第一张 -->
+				<div class="mui-slider-item">
+				  <a href="#">
+					<img src="images/home/viewImg.png">
+				  </a>
+				</div>
+				<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+				  <a href="#">
+					<img src="http:\/\/placehold.it\/400x300">
+				  </a>
+				</div>
+			  </div>
+			<!--  <div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+
+			  </div> -->
+			</div>
+			
+			
+			<ul class="mui-table-view mui-grid-view mui-grid-9 homeCont">
+			    <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6"><a href="#">
+			            <img src="images/home/home_img_1.png" >
+			            <div class="mui-media-body">工艺工序及基础材料</div></a></li>
+			    <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6"><a href="#">
+			           <img src="images/home/home_img_2.png" >
+			            <div class="mui-media-body">设计师</div></a></li>
+						
+				<li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6"><a href="#">
+						<img src="images/home/home_img_3.png" >
+						<div class="mui-media-body">工人师傅</div></a></li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6"><a href="#">
+						<img src="images/home/home_img_4.png" >
+						<div class="mui-media-body">主材与软装</div></a></li>
+						
+						<li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6"><a href="#">
+								<img src="images/home/home_img_5.png" >
+								<div class="mui-media-body">找监理</div></a></li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6"><a href="#">
+								<img src="images/home/home_img_6.jpg" >
+								<div class="mui-media-body">项目托管</div></a></li>
+
+			</ul> 
+			
+			<div class="telPhone" align="center">
+				<span class="mui-icon iconfont iconicon-test2 font20"></span> 
+				<a tel="4001110000">400-111-0000</a>
+			</div>
+			
+			<nav class="mui-bar mui-bar-tab">
+				<a class="mui-tab-item mui-active">
+					<span class="mui-icon mui-icon-home"></span>
+					<span class="mui-tab-label">首页</span>
+				</a>
+				<a class="mui-tab-item" >
+					<span class="mui-icon iconfont iconanli font24"></span>
+					<span class="mui-tab-label">电话</span>
+				</a>
+				<a class="mui-tab-item">
+					<span class="mui-icon mui-icon-email"></span>
+					<span class="mui-tab-label">邮件</span>
+				</a>
+				<a class="mui-tab-item">
+					<span class="mui-icon mui-icon-gear"></span>
+					<span class="mui-tab-label">设置</span>
+				</a>
+			</nav>
+			
+		</div>
+
+		<script src="js/util.js"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/city.data.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+		(function($, doc) {
+			$.init();
+			$.ready(function() {
+				//级联示例
+				var cityPicker = new $.PopPicker({
+					layer: 2
+				});
+				cityPicker.setData(cityData);
+				var showCityPickerButton = doc.getElementById('showCityPicker');
+				var cityResult = doc.getElementById('cityResult');
+				showCityPickerButton.addEventListener('tap', function(event) {
+
+					cityPicker.show(function(items) {
+						cityResult.innerText = "你选择的城市是:" + items[0].text + " " + items[1].text;
+						//返回 false 可以阻止选择框的关闭
+						//return false;
+					});
+				}, false);
+				
+			});
+		})(mui, document);
+		</script>
+	</body>
+
+</html>
