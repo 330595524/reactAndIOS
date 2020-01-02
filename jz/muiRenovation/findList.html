@@ -30,6 +30,10 @@
 				list-style: none;
 				background: #fcfcfc;
 			}
+		
+			.findListCont .mui-table-view-cell>a:not(.mui-btn){
+				margin: 0;
+			}
 			.findListCont img{
 				display: block;
 				width: 100%;
@@ -70,7 +74,7 @@
 		<div class="mui-content ">
 
 			<div class="mui-segmented-control mui-segmented-control-inverted findPeople">
-				<a class="mui-control-item  mui-active" href="#item1">拆改工人1</a>
+				<a class="mui-control-item  mui-active" href="#item1">拆改工人</a>
 				<a class="mui-control-item" href="#item2">成品保护</a>
 				<a class="mui-control-item" href="#item3">水电工</a>
 				<a class="mui-control-item" href="#item4">瓦工</a>
@@ -79,7 +83,7 @@
 			</div>
 			<div class="mui-slider-group">
 				<div id="item1" class="md-f1 mui-slider-item mui-control-content detailInfos md-box md-ver mui-active">
-					<!-- 验证码 -->
+					<!-- 拆改工人 -->
 					<div class="mui-row findListCont" align="center">
 						<div class="mui-col-sm-6 mui-col-xs-6">
 							<li class="mui-table-view-cell">
@@ -140,7 +144,7 @@
 								<div class="">
 									<div align="left" class="mui-clearfix mgt10">
 										<h4 class="mui-pull-left">韩大东</h4>
-										<button type="button" class="mui-btn mui-btn-blue mui-btn-myprimary  mui-pull-right btngz mr4">关注</button>
+										<button type="button" class="mui-btn mui-btn-blue mui-btn-myprimary  mui-pull-right btngz mr4 btnActive">已关注</button>
 									</div>
 									<div class="mui-row detailPeple" align="center">
 										<div class="mui-col-sm-4 mui-col-xs-4">
@@ -190,7 +194,33 @@
 					</div>
 				</div>
 				<div id="item2" class="bg md-f1 mui-slider-item mui-control-content detailInfos1 md-box md-ver">
-					成品保护
+					<!-- 成品保护 -->
+					<div class="mui-row findListCont" align="center">
+						<div class="mui-col-sm-6 mui-col-xs-6">
+							<li class="mui-table-view-cell">
+								<a href="#">
+									<img src="images/find/people.jpg">
+									<div class="">
+										<div align="left" class="mui-clearfix mgt10">
+											<h4 class="mui-pull-left">韩大东</h4>
+											<button type="button" class="mui-btn mui-btn-blue mui-btn-myprimary  mui-pull-right btngz mr4 btnActive">已关注</button>
+										</div>
+										<div class="mui-row detailPeple" align="center">
+											<div class="mui-col-sm-4 mui-col-xs-4">
+												<p>工作经验</p>
+												<p>8年</p>
+											</div>
+											<div class="mui-col-sm-4 mui-col-xs-4">
+												<p>工地展示</p>
+												<p>7套</p>
+											</div>
+										</div>
+									</div>
+								</a>
+							</li>
+						</div>
+					</div>
+						
 				</div>
 				<div id="item3" class="bg md-f1 mui-slider-item mui-control-content detailInfos1 md-box md-ver">
 					水电工

@@ -1,3 +1,11 @@
+i {
+	font-style: normal;
+}
+
+.red {
+	color: #FF0000;
+}
+
 .loginLogo {
 	display: block;
 	margin: 6.25rem auto 1.875rem;
@@ -92,16 +100,51 @@
 }
 
 .passwordCont .verificationCode.discolor {
-color: #ccc;
+	color: #ccc;
 }
-.btn-finsh{
-				border-radius: 20rem;
-				color: #fff;
-				background: #66cccc;
-				border: 0;
-			}
-.mui-btn-myprimary{
+
+.btn-finsh {
+	border-radius: 20rem;
+	color: #fff;
+	background: #66cccc;
+	border: 0;
+}
+
+.mui-btn-myprimary {
 	background: #66CCCC;
 	border: 0;
 	color: #fff;
+}
+
+.btnActive {
+	background: #ccc;
+}
+
+.btnS {
+	padding: 0.15rem 0.6rem;
+	font-size: 0.625rem;
+}
+
+.imgmgD {
+	border-radius: 50%;
+}
+
+.colorW {
+	color: #fff;
+}
+
+.home_head {
+	overflow: hidden;
+	background: #66CCCC;
+	text-align: center;
+}
+
+.home_head .title {
+	color: #fff;
+}
+
+.btngz {
+	padding: 0.15rem 0.6rem;
+	font-size: 0.625rem;
+	margin-top: 0.325rem;
 }
