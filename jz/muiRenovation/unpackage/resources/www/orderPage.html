@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>预约工人</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="fonts/iconfont.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+		
+		<style type="text/css">
+			.bg{
+				background: #66CCCC;
+				color: #fff;
+			}
+			.orderHear{
+				padding: 1rem 0;
+			}
+			.step span{
+				color: #66CCCC;
+				font-size: 1.45rem;
+			}
+			.step .stepRight{
+				position: absolute;
+				right: -0.625rem;
+				top:  0rem;
+				font-size: 2.25rem;
+				color: #999;
+			}
+			.step.active,.step.active span,.step.active .stepRight{
+				color: #66CCCC;
+			}
+			.bgw{
+				background: #fff;
+			}
+			.stepListTitle {
+				font-size: 1rem;
+				color: #999;
+			}
+			.stepListBody {
+				font-size: 1.2rem;
+				color: #333;
+				margin-top: 0.125rem;
+			}
+			.mui-table-view-cell>a:not(.mui-btn){
+				padding-bottom: 0.325rem;
+			}
+			.orderCont .inputText{
+				border: 0!important;
+				margin: 0!important;
+				padding: 0;
+				height: auto;
+			}
+			.btn-finsh{
+				border: 0;
+				width: 80%;
+				margin-left: auto;
+				margin-right: auto;
+				border-color: #66CCCC;
+				box-shadow: none;
+			}
+			.color99{
+				color: #999;
+			}
+			.color99 span{
+				color: #999;
+			}
+			.money{
+				font-size: 1.8rem;
+				color: #333;
+			}
+			.mui-input-group{
+				padding-right: 1.25rem;
+			}
+			.mui-input-group:before,.mui-input-group:after{
+				display: none;
+			}
+			.mui-input-group .mui-input-row:last-child:after{
+				display: none;
+			}
+			.mui-checkbox input[type=checkbox]{
+				right: 0;
+			}
+			.mui-checkbox input[type=checkbox]:checked:before{
+				color: #66CCCC;
+			}
+			.mui-input-group img{
+				display: inline-block;
+				float: left;
+				width: 1.575rem;
+				height: 1.5rem;
+				margin-top: -0.2rem;
+				margin-right: 0.625rem;
+			}
+			.bt30{
+				bottom: 1.875rem;
+				height: auto;
+				border: 0;
+				background: transparent;
+				box-shadow: none;
+			}
+			.mt10{
+				margin-top: 0.625rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav bg">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left backW"></a>
+			<h1 class="mui-title title backW ">预约工人</h1>
+			<span class="mui-icon mui-icon-search  mui-pull-right"></span>
+		</header>
+
+		<div class="mui-content bgw">
+			<div class="orderHear ">
+				<div class="mui-row " align="center">
+					<div class="mui-col-xs-4 step active" index='1'>
+						<span class="iconfont iconxuhao1 iconxuhao01"></span>
+						<p>信息录入</p>
+						<span class="iconfont iconfangxiang stepRight"></span>
+					</div>
+					<div class="mui-col-xs-4 step color99 " index='2'>
+						<span class="iconfont iconxuhao2"></span>
+						<p>支付定金</p>
+						<span class="iconfont iconfangxiang stepRight"></span>
+					</div>
+					<div class="mui-col-xs-4 step color99" index='3'>
+						<span class="iconfont iconxuhao3"></span>
+						<p>预约完成</p>
+					</div>
+				</div>
+			</div>
+			<div class="orderCont">
+				<div id="orderContain1" class="cont">
+					<ul class="mui-table-view">
+					    <li class="mui-table-view-cell mui-media">
+					        <a href="javascript:;">
+					            <div class="mui-media-body stepListTitle">
+					                预约时间
+					                <p class='mui-ellipsis stepListBody'>
+										2020-01-04
+										<span class="mui-icon mui-icon-arrowdown mui-pull-right"></span>
+									</p>
+					            </div>
+					        </a>
+					    </li>
+					    <li class="mui-table-view-cell mui-media">
+					        <a href="javascript:;">
+					            <div class="mui-media-body stepListTitle">
+					                地址
+					                <p class='mui-ellipsis stepListBody'>
+					    				山西省太原市嘉园小区4-1-201
+					    				<span class="mui-icon mui-icon-location mui-pull-right"></span>
+					    			</p>
+					            </div>
+					        </a>
+					    </li>
+						<li class="mui-table-view-cell mui-media">
+						    <a href="javascript:;" class="mui-row">
+						        <div class="mui-media-body stepListTitle mui-col-xs-6">
+										联系人
+						            <p class='mui-ellipsis stepListBody'>
+										 <input type="text" class="mui-input-clear inputText" placeholder="请输入">
+									</p>
+						        </div>
+								<div class="mui-media-body stepListTitle mui-col-xs-6">
+								    电话
+								    <p class='mui-ellipsis stepListBody'>
+										 <input type="text" class="mui-input-clear inputText" placeholder="请输入电话">
+									</p>
+								</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+						    <a href="javascript:;">
+						        <div class="mui-media-body stepListTitle">
+						            备注
+						            <p class='mui-ellipsis stepListBody'>
+										备注说明
+									</p>
+						        </div>
+						    </a>
+						</li>
+					</ul>
+				</div>
+				<div id="orderContain2" class="cont hidden">
+					<div align="center">
+						<p>定金</p>
+						<p class="money">¥500</p>
+					</div>
+					<div class="">
+						<p>请选择支付方式</p>
+						<form class="mui-input-group">
+							<div class="mui-input-row mui-checkbox">
+								<label><img src="images/order/img_01.jpg" >微信支付</label>
+								<input name="checkbox1" value="Item 3" type="checkbox" >
+							</div>
+							<div class="mui-input-row mui-checkbox">
+								<label><img src="images/order/img_02.jpg" >支付宝支付</label>
+								<input name="checkbox1" value="Item 4" type="checkbox" checked>
+							</div>
+							
+						</form>
+
+					</div>
+				</div>
+				<div id="orderContain3" class="cont hidden">
+					<ul class="mui-table-view">
+					    <li class="mui-table-view-cell mui-media">
+					        <a href="javascript:;">
+					            <div class="mui-media-body stepListTitle">
+					                预约时间
+					                <p class='mui-ellipsis stepListBody'>
+										2020-01-04
+										<span class="mui-icon mui-icon-arrowdown mui-pull-right"></span>
+									</p>
+					            </div>
+					        </a>
+					    </li>
+					    <li class="mui-table-view-cell mui-media">
+					        <a href="javascript:;">
+					            <div class="mui-media-body stepListTitle">
+					                地址
+					                <p class='mui-ellipsis stepListBody'>
+					    				山西省太原市嘉园小区4-1-201
+					    				<span class="mui-icon mui-icon-location mui-pull-right"></span>
+					    			</p>
+					            </div>
+					        </a>
+					    </li>
+						<li class="mui-table-view-cell mui-media">
+						    <a href="javascript:;" class="mui-row">
+						        <div class="mui-media-body stepListTitle mui-col-xs-6">
+										联系人
+						            <p class='mui-ellipsis stepListBody'>
+										 <input type="text" class="mui-input-clear inputText" placeholder="请输入">
+									</p>
+						        </div>
+								<div class="mui-media-body stepListTitle mui-col-xs-6">
+								    电话
+								    <p class='mui-ellipsis stepListBody'>
+										 <input type="text" class="mui-input-clear inputText" placeholder="请输入电话">
+									</p>
+								</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+						    <a href="javascript:;">
+						        <div class="mui-media-body stepListTitle">
+						            备注
+						            <p class='mui-ellipsis stepListBody'>
+										备注说明
+									</p>
+						        </div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+						    <a href="javascript:;">
+						        <div class="mui-media-body stepListTitle">
+						            定金
+						            <p class='mui-ellipsis stepListBody'>
+										500元
+									</p>
+						        </div>
+						    </a>
+						</li>
+					</ul>
+				</div>
+				
+			</div>
+						
+							
+				
+			
+			
+			
+
+			<div class="mui-content-padded footBox " align="center">
+				<button type="button" class="mui-bar mui-bar-tab mui-btn mui-btn-block  btn-finsh">
+					确认下单
+				</button>
+			</div>
+			<!-- 状态2 -->
+			<div class="mui-bar bt30 footBox hidden" align="center">
+				<button type="button" class="mui-bar mui-bar-tab mui-btn mui-btn-block  btn-finsh ">
+					支付定金
+				</button>
+				<p class="mt10">提示：如有问题请拨打客服电话进行咨询</p>
+			</div>
+			<!-- 状态3 -->
+			<div class="mui-content-padded footBox hidden" align="center">
+				<button type="button" class="mui-bar mui-bar-tab mui-btn mui-btn-block  btn-finsh ">
+					完成
+				</button>
+			</div>
+		</div>
+		
+		<script src="js/mui.min.js"></script>
+
+
+		<script>
+			
+			(function($, doc) {
+				var loginButton = doc.querySelector('.step');  
+				var orderContain = document.querySelector('.orderCont'); 
+				var index = 1;
+				
+				$('.orderHear').on('tap','.step',function(it){
+				 index = this.getAttribute('index');
+				 var span = this.querySelector('.iconfont');
+				 var stepRight = this.querySelector('.stepRight');
+				 
+				 
+				 span.classList.add("iconxuhao0"+index)
+				 span.classList.remove("iconxuhao"+index)
+				 this.classList.add("active")
+				 
+				 var  contList = $(".cont");
+				 $.each(contList, function(i, item) {
+					  item.classList.add("hidden");
+				 })
+				 var cont = $("#orderContain"+index)[0];
+				 cont.classList.remove("hidden");
+				 
+				  var  footBoxs = $(".footBox");
+				 $.each(footBoxs, function(i, item) {
+					 if((i+1) == index){
+						 item.classList.remove("hidden");
+					 }else{
+						 item.classList.add("hidden");
+					 }
+				 })
+				  
+				  
+				}) 
+				
+			}(mui, document));
+		</script>
+	</body>
+
+</html>
