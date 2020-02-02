@@ -47,20 +47,16 @@
 
             <div class="nav navbar-nav navbar-right user_cont">
                 <div class="row">
-                    <div class="col-md-5 clearfix user_cont_left">
+                    <div class="col-md-6 clearfix user_cont_left">
                         <img src="./img/index/user_img.jpg" alt="头像" class="img-circle user_img">
                         <div class="login_name">
                             <p class="login_name_top">小明</p>
                             <p class="login_name_time">2019.11.23 09:39:20</p>
                         </div>
                     </div>
-                    <div class="col-md-1">
-                        <span class="right_icon notice" aria-hidden="true"></span>
-                    </div>
-                    <div class="col-md-1">
+                    <div class="col-md-6">
+                        <span class="right_icon notice" id="notice" aria-hidden="true"></span>
                         <span class="right_icon help" aria-hidden="true"></span>
-                    </div>
-                    <div class="col-md-3">
                         <span class="right_icon off" aria-hidden="true"></span>
                     </div>
                 </div>
@@ -856,8 +852,6 @@
                     <span class="glyphicon icon_save" aria-hidden="true"></span> 保存
                 </button>
             </div>
-
-
             <!-- Modal -->
             <div class="modal fade create_meet_modal" id="myModal" tabindex="-1" role="dialog"
                  aria-labelledby="myModalLabel">
@@ -1772,6 +1766,43 @@
         </div>
     </div>
 
+    <div id="myModalNotice" >
+       <div class="notice_head">
+           <h3>消息中心
+               <i class="pull-right close" id="closeNotice">x</i>
+               <a href="#" class="more pull-right">查看更多</a>
+           </h3>
+           <div class="notice_head_cont_search">
+               <input type="text" class="form-control search_notice_input" placeholder="系统通知"
+                      aria-describedby="basic-addon1">
+               <span class="input-group-btn search_btn glyphicon-search_bg input_seacrch_bg"></span>
+           </div>
+       </div>
+       <div class="notice_cont">
+           <ul class="list-group border-none">
+               <li class="list-group-item">
+                  <p class="notice_list_title">产品消息 <i class="pull-right">2020.02.02</i></p>
+                   <p class="notice_list_cont">腾讯云代金券到期提醒</p>
+               </li>
+               <li class="list-group-item">
+                   <p class="notice_list_title">产品消息 <i class="pull-right">2020.02.02</i></p>
+                   <p class="notice_list_cont">关于12月9日凌晨广州地区网络升级通知消息</p>
+               </li>
+               <li class="list-group-item">
+                   <p class="notice_list_title">产品消息 <i class="pull-right">2020.02.02</i></p>
+                   <p class="notice_list_cont new">腾讯云代金券到期提醒</p>
+               </li>
+               <li class="list-group-item">
+                   <p class="notice_list_title">产品消息 <i class="pull-right">2020.02.02</i></p>
+                   <p class="notice_list_cont read">腾讯云代金券到期提醒</p>
+               </li>
+               <li class="list-group-item">
+                   <p class="notice_list_title">产品消息 <i class="pull-right">2020.02.02</i></p>
+                   <p class="notice_list_cont">腾讯云代金券到期提醒</p>
+               </li>
+           </ul>
+       </div>
+    </div>
 </div>
 <!--<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>-->
 <!--<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
@@ -1807,6 +1838,15 @@
       $(this).addClass("active").siblings().removeClass("active");
       $(".container_content .container_box").eq(_index2).addClass('show').siblings().removeClass("show");
     });
+
+    $("#notice").click(function () {
+      $("#myModalNotice").toggle();
+
+    })
+    $("#closeNotice").click(function () {
+      $("#myModalNotice").hide();
+
+    })
 
   });
 </script>
