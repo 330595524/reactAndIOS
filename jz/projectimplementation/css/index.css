@@ -962,6 +962,8 @@ h3.title{
 }
 .container_box{
     display: none;
+    height: 100%;
+    overflow-y: auto;
 }
 /*project end*/
 
@@ -995,6 +997,7 @@ h3.title{
 }
 .base_cont_box{
     padding-left: 15px;
+    font-size: 14px;
 }
 .base_name{
     width: 112px;
@@ -1010,6 +1013,59 @@ h3.title{
 .border-none{
     border: none;
     padding-bottom: 0;
+}
+input[disabled]{
+    background: #efefef;
+}
+.base_cont_box input,.base_cont_box textarea{
+    box-shadow: none;
+    border: 0;
+}
+.select_div_name{
+    width: 100%;
+    padding: 8px;
+    color: #333;
+}
+.right_p{
+    right: 0;
+    left: auto;
+    width: 74%;
+}
+.bg_ef{
+    background: #efefef;
+}
+.input_seacrch_bg{
+    position: absolute;
+    right: -11px;
+    z-index: 3;
+}
+.input_data{
+    background-image: url("../img/index/icon_date.png");
+}
+.pd10{
+    padding: 7px 0;
+}
+.date_select{
+    position: relative;
+}
+.date_select .center{
+    padding: 10px;
+    position: absolute;
+    left: 50%;
+    top:10px;
+    margin-left: -24px;
+    z-index: 3;
+}
+.icon_save{
+    width: 15px;
+    height: 15px;
+    background: url("../img/index/save.png") no-repeat;
+    background-size: cover;
+}
+.btn_save {
+    margin-top: 30px;
+    margin-left: 12px;
+    width: 98%;
 }
 /* 最近访问 visit_nav end */
 
