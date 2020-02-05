@@ -1147,12 +1147,12 @@ h3.title {
     color: #333;
 }
 
-.visit_nav li.active, .visit_nav li:hover {
+.visit_nav li.active, .visit_nav li:hover{
     border-bottom: 2px solid #609eee;
     background: #fff;
 }
 
-.visit_nav li:hover a {
+.visit_nav li:hover a,.visit_nav li.active a {
     background: #fff;
     color: #333;
 }
@@ -1176,7 +1176,6 @@ h3.title {
 }
 
 .label_base_name {
-    /*width: 30%;*/
     background: #f8f8f8;
     text-align: center;
 }
@@ -1291,7 +1290,7 @@ input[disabled] {
     margin-top: -6px;
 }
 
-.notice_head .notice_head_cont_search {
+.notice_head_cont_search {
     position: relative;
 }
 
@@ -1891,8 +1890,143 @@ input[disabled] {
 
 /* 项目管理  start*/
 .management_left{
-    display: none;
+    /*width: 300px;*/
+    background: #fafafa;
 }
+.management_nav_left{
+    display: none;
+    padding: 20px 10px;
+    background: #fafafa;
+}
+.management_left_nav li{
+    /*width: 50%;*/
+}
+.management_left_nav li a{
+    padding: 10px 59px;
+}
+.pt0{
+    padding-top: 0;
+}
+.management_nav_left input{
+    color: #999;
+    font-size: 14px;
+}
+.management_nav_left .base_name{
+    font-size: 14px;
+}
+.mb10{
+    margin-bottom: 10px;
+}
+.management_select{
+    background: #fff;
+}
+.management_select .right_p{
+    width: 60%;
+}
+.management_select .right_p li a{
+    color: #999;
+}
+.management_select .select_div_name{
+    color: #999;
+}
+.management_date .center{
+    top: -3px;
+    margin-left: -15px;
+}
+.management_date input{
+    width: 20px;
+    padding: 0;
+    padding-left: 4px;
+    border: 0;
+}
+.management_date span{
+    font-size: 12px;
+}
+
+.management_table_top{
+    background: #fff;
+    width: 100%;
+    padding: 5px;
+    position: relative;
+}
+.management_table_top .search_notice_input{
+    font-size: 12px;
+    padding-bottom: 0;
+    padding-top: 0;
+    height: 30px;
+}
+.management_table_top .glyphicon-search_bg{
+    background-size: 15px 15px;
+    top: 1px;
+}
+.management_table_top_right{
+    padding-top: 6px;
+}
+.management_table_top_right .btn{
+    border: 0;
+    border-right: 1px solid #e5e5e5;
+}
+.management_table_top_right img{
+    margin-right: 5px;
+}
+
+.management_table .leaderTableCont > thead > tr > th {
+    font-size: 12px;
+    font-weight: normal;
+    background: #e7f2ff;
+}
+.w100{
+    width: 100%;
+}
+.management_table{
+    background: #fff;
+    position: relative;
+    color: #999;
+    font-size: 12px;
+}
+.management_page{
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
+    bottom: 0;
+    background: #FFF;
+}
+#managementBox{background: #fff}
+.management_page img{
+    width: 12px;
+    height: 12px;
+}
+.management_page span{
+    margin: 0 10px;
+}
+.management_page span.br{
+    border-right: 1px solid #e5e5e5;
+}
+.page_input{
+    width: 40px;
+}
+.management_page_rt{
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+}
+.management_nav_foot{
+    position: absolute;
+    bottom: 10px;
+}
+.define{
+    background: #8bc2ff;
+    color: #fff;
+}
+.management_nav_foot button{
+    border: 0;
+}
+
+
+
+
+
+
 /* 项目管理  end*/
 
 
