@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link href="./css/zTreeStyle/zTreeStyle.css" rel="stylesheet" />
+
 </head>
 <body>
 <div class="navbar navbar-default navbar-fixed-top">
@@ -64,7 +66,9 @@
                 </div>
             </div>
             <div class="management_left_cont clearfix">
-                <div class="management_nav_left ">11</div>
+                <div class="management_nav_left ">
+                    <ul id="tree" class="ztree"></ul>
+                </div>
                 <div class="management_nav_left show">
                     <!--          查询          -->
                     <div class="input-group bor1 mb10">
@@ -433,8 +437,11 @@
     </div>
 </div>
 
+<div id="menu_tree_left" class="ztree"></div>
 
 <script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
+<script src="./js/jquery-migrate-1.2.1.js"></script>
+<script src="./js/jquery.ztree.all-3.5.min.js"></script>
 <script>
   $().ready(function () {
     var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -453,7 +460,102 @@
       $(".management_left_cont .management_nav_left").eq(_index2).addClass('show').siblings().removeClass("show");
     });
 
+
+    // zTree 的参数配置，深入使用请参考 API 文档（setting 配置详解）
+    var setting = {};
+    // zTree 的数据属性，深入使用请参考 API 文档（zTreeNode 节点数据详解）
+    var zNodes = [{
+      name: "项目类型",
+      open: true,
+      children: [
+        {name: "全部"},
+        {name: "新系统开发类"},
+        {name: "运维开发类"},
+        {name: "资讯服务类"},
+        ]
+    },
+      {
+        name: "项目状态",
+        open: true,
+        children: [{
+          name: "test2_1"
+        }, {
+          name: "test2_2"
+        }]
+      },
+      {
+        name: "项目年度",
+        open: true,
+        children: [{
+          name: "test2_1"
+        }, {
+          name: "test2_2"
+        }]
+      }
+    ];
+    $(function() {
+      $.fn.zTree.init($("#tree"), setting, zNodes);
+    });
+
+
+
+    var settingLeft = {
+      view: {
+        dblClickExpand: false,//双击节点时，是否自动展开父节点的标识
+        showLine: false,//是否显示节点之间的连线
+        showIcon: true,
+        fontCss: { 'color': 'white', 'font-weight': 'normal' },//字体样式函数
+        selectedMulti: false //设置是否允许同时选中多个节点
+      },
+      check: {
+        //chkboxType: { "Y": "ps", "N": "ps" },
+        chkStyle: "checkbox",//复选框类型
+        enable: false //每个节点上是否显示 CheckBox
+      },
+      data: {
+        simpleData: {//简单数据模式
+          enable: true,
+          idKey: "id",
+          pIdKey: "pId",
+          rootPId: ""
+        }
+      },
+      callback: {
+
+        beforeClick: function (treeId, treeNode) {
+          zTree = $.fn.zTree.getZTreeObj("menu_tree_vehicle");
+          if (treeNode.isParent) {
+            zTree.expandNode(treeNode);//如果是父节点，则展开该节点
+          } else {
+            zTree.checkNode(treeNode, !treeNode.checked, true, true);//单击勾选，再次单击取消勾选
+          }
+        }//,
+        // onCheck: onCheck
+
+      }
+    };
+
+    $(function () {
+      //初始化菜单树
+      var zNodes = [
+        { id: 0, pId: -1, name: "一级部门", open: true },
+        { id: 1, pId: 0, name: "二级部门1", open: false },
+        { id: 2, pId: 1, name: "三级部门1" },
+        { id: 3, pId: 1, name: "三级部门2" },
+        { id: 4, pId: 0, name: "二级部门2", open: false },
+        { id: 5, pId: 4, name: "三级部门3" },
+        { id: 6, pId: 4, name: "三级部门4", open: false },
+        { id: 7, pId: 6, name: "四级部门1" },
+        { id: 8, pId: 6, name: "四级部门2" },
+        { id: 9, pId: 0, name: "二级部门3" },
+        { id: 10, pId: 0, name: "二级部门4" }
+      ];
+      $.fn.zTree.init($("#menu_tree_left"), settingLeft, zNodes);
+    });
+
   });
+
+
 
 
 </script>
