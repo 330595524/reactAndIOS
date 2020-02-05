@@ -1510,10 +1510,6 @@ input[disabled] {
     background: #fbd23d;
 }
 
-.leaderTableCont {
-
-}
-
 .leaderTableCont > thead > tr > th {
     text-align: center;
 }
@@ -1653,5 +1649,307 @@ input[disabled] {
     background: #fff;
 }
 /*领导 end*/
+/*员工  start*/
+.personnelTableCont{
+    border-top: 0;
+    margin-bottom: 0;
+}
+.personnelTableCont > tbody > tr > td.td_red{
+     color: #fc8084;
+ }
+.personnelTableCont > tbody > tr > td.td_orign{
+    color: #ffb030;
+}
+.personnelTableCont > tbody > tr > td.td_green{
+    color: #13d982;
+}
+.date_left{
+    border: 1px solid transparent;
+    display: inline-block;
+    padding: 2px 4px 4px 4px;
+    color: #619eee;
+}
+.date_left:hover,.date_left.active{
+    border-color: #619eee;
+    border: 1px solid #619eee;
+}
+.font12{
+    font-size: 12px;
+    padding: 5px 0;
+    border: 1px solid #3CAAFF;
+    color: #888;
+}
+.font_b{
+    background: #f4f4f4;
+    border-color: #dbdbdb;
+}
+.mt3{
+    margin-top: 3px;
+}
+.personnel_date_container{
+    background: #fff;
+    padding: 10px 15px 0 15px;
+    overflow: hidden;
+    width: 100%;
+}
+.date_table > thead > tr > th{
+    text-align: center;
+    color: #666;
+    border: 0;
+}
+.date_table > tbody > tr > td{
+    color: #666;
+    border: 0;
+}
+.date_table > tbody > tr > td.td_blue{
+    color: #609eee;
+}
+.date_table{
+    border-bottom: 1px solid #e5e5e5;
+}
+.pd_personel_btn{
+    padding: 5px 10px;
+    width: 118px;
+    border-radius: 300px;
+    border-color: #888;
+    color: #888;
+}
+.mr20{
+    margin-right: 20px;
+}
+.pd_personel_btn.active{
+    border-color: #609eee;
+    color: #609eee;
+}
+.personnel_top_left{
+    padding: 27px 15px;
+    background: #fff;
+}
+.pdt0{
+    padding-top: 0;
+    padding-bottom: 18px;
+}
+.personnel_top_left table{
+    border-top: 1px solid #e5e5e5;
+}
+.personnel_top_left table.bt0{
+    border-top: 0;
+}
+.date_cont{
+    margin-bottom: 10px;
+}
+.status{
+    padding: 10px 0px;
+}
+.status span{
+    display: inline-block;
+    font-size: 14px;
+    color: #888;
+}
+.status span:before{
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #666666;
+    border-radius: 50%;
+    margin-right: 3px;
+}
+.status .status_b:before{
+    background-color: #666666;
+}
+.status .status_g:before{
+    background-color: #7dd4b5;
+}
+.status .status_blue:before{
+    background-color: #609eee;
+}
+.status .status_r:before{
+    background-color: #f17070;
+}
+.table > tbody > tr.table_td_bt0 > td{
+    border-top: 0;
+}
+.table > tbody > tr.table_td_br > td{
+    border-right: 1px solid #e5e5e5;
+}
+.table_btn{
+    color: #fdc680;
+    padding-right: 2px;
+    border-right: 1px solid #e5e5e5;
+}
+.table_btn.br0{
+    border-right: 0;
+}
+.table_position> td{
+    position: relative;
+}
+.table_position> td span{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-top: -12px;
+    font-weight: bold;
+}
+.div_tips{
+    width: 46px;
+    height: 46px;
+    background: url("../img/index/home_right/sign_red.png") no-repeat;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    color: #fff;
+    padding: 10px 0 0 20px;
+}
+.div_tips.yellow {
+    background: url("../img/index/home_right/sign_yellow.png") no-repeat;
+}
+.div_tips.green {
+    background: url("../img/index/home_right/sign_green.png") no-repeat;
+}
+.personnel_list{
+    max-height: 520px;
+    width: 100%;
+    background: #f7f7f7;
+    overflow-y: auto;
+    padding-bottom: 10px;
+}
+.personnel_list_title{
+    position: relative;
+    color: #d96565;
+}
+.personnel_list_title:after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #d96565;
+    position: absolute;
+    left: -10px;
+    top: 8px;
+}
+.personnel_list p{
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.personnel_list h3{
+    padding: 0;
+    font-size: 14px;
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+.personnel_list_foot{
+    font-size: 14px;
+    color: #999;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 5px;
+}
+.personnel_list .list-group-item{
+    padding-bottom: 4px;
+}
+.pm_list{
+    background: #fff;
+    padding: 10px 20px;
+}
+.pm_list .list-group-item{
+    margin-bottom: 0px;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 8px 0px;
+    font-size: 14px;
+    color: #cfcfcf;
+}
+.pm_list .list-group-item.bbt0{
+    border-bottom: 0;
+    margin-bottom: 0px;
+}
+.pm_list .list-group-item.color9{
+    color: #999;
+}
+.pm_list .list-group-item .blue{
+    color: #76abf1;
+}
+.myApply{
+    margin-bottom: 10px;
+}
+.myApply2{
+    margin-top: -10px;
+}
+.pmTable.table > tbody > tr > td{
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+.pdb10{
+    padding-bottom: 14px;
+}
+/*员工  end*/
 /*首页  end*/
+
+/* 项目管理  start*/
+.management_left{
+    display: none;
+}
+/* 项目管理  end*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

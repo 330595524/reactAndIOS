@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>项目管理</title>
+       
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid nav_container">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse clearfix" id="bs-example-navbar-collapse-1">
+            <!--            <div class="navbar-header">-->
+            <!--                <a class="navbar-brand logo" href="#">LOGO</a>-->
+            <!--            </div>-->
+            <a class="navbar-brand logo" href="#">LOGO</a>
+            <ul class="nav navbar-nav nav_link">
+                <li><a href="index.html">工怍台</a></li>
+                <li><a href="#">销售管理</a></li>
+                <li class="active"><a href="projectManagement.html">项目管理</a></li>
+                <li><a href="#">采购管理</a></li>
+                <li><a href="#">知识库</a></li>
+                <li><a href="#">报表</a></li>
+                <li><a href="#">系统管理</a></li>
+                <li><a href="#">最近访问</a></li>
+            </ul>
+
+            <div class="nav navbar-nav navbar-right user_cont">
+                <div class="row">
+                    <div class="col-md-6 clearfix user_cont_left">
+                        <img src="./img/index/user_img.jpg" alt="头像" class="img-circle user_img">
+                        <div class="login_name">
+                            <p class="login_name_top">小明</p>
+                            <p class="login_name_time">2019.11.23 09:39:20</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <span class="right_icon notice" id="notice" aria-hidden="true"></span>
+                        <span class="right_icon help" aria-hidden="true"></span>
+                        <span class="right_icon off" aria-hidden="true"></span>
+                    </div>
+                </div>
+
+            </div>
+        </div><!-- /.container-fluid -->
+
+    </div><!-- /.container-fluid -->
+</div>
+
+<div class="container-fluid container_content">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="leaderTable">
+                <div class="visit_nav">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">菜单</a></li>
+                        <li><a href="#">查询</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="management_left_cont">
+                <div class="management_left">11</div>
+                <div class="management_left">22</div>
+            </div>
+        </div>
+        <div class="col-md-9">
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
+<script>
+  $().ready(function () {
+    $(".navbar-nav li").click(function () {
+      var _index2 = $(this).index();
+      $(this).addClass("active").siblings().removeClass("active");
+      $(".management_left_cont .management_left").eq(_index2).addClass('show').siblings().removeClass("show");
+    });
+
+  });
+
+
+</script>
+</body>
+
+</html>
