@@ -188,11 +188,8 @@ p {
 /*边栏内容*/
 .side_left {
     background: #fff;
-    /*background: #f3f6f9;*/
-    /*height: 100%;*/
     overflow: hidden;
-    /*height: 760px;*/
-    /*max-height: 760px;*/
+    padding-bottom: 60px;
 }
 
 .meet_hide {
@@ -317,16 +314,23 @@ p {
 }
 
 /*列表*/
+.meet_many{
+    background: #fff;
+}
+.list_box{
+    position: relative;
+    overflow: hidden;
+}
 .meet_list_cont {
     padding: 10px 10px 0px 10px;
-    position: relative;
-    max-height: 580px;
+    max-height: 530px;
     overflow-y: scroll;
 }
 
 .meet_list_cont li {
     position: relative;
     margin-bottom: 10px;
+    padding-bottom: 0;
 }
 
 .meet_sign {
@@ -433,7 +437,7 @@ p {
     padding-bottom: 5px;
     margin-bottom: 5px;
     color: #a8a8a8;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .meet_people i {
@@ -453,7 +457,9 @@ p {
 
 .meet_foot_page {
     text-align: center;
-    width: 240px;
+    width:200px;
+    margin: 0 auto;
+    background: #fff;
 }
 
 .meet_foot_page .total {
@@ -1144,7 +1150,7 @@ h3.title {
 
 .visit_nav li a {
     padding: 10px 20px;
-    color: #333;
+    color: #999;
 }
 
 .visit_nav li.active, .visit_nav li:hover{
@@ -1367,6 +1373,7 @@ input[disabled] {
 
 .home_notice_head_more {
     color: #888;
+    font-size: 12px;
 }
 
 .home_notice_cont {
@@ -1449,7 +1456,7 @@ input[disabled] {
 
 .todoList .item {
     position: relative;
-    padding-left: 50px;
+    padding-left: 40px;
     height: 75px;
 }
 
@@ -1478,7 +1485,7 @@ input[disabled] {
 }
 
 .todoList .item p {
-    font-size: 16px;
+    font-size: 14px;
     text-align: right;
     color: #fff;
     padding-right: 10px;
@@ -1652,6 +1659,9 @@ input[disabled] {
 .personnelTableCont{
     border-top: 0;
     margin-bottom: 0;
+}
+.personnelTableCont.bdtp1{
+    border-top: 1px solid #e5e5e5;
 }
 .personnelTableCont > tbody > tr > td.td_red{
      color: #fc8084;
@@ -1990,14 +2000,29 @@ input[disabled] {
     position: absolute;
     bottom: 0;
     background: #FFF;
+    z-index: 3;
+    opacity: 1;
+}
+.btm10{
+    bottom: 10px;
+    background: #fff;
 }
 #managementBox{background: #fff}
 .management_page img{
     width: 12px;
     height: 12px;
 }
+.management_page.small img{
+    width: 8px;
+    height: 8px;
+}
 .management_page span{
-    margin: 0 10px;
+    margin: 0 5px;
+}
+.management_page.small span{
+    padding: 0 4px;
+    margin: 0;
+    font-size: 12px;
 }
 .management_page span.br{
     border-right: 1px solid #e5e5e5;
@@ -2021,14 +2046,255 @@ input[disabled] {
 .management_nav_foot button{
     border: 0;
 }
-
-
-
-
-
-
 /* 项目管理  end*/
+/*最近访问  start*/
+.visit_base_cont{
+    display: none;
+}
+.home_cont_R_cont_nav img{
+    display: inline-block;
+}
+.home_cont_R_cont_nav a{
+    display: inline-block;
+    width: 11.2%;
+    font-size: 12px;
+    height: 40px;
+    text-align: center;
+}
+.home_cont_R_cont_nav span{
+    display: block;
+    padding-top: 4px;
+    color: #999;
+}
+.visit_home_cont_L_H{
+    max-width: 75%;
+    width: auto;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+    padding: 5px 70px 5px 5px;
+}
+.visit_home_cont_L_H p{
+    color: #666;
+}
+.visit_home_cont_L_H .meet_tips{
+    right: 12px;
+    top: 3px;
+}
+.pl0{
+    padding-left: 0;
+}
+.visit_home_cont_L .meet_people{
+    padding-bottom:0 ;
+    margin-bottom: 5px;
+}
+.visit_home_cont_L_bottom{
+    text-align: center;
+}
+.visit_home_cont_L_bottom .head{
+    background: #edf3ff;
+}
+.visit_home_cont_L_bottom .body{
+    padding: 5px 0;
+    color: #609eee;
+}
+.fraction{
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    text-align: center;
+    border: 2px solid #58dd95;
+    color: #58dd95;
+    border-radius: 50%;
+}
+.fraction span{
+    font-size: 24px;
+}
+.fraction i{
+    font-size: 16px;
+}
+.pt10{
+    padding-top: 10px;
+}
+.home_cont_R_title h4{
+    margin: 14px 0 5px 0px;
+    font-weight: normal;
+    font-size: 16px;
+    color: #666;
+}
+.home_cont_R_title p{
+    color: #999;
+    font-size: 14px;
+}
+.btn_experience{
+    border-radius: 300px;
+    border: 1px solid #58dd95;
+    color: #58dd95;
+    margin-top: 15px;
+}
+.mb32{
+    margin-bottom: 32px;
+}
+.visit_r_head{
+    background: transparent;
+    border: 0;
+    font-size: 16px;
+}
+.bd1{
+    border: 1px solid #e5e5e5;
+}
+.visit_table .imgTopBox{
+    padding: 0;
+    background: url("../img/index/visit/visit_table_top.png") no-repeat;
+    background-size: 100% 100%;
+    background-color: #f9f9f9;
+}
+.visit_table .imgTop{
+    width: 100%;
+    height: 100%;
+}
+.visit_table > thead > tr > th {
+    font-size: 14px;
+    background: #f9f9f9;
+    border-bottom: 0;
+}
+.visit_table_box{
+    padding: 10px;
+}
+.visitLeft_bottom{
+    padding-top: 60px;
+    text-align: center;
+}
+.visitLeft_bottom img{
+    display: inline-block;
 
+}
+.visitLeft_bottom p{
+    font-size: 16px;
+    color: #666;
+}
+.visit_home_cont h4{
+    border-bottom: 1px solid #e5e5e5;
+    margin: 0 20px;
+    padding: 15px 0;
+}
+.visitLeft{
+    width: 12%;
+    float: left;
+    margin-left: 10px;
+}
+.visitLeft,.visitCenter,.visitRight{
+    border: 1px solid #a1f6c8;
+    border-radius: 5px;
+    height:220px;
+}
+.visitCenter{
+    border-color: #afd6fb;
+    margin: 0 10px;
+}
+.visitRight{
+    border-color: #fbafaf;
+}
+.visitCenter h4,.visitRight h4{
+    border-bottom: 0;
+}
+
+.project_list{
+    padding: 130px 40px 10px 40px;
+    width: 100%;
+}
+.project_list li {
+    position: relative;
+    width: 20%;
+    float: left;
+    background: #e5e5e5;
+    height: 1px;
+}
+.project_list li.step1{
+    background: #2e8bf3;
+    height: 2px;
+}
+
+.project_list li .before{
+    display: block;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: url("../img/index/visit/icon_jd_03.jpg") no-repeat;
+    background-size: cover;
+    top: -11px;
+    left: -11px;
+}
+.project_list li.step1 .before{
+    background: url("../img/index/visit/icon_jd_01.png") no-repeat;
+}
+
+.project_list li.step2 .before{
+    background: url("../img/index/visit/icon_jd_02.jpg") no-repeat;
+}
+
+.project_list li .after{
+    display: block;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: url("../img/index/visit/icon_jd_03.jpg") no-repeat;
+    background-size: cover;
+    top: -11px;
+    right: -11px;
+}
+.project_list li.finish1 .after{
+    background: url("../img/index/visit/icon_jd_01.png") no-repeat;
+}
+.project_list li.finish2 .after{
+    background: url("../img/index/visit/icon_jd_02.jpg") no-repeat;
+}
+
+.project_list li div.tips{
+    position: absolute;
+    top: -120px;
+    left: -220px;
+    width: 440px;
+    background: #e2efff;
+    height: 80px;
+
+}
+.project_list li div.tips::after{
+    content: "";
+    width: 16px;
+    height: 9px;
+    background: url("../img/index/visit/sj.png") no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: -9px;
+    left: 50%;
+    margin-left: -8px;
+}
+.tips .row{
+    font-size: 12px;
+    color: #666;
+}
+.tips .row i{
+    color: #999;
+}
+.tips_head{
+    font-size: 14px;
+    padding: 0px 0 10px 0;
+    text-align: left;
+    color: #666;
+}
+.tips{
+    padding: 10px;
+}
+.mt3{
+    margin-top: 2px;
+}
+.visit_cont_foot{
+    padding: 10px;
+}
+
+
+/*最近访问  end*/
 
 
 

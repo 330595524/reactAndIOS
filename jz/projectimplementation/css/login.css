@@ -8,7 +8,7 @@ html,body,.jumbotron{
 .login_bg{
     height: 100%;
     width: 100%;
-    background: url("../img/login/bj.png") no-repeat ;
+    background: #8cd8ff ;
     background-size: cover;
     position: absolute;
     top: 0;
@@ -17,31 +17,46 @@ html,body,.jumbotron{
     bottom: 0;
 }
 .login_bg .login_bg_left{
-    width: 384px;
-    height: 384px;
-    background: url("../img/login/login_left_bg.png") no-repeat ;
+    width: 100%;
+    height: 353px;
+    background: url("../img/login/login_bg.png") no-repeat ;
     background-size: cover;
     position: absolute;
-    top: 15%;
-    left: 20%;
+    top: 50%;
+    margin-top: -176px;
+    left: 0;
 }
 
 .login_contain{
-    width: 350px;
-    height: 420px;
+    width: 780px;
+    height: 450px;
     position: absolute;
-    top: 15%;
-    right: 20%;
-    background: #fff;
+    top: 50%;
+    left: 50%;
+    margin-top: -225px;
+    margin-left: -390px;
+    padding-left: 390px;
+    background: url("../img/login/login_left_bg_01.png") no-repeat 0 0;
+    background-color: #fff;
+    background-size: 390px 450px;
     overflow: hidden;
     text-align: center;
 }
 
-.login_contain h2{
-    color: #3CAAFF;
-    font-size: 30px;
-    padding: 50px 0;
-    margin: 0;
+/*.login_contain h2{*/
+/*    color: #3CAAFF;*/
+/*    font-size: 30px;*/
+/*    padding: 50px 0;*/
+/*    margin: 0;*/
+/*}*/
+.login_head{
+    width: 221px;
+    height: 46px;
+    padding-top: 46px;
+    overflow: hidden;
+    margin: 30px auto;
+    background: url("../img/login/login_left_bg_02.png") no-repeat 0 0 ;
+    background-size: cover;
 }
 
 .login_center{
@@ -71,36 +86,136 @@ html,body,.jumbotron{
 .login_center .user_icon{
     display: inline-block;
     vertical-align: middle;
-    width: 24px;
-    height: 26px;
+    width: 16px;
+    height: 16px;
     position: absolute;
     left: 0;
     top: 50%;
-    margin-top: -13px;
+    margin-top: -10px;
     background: url("../img/login/login_user.png") no-repeat;
+    background-size: cover;
 }
 
 .login_center .pass_icon{
+    height: 18px;
     background: url("../img/login/login_pass.png") no-repeat;
+    background-size: cover;
 }
-
-.login_bot{
-    text-align: center;
-    padding: 30px 0;
+.login_center .txtlable{
+    background: none;
+    width: 50px;
     color: #c7c7c7;
 }
-
+.login_center input.left_lable{
+    text-indent: 60px;
+}
+.login_bot{
+    text-align: center;
+    padding: 14px 0;
+    color: #c7c7c7;
+}
+.login_user input,.login_pass input{
+    font-size: 16px;
+}
 
 .btn_login{
-    width: 260px;
+    width: 320px;
     height: 60px;
-    border-radius: 33px;
-    font-size: 28px;
+    font-size: 16px;
     color: #fff;
-    background: #3CAAFF;
+    background: #6cbaff;
     border: 0;
+    margin-top: 24px;
 }
 
 .mb20{
     margin-bottom: 20px;
 }
+.cont_box{display: none}
+.login_nav{
+    margin: 0 30px 30px 30px;
+}
+
+#box{
+    position: relative;
+    width: 320px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: #e8e8e8;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+#box .bgColor{
+    position: absolute;
+    left:0;
+    top:0;
+    width:40px;
+    height: 40px;
+    background-color: lightblue;
+}
+#box .txt{
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+}
+#box .slider{
+    position: absolute;
+    left:0;
+    top:0;
+    width: 50px;
+    height: 40px;
+    border: 1px solid #ccc;
+    background: #fff;
+    text-align: center;
+    cursor: move;
+}
+#box .slider>i{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background: url("../img/login/jtr.png") no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+}
+#box .slider.active>i{
+    background: url("../img/login/success.png") no-repeat;
+    background-size: cover;
+}
+.hidden{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

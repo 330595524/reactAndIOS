@@ -8,42 +8,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
        
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>登录</title>
-        <!-- Bootstrap -->
-       <link rel="stylesheet" href="./css/common.css">
-<!--    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
+        <title>登录</title>
+       
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/login.css">
 
-        <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
-        <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
-<!--        &lt;!&ndash;[if lt IE 9]>-->
-<!--         -->
-<!--        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>-->
-<!--         -->
-<!--        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>-->
-<!--        <![endif]&ndash;&gt;-->
+       
 </head>
  
 <body>
+
+
 <div class="container login_bg" id="loginContainer">
     <div class="login_bg_left"></div>
     <div class="login_contain">
-        <h2>综合会议管理平台</h2>
-        <div class="login_center">
-            <div class="login_user mb20">
-                <label for="exampleInputEmail1">
-                    <span class="user_icon"></span>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="请输入账号">
-                </label>
+        <h2 class="login_head">项目运营管理平台</h2>
+        <div class="visit_nav login_nav">
+            <ul class="nav navbar-nav ">
+                <li class="active"><a href="#">密码登录</a></li>
+                <li><a href="#">账号登录</a></li>
+            </ul>
+        </div>
+        <div class="login_cont_box">
+            <div class="cont_box show">
+                <!--       密码登录         -->
+                <div class="login_center">
+                    <div class="login_user mb20">
+                        <label for="exampleInputEmail1">
+                            <span class="user_icon"></span>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="请输入账号">
+                        </label>
+                    </div>
+                    <div class="login_pass">
+                        <label for="exampleInputPassword1">
+                            <span class="user_icon pass_icon"></span>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="请输入密码">
+                        </label>
+                    </div>
+                </div>
             </div>
-            <div class="login_pass">
-                <label for="exampleInputPassword1">
-                    <span class="user_icon pass_icon"></span>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="请输入密码">
-                </label>
+            <div class="cont_box ">
+
+                <!--        账号登录        -->
+                <div class="login_center">
+                    <div class="login_user mb10">
+                        <label for="exampleInputEmail1">
+                            <span class="user_icon txtlable">手机号</span>
+                            <input type="email" class="form-control left_lable" id="exampleInputEmail3"
+                                   placeholder="请输入手机号">
+                        </label>
+                    </div>
+                    <div class="mb10">
+                        <div id="box">
+                            <div class="bgColor"></div>
+                            <div class="txt">滑动解锁</div>
+                            <!--给i标签添加上相应字体图标的类名即可-->
+                            <div class="slider"><i class="rightright"></i></div>
+                        </div>
+                    </div>
+                    <div class="login_pass">
+                        <label for="exampleInputPassword1">
+                            <span class="user_icon txtlable">验证码</span>
+                            <input type="password" class="form-control left_lable" id="exampleInputPassword4"
+                                   placeholder="请输入验证码">
+                        </label>
+                    </div>
+                </div>
+
             </div>
         </div>
-        <div class="login_bot">
+
+
+        <button type="submit" class="btn btn-default btn_login">登录</button>
+
+        <div class="login_bot" id="forget">
             <div class="row">
                 <div class="col-md-6">
                     <label class="checkbox-inline">
@@ -53,13 +92,107 @@
                 </div>
                 <div class="col-md-6">忘记密码？</div>
             </div>
-
-
         </div>
-        <button type="submit" class="btn btn-default btn_login">登录</button>
+
     </div>
 </div>
-<!--  <script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>-->
 </body>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script>
+  $().ready(function () {
+    let passSHow = 'login_bot show';
+    var forget = document.querySelector('#forget');
+    $(".login_nav li").click(function () {
+      var _index2 = $(this).index();
+      $(this).addClass("active").siblings().removeClass("active");
+      $(".login_cont_box .cont_box").eq(_index2).addClass('show').siblings().removeClass("show");
+        if(_index2 !== 0){
+          passSHow = 'hidden';
+        }else {
+          passSHow = 'login_bot show';
+        }
 
+      forget.className= passSHow;
+    });
+
+
+    //一、定义了一个获取元素的方法
+    function getEle(selector) {
+      return document.querySelector(selector);
+    }
+
+//二、获取到需要用到的DOM元素
+    var box = 320, //容器
+      bgColor = getEle(".bgColor"), //背景色
+      txt = getEle(".txt"), //文本
+      slider = getEle(".slider"), //滑块
+      icon = getEle(".slider>i"),
+      successMoveDistance = box - 50, //解锁需要滑动的距离
+      downX, //用于存放鼠标按下时的位置
+      isSuccess = false; //是否解锁成功的标志，默认不成功
+//三、给滑块添加鼠标按下事件
+    slider.onmousedown = mousedownHandler;
+
+//3.1鼠标按下事件的方法实现
+    function mousedownHandler(e) {
+      bgColor.style.transition = "";
+      slider.style.transition = "";
+      var e = e || window.event || e.which;
+      downX = e.clientX;
+      //在鼠标按下时，分别给鼠标添加移动和松开事件
+      document.onmousemove = mousemoveHandler;
+      document.onmouseup = mouseupHandler;
+    };
+
+//四、定义一个获取鼠标当前需要移动多少距离的方法
+    function getOffsetX(offset, min, max) {
+      if (offset < min) {
+        offset = min;
+      } else if (offset > max) {
+        offset = max;
+      }
+      return offset;
+    }
+
+//3.1.1鼠标移动事件的方法实现
+    function mousemoveHandler(e) {
+      var e = e || window.event || e.which;
+      var moveX = e.clientX;
+      var offsetX = getOffsetX(moveX - downX, 0, successMoveDistance);
+      bgColor.style.width = offsetX + "px";
+      slider.style.left = offsetX + "px";
+
+      if (offsetX == successMoveDistance) {
+        success();
+      }
+      //如果不设置滑块滑动时会出现问题（目前还不知道为什么）
+      e.preventDefault();
+    };
+
+//3.1.2鼠标松开事件的方法实现
+    function mouseupHandler(e) {
+      if (!isSuccess) {
+        bgColor.style.width = 0 + "px";
+        slider.style.left = 0 + "px";
+        bgColor.style.transition = "width 0.8s linear";
+        slider.style.transition = "left 0.8s linear";
+      }
+      document.onmousemove = null;
+      document.onmouseup = null;
+    };
+
+//五、定义一个滑块解锁成功的方法
+    function success() {
+      isSuccess = true;
+      txt.innerHTML = "解锁成功";
+      bgColor.style.backgroundColor = "lightgreen";
+      slider.className = "slider active";
+      //滑动成功时，移除鼠标按下事件和鼠标移动事件
+      slider.onmousedown = null;
+      document.onmousemove = null;
+    };
+
+
+  });
+</script>
 </html>

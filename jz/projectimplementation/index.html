@@ -32,7 +32,7 @@
                 <li><a href="#">知识库</a></li>
                 <li><a href="#">报表</a></li>
                 <li><a href="#">系统管理</a></li>
-                <li class="active"><a href="#">最近访问</a></li>
+                <li class="active"><a href="recentVisit.html">最近访问</a></li>
             </ul>
 
             <div class="nav navbar-nav navbar-right user_cont">
@@ -1392,24 +1392,24 @@
 
 
     <div id="cont_8" name="最近访问" class="container_box row-fluid container_content_bg ">
-        <div class="span3 side_left" id="side_left">
-            <!--边栏内容-->
-            <!--  空 start-->
-            <!--            meet_hide 处理空值状态-->
+        <!--<div class="span3 side_left" id="side_left">
+            &lt;!&ndash;边栏内容&ndash;&gt;
+            &lt;!&ndash;  空 start&ndash;&gt;
+            &lt;!&ndash;            meet_hide 处理空值状态&ndash;&gt;
             <div class="meet_none hidden">
                 <img src="./img/index/imgjpg_02.jpg" alt="" class="meet_none_img">
                 <button class="btn btn-default meet_create_btn" type="submit">安排会议</button>
             </div>
-            <!--  空 end-->
-            <!--  列表 -->
+            &lt;!&ndash;  空 end&ndash;&gt;
+            &lt;!&ndash;  列表 &ndash;&gt;
             <div class="meet_many">
                 <div class="meet_search">
                     <div class="meet_search_cont">
-                        <!--                        <div class="form-group has-success has-feedback table_search_box newproject">-->
-                        <!--                            <input type="text" class="form-control text_input">-->
-                        <!--                            <span class="glyphicon-search_bg"-->
-                        <!--                                  aria-hidden="true"></span>-->
-                        <!--                        </div>-->
+                        &lt;!&ndash;                        <div class="form-group has-success has-feedback table_search_box newproject">&ndash;&gt;
+                        &lt;!&ndash;                            <input type="text" class="form-control text_input">&ndash;&gt;
+                        &lt;!&ndash;                            <span class="glyphicon-search_bg"&ndash;&gt;
+                        &lt;!&ndash;                                  aria-hidden="true"></span>&ndash;&gt;
+                        &lt;!&ndash;                        </div>&ndash;&gt;
 
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="项目名称">
@@ -1537,9 +1537,9 @@
 
                 </ul>
             </div>
-            <!--      分页     -->
+            &lt;!&ndash;      分页     &ndash;&gt;
             <div class="meet_foot_page">
-                <!--                <span class="total">共10条</span>-->
+                &lt;!&ndash;                <span class="total">共10条</span>&ndash;&gt;
                 <ul class="pagination pagination-sm meet_foot_page_num">
                     <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
                     <li class="active"><a href="#">1</a></li>
@@ -1552,14 +1552,14 @@
             </div>
         </div>
         <div class="span9 main_center " id="main_center">
-            <!--主体内容-->
-            <!--  空 start-->
-            <!--            <div class="meet_none hidden">-->
-            <!--                <img src="./img/index/imgjpg_03.jpg" alt="" class="meet_none_img">-->
-            <!--            </div>-->
-            <!--  空 end-->
+            &lt;!&ndash;主体内容&ndash;&gt;
+            &lt;!&ndash;  空 start&ndash;&gt;
+            &lt;!&ndash;            <div class="meet_none hidden">&ndash;&gt;
+            &lt;!&ndash;                <img src="./img/index/imgjpg_03.jpg" alt="" class="meet_none_img">&ndash;&gt;
+            &lt;!&ndash;            </div>&ndash;&gt;
+            &lt;!&ndash;  空 end&ndash;&gt;
 
-            <!--      最近访问，属性 start      -->
+            &lt;!&ndash;      最近访问，属性 start      &ndash;&gt;
             <div class="visit_nav">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">主页</a></li>
@@ -1868,7 +1868,7 @@
                             </div>
                         </div>
                     </div>
-                    <!--      最近访问，属性   end      -->
+                    &lt;!&ndash;      最近访问，属性   end      &ndash;&gt;
                 </div>
 
                 <button type="button" class="btn btn-default btn-block btn_save">
@@ -1876,7 +1876,7 @@
                 </button>
             </div>
 
-        </div>
+        </div>-->
     </div>
     <!--  消息  -->
     <div id="myModalNotice">
@@ -1978,17 +1978,6 @@
       var left2 = document.getElementsByClassName('circle-left2')[0];
       move(percent, right, left);
       move(percent, right2, left2);
-
-      // if (percent <= 0.5) {  //红色区域不超过一半
-      //   right.style.transform = `rotate(${percent * 360}deg)`
-      // } else {    //红色区域超过一半的情况，重点部分
-      //   right.style.transform = `rotate(180deg)`
-      //   right.style.transition = `opacity 0s step-end 1s, transform 1s linear` //timing-function需要设为linear来达到视觉上的平缓过渡
-      //   right.style.opacity = 0
-      //
-      //   left.style.transition = `transform ${(percent - 0.5) / 0.5}s linear 1s`
-      //   left.style.transform = `rotate(${percent * 360 - 180}deg)`
-      // }
     }
 
     // 柱状图
@@ -2135,7 +2124,6 @@
         },
       ]
     };
-    ;
 
     if (option2 && typeof option2 === "object") {
       myChart2.setOption(option2, true);
