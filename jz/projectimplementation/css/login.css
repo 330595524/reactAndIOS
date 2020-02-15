@@ -19,26 +19,26 @@ html,body,.jumbotron{
 .login_bg .login_bg_left{
     width: 100%;
     height: 353px;
-    background: url("../img/login/login_bg.png") no-repeat ;
-    background-size: cover;
+    /* background: url("../img/login/login_bg.png") no-repeat ; */
+    /* background-size: cover; */
     position: absolute;
     top: 50%;
     margin-top: -176px;
-    left: 0;
+    /* left: 10%; */
 }
 
 .login_contain{
-    width: 780px;
+    width: 700px;
     height: 450px;
     position: absolute;
     top: 50%;
     left: 50%;
     margin-top: -225px;
     margin-left: -390px;
-    padding-left: 390px;
+    padding-left: 350px;
     background: url("../img/login/login_left_bg_01.png") no-repeat 0 0;
     background-color: #fff;
-    background-size: 390px 450px;
+    background-size: 350px 450px;
     overflow: hidden;
     text-align: center;
 }
@@ -50,9 +50,9 @@ html,body,.jumbotron{
 /*    margin: 0;*/
 /*}*/
 .login_head{
-    width: 221px;
-    height: 46px;
-    padding-top: 46px;
+    width: 246px;
+    height: 51px;
+    padding-top: 51px;
     overflow: hidden;
     margin: 30px auto;
     background: url("../img/login/login_left_bg_02.png") no-repeat 0 0 ;
@@ -120,7 +120,7 @@ html,body,.jumbotron{
 
 .btn_login{
     width: 320px;
-    height: 60px;
+    height: 50px;
     font-size: 16px;
     color: #fff;
     background: #6cbaff;

@@ -1895,6 +1895,18 @@ textarea.form-control {
 }
 
 
-
-
-
+.ztree li span.button.diy01_ico_open, .ztree li span.button.diy01_ico_close{
+	background: url(../img/index/management/11.png) no-repeat center;
+}
+.ztree li span.button.diy02_ico_docu{
+	background: url(../img/index/management/12_all.png) no-repeat center;
+}
+.ztree li span.button.diy03_ico_docu{
+	background: url(../img/index/management/13_xxt.png) no-repeat center;
+}
+.ztree li span.button.diy04_ico_docu{
+	background: url(../img/index/management/14_jkyw.png) no-repeat center;
+}
+.ztree li span.button.diy05_ico_docu{
+	background: url(../img/index/management/15_zx.png) no-repeat center ;
+}

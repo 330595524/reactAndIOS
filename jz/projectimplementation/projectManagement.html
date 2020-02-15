@@ -56,7 +56,7 @@
 
 <div class="container-fluid container_content">
     <div class="row clearfix">
-        <div class="col-md-3 management_left" id="management_left">
+        <div class="management_left" id="management_left">
             <div class="leaderTable">
                 <div class="visit_nav management_left_nav">
                     <ul class="nav navbar-nav ">
@@ -176,13 +176,13 @@
 
                     </div>
                 </div>
-                <div class="management_nav_foot col-md-3">
+                <div class="management_nav_foot  clearfix">
                     <button class="btn btn-default col-md-6 define">确定</button>
                     <button class="btn btn-default col-md-6 saveß">保存为查询条件</button>
                 </div>
             </div>
         </div>
-        <div class="col-md-9"  style="padding-left: 10px">
+        <div  id="management_right">
             <div class="management_table_top clearfix" >
                 <div class="col-md-3">
                     <div class="notice_head_cont_search">
@@ -446,6 +446,7 @@
     var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     var side_left = document.getElementById('management_left');
+	
     var main_center = document.getElementById('managementBox');
     side_left.style.height = screenHeight - 80 + 'px';
     main_center.style.height = screenHeight - 120 + 'px';
@@ -459,37 +460,43 @@
       $(".management_left_cont .management_nav_left").eq(_index2).addClass('show').siblings().removeClass("show");
     });
 
-
+function setFontCss(treeId, treeNode) {
+	return treeNode.level == 0 ? {color:"#000"} : {};
+};
     // zTree 的参数配置，深入使用请参考 API 文档（setting 配置详解）
-    var setting = {};
+    var setting = {
+		view: {
+				fontCss : setFontCss
+			}
+	};
     // zTree 的数据属性，深入使用请参考 API 文档（zTreeNode 节点数据详解）
     var zNodes = [{
       name: "项目类型",
       open: true,
+	  iconSkin:"diy01",
       children: [
-        {name: "全部"},
-        {name: "新系统开发类"},
-        {name: "运维开发类"},
-        {name: "资讯服务类"},
+        {name: "全部",iconSkin:"diy02",},
+        {name: "新系统开发类",iconSkin:"diy03",},
+        {name: "运维开发类",iconSkin:"diy04",},
+        {name: "资讯服务类",iconSkin:"diy05",},
         ]
     },
       {
         name: "项目状态",
+		 iconSkin:"diy01",
         open: true,
-        children: [{
-          name: "test2_1"
-        }, {
-          name: "test2_2"
-        }]
+        children: [ {name: "运维开发类",iconSkin:"diy04",},
+        {name: "资讯服务类",iconSkin:"diy05",},
+		]
       },
       {
         name: "项目年度",
         open: true,
-        children: [{
-          name: "test2_1"
-        }, {
-          name: "test2_2"
-        }]
+		 iconSkin:"diy01",
+        children: [
+			{name: "运维开发类",iconSkin:"diy04",},
+			{name: "资讯服务类",iconSkin:"diy05",},
+		]
       }
     ];
     $(function() {

@@ -80,11 +80,13 @@ p {
     color: #B4D2FF;
     font-size: 14px;
     padding: 20px 12px;
+	border-bottom: 2px solid transparent;
 }
 
 .nav_container .nav_link .active a, .nav_container .nav_link > li a:hover, .nav_container .nav_link > li a:focus {
     color: #fff;
     background: #619dfa;
+	border-bottom: 2px solid #FFBD0D;
 }
 
 .nav_container .user_cont {
@@ -114,7 +116,7 @@ p {
 }
 
 .login_name_top {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .login_name_time {
@@ -1150,7 +1152,7 @@ h3.title {
 
 .visit_nav li a {
     padding: 10px 20px;
-    color: #999;
+    color: #666;
 }
 
 .visit_nav li.active, .visit_nav li:hover{
@@ -1378,7 +1380,7 @@ input[disabled] {
 
 .home_notice_cont {
     margin-top: -1px;
-    height: 210px;
+    height: 200px;
     overflow-y: auto;
     background: #fff;
     width: 100%;
@@ -1415,7 +1417,7 @@ input[disabled] {
     border: 0;
     border-bottom: 1px solid #e5e5e5;
     margin-bottom: 0;
-    padding: 7px 10px;
+    padding: 7px 0px;
 }
 
 .home_notice_cont .list-group-item:last-child {
@@ -1425,7 +1427,12 @@ input[disabled] {
 .home_notice_cont .list-group-item:hover, .home_notice_cont .list-group-item.active {
     color: #3d82d9;
 }
-
+.home_notice_cont .date img{
+	display: none;
+}
+.home_notice_cont .list-group-item:hover .date img{
+	display: block;
+}
 .date {
     margin-right: 10px;
 }
@@ -1435,7 +1442,7 @@ input[disabled] {
 }
 
 .todoList {
-    padding: 20px 0 20px 40px;
+    padding: 15px 0 10px 40px;
 }
 
 .todoList .red {
@@ -1542,7 +1549,8 @@ input[disabled] {
     border-bottom: 1px solid #e5e5e5;
     font-size: 12px;
     color: #888;
-    padding: 5px 0;
+    padding: 5px;
+	margin-right: 15px;
 }
 
 .dataList li.last, .dataList li:last-child {
@@ -1551,6 +1559,7 @@ input[disabled] {
 
 .dataList li i {
     color: #4196f5;
+
 }
 
 .dataList li em {
@@ -1659,6 +1668,7 @@ input[disabled] {
 .personnelTableCont{
     border-top: 0;
     margin-bottom: 0;
+	font-size: 12px;
 }
 .personnelTableCont.bdtp1{
     border-top: 1px solid #e5e5e5;
@@ -1697,7 +1707,7 @@ input[disabled] {
 }
 .personnel_date_container{
     background: #fff;
-    padding: 10px 15px 0 15px;
+    padding: 10px 15px 5px 15px;
     overflow: hidden;
     width: 100%;
 }
@@ -1752,7 +1762,7 @@ input[disabled] {
 }
 .status span{
     display: inline-block;
-    font-size: 14px;
+    font-size: 13px;
     color: #888;
 }
 .status span:before{
@@ -1899,9 +1909,15 @@ input[disabled] {
 /*首页  end*/
 
 /* 项目管理  start*/
+#management_right{
+	width: 100%;
+	padding-left: 320px;
+	
+}
 .management_left{
-    /*width: 300px;*/
+    width: 310px;
     background: #fafafa;
+	position: absolute;
 }
 .management_nav_left{
     display: none;
@@ -1913,6 +1929,7 @@ input[disabled] {
 }
 .management_left_nav li a{
     padding: 10px 59px;
+	font-size: 18px;
 }
 .pt0{
     padding-top: 0;
@@ -2038,6 +2055,7 @@ input[disabled] {
 .management_nav_foot{
     position: absolute;
     bottom: 10px;
+	width: 310px;
 }
 .define{
     background: #8bc2ff;
