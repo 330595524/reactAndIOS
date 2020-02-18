@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>项目管理</title>
+       
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link href="./css/zTreeStyle/zTreeStyle.css" rel="stylesheet" />
+
+</head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid nav_container">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse clearfix" id="bs-example-navbar-collapse-1">
+            <!--            <div class="navbar-header">-->
+            <!--                <a class="navbar-brand logo" href="#">LOGO</a>-->
+            <!--            </div>-->
+            <a class="navbar-brand logo" href="#">LOGO</a>
+            <ul class="nav navbar-nav nav_link">
+                <li><a href="index.html">工怍台</a></li>
+                <li><a href="#">销售管理</a></li>
+                <li class="active"><a href="projectManagement.html">项目管理</a></li>
+                <li><a href="#">采购管理</a></li>
+                <li><a href="#">知识库</a></li>
+                <li><a href="#">报表</a></li>
+                <li><a href="#">系统管理</a></li>
+                <li><a href="recentVisit.html">最近访问</a></li>
+            </ul>
+
+            <div class="nav navbar-nav navbar-right user_cont">
+                <div class="row">
+                    <div class="col-md-6 clearfix user_cont_left">
+                        <img src="./img/index/user_img.jpg" alt="头像" class="img-circle user_img">
+                        <div class="login_name">
+                            <p class="login_name_top">小明</p>
+                            <p class="login_name_time">2019.11.23 09:39:20</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <span class="right_icon notice" id="notice" aria-hidden="true"></span>
+                        <span class="right_icon help" aria-hidden="true"></span>
+                        <span class="right_icon off" aria-hidden="true"></span>
+                    </div>
+                </div>
+
+            </div>
+        </div><!-- /.container-fluid -->
+
+    </div><!-- /.container-fluid -->
+</div>
+
+<div class="container-fluid container_content">
+    <div class="row clearfix">
+        <div class="management_left" id="management_left">
+            <div class="leaderTable">
+                <div class="visit_nav management_left_nav">
+                    <ul class="nav navbar-nav ">
+                        <li class="col-md-6 "><a href="#">菜单</a></li>
+                        <li class="col-md-6 active"><a href="#">查询</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="management_left_cont clearfix">
+                <div class="management_nav_left ">
+                    <ul id="tree" class="ztree"></ul>
+                </div>
+                <div class="management_nav_left show">
+                    <!--          查询          -->
+                    <div class="input-group bor1 mb10">
+                        <span class="input-group-addon label_base_name">
+                            <div class="base_name">项目名称</div>
+                        </span>
+                        <input type="text" class="form-control border-none pt0" placeholder="请输入" value="收入合同"
+                               aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group bor1 mb10">
+                        <span class="input-group-addon label_base_name">
+                            <div class="base_name">项目编号</div>
+                        </span>
+                        <input type="text" class="form-control border-none pt0" placeholder="" value=""
+                               aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group bor1 mb10">
+                        <span class="input-group-addon label_base_name">
+                            <div class="base_name">项目状态</div>
+                        </span>
+                        <div class="management_select">
+                            <div data-toggle="dropdown" class="select_div_name">
+                                审批中
+                                <span class="caret pull-right" style="margin-top: 8px"></span>
+                            </div>
+                            <ul class="dropdown-menu right_p" aria-labelledby="dLabel">
+                                <li><a href="#">审批中</a></li>
+                                <li><a href="#">未审批</a></li>
+                                <li><a href="#">审批通过</a></li>
+                                <li><a href="#">完成</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="input-group bor1 mb10">
+                        <span class="input-group-addon label_base_name">
+                            <div class="base_name">类型</div>
+                        </span>
+                        <div class="management_select">
+                            <div data-toggle="dropdown" class="select_div_name">
+                                研发费用
+                                <span class="caret pull-right" style="margin-top: 8px"></span>
+                            </div>
+                            <ul class="dropdown-menu right_p" aria-labelledby="dLabel">
+                                <li><a href="#">研发费用</a></li>
+                                <li><a href="#">对接费用</a></li>
+                                <li><a href="#">采购费用</a></li>
+                                <li><a href="#">其他</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="input-group bor1 mb10">
+                        <span class="input-group-addon label_base_name">
+                            <div class="base_name">项目经理</div>
+                        </span>
+                        <input type="text" class="form-control border-none pt0" placeholder="请输入" value="收入合同"
+                               aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group bor1 mb10">
+                        <span class="input-group-addon label_base_name">
+                            <div class="base_name">归属部门</div>
+                        </span>
+                        <div class="management_select">
+                            <div data-toggle="dropdown" class="select_div_name">
+                                综合部
+                                <span class="caret pull-right" style="margin-top: 8px"></span>
+                            </div>
+                            <ul class="dropdown-menu right_p" aria-labelledby="dLabel">
+                                <li><a href="#">财务部</a></li>
+                                <li><a href="#">综合部</a></li>
+                                <li><a href="#">研发部</a></li>
+                                <li><a href="#">其他</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="input-group bor1">
+                        <span class="input-group-addon label_base_name">
+                            <div class="base_name">执行日期</div>
+                        </span>
+                        <div class="management_date clearfix date_select">
+                            <div class="col-md-5">
+                                <div class="input-group bor1" style="width: 100%">
+                                    <div>
+                                        <input type="text" class="form-control" placeholder="开始"
+                                               aria-describedby="basic-addon1">
+                                        <span class="input-group-btn search_btn glyphicon-search_bg input_seacrch_bg input_data"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <i class="center">-</i>
+
+                            <div class="col-md-5 pull-right">
+                                <div class="input-group bor1" style="width: 100%">
+                                    <div>
+                                        <input type="text" class="form-control" placeholder="结束"
+                                               aria-describedby="basic-addon1">
+                                        <span class="input-group-btn search_btn glyphicon-search_bg input_seacrch_bg input_data"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="management_nav_foot  clearfix">
+                    <button class="btn btn-default col-md-6 define">确定</button>
+                    <button class="btn btn-default col-md-6 saveß">保存为查询条件</button>
+                </div>
+            </div>
+        </div>
+        <div  id="management_right">
+            <div class="management_table_top clearfix" >
+                <div class="col-md-3">
+                    <div class="notice_head_cont_search">
+                        <input type="text" class="form-control search_notice_input" placeholder="系统通知"
+                               aria-describedby="basic-addon1">
+                        <span class="input-group-btn search_btn glyphicon-search_bg input_seacrch_bg"></span>
+                    </div>
+                </div>
+                <div class="col-md-9 management_table_top_right" align="right">
+                    <button class="btn btn-default pd0" type="submit"><img src="./img/index/management/xj.png" alt="">新建</button>
+                    <button class="btn btn-default pd0" type="submit"><img src="./img/index/management/sc.png" alt="">删除</button>
+                    <button class="btn btn-default pd0" type="submit"><img src="./img/index/management/gz.png" alt="">关注</button>
+                    <button class="btn btn-default pd0" type="submit"><img src="./img/index/management/daoru.png" alt="">导入</button>
+                    <button class="btn btn-default pd0" type="submit"><img src="./img/index/management/dc.png" alt="">导出</button>
+                </div>
+            </div>
+            <div class="management_table " id="managementBox" >
+                <table class="table table-hover leaderTableCont"
+                >
+                    <thead>
+                    <tr align="center">
+                        <th><input type="checkbox"></th>
+                        <th>序号</th>
+                        <th><img src="./img/index/home_right/lamp.png" alt=""></th>
+                        <th>项目名称</th>
+                        <th>项目编号</th>
+                        <th>项目类型</th>
+                        <th>项目状态</th>
+                        <th>部门</th>
+                        <th>项目经理</th>
+                        <th>测试经理</th>
+                        <th>计划开始日期</th>
+                        <th>计划结束日期</th>
+                    </tr>
+                    </thead>
+                    <tbody align="center">
+                    <tr>
+                        <td><input type="checkbox" name="managementCheckbox"></td>
+                        <td>1</td>
+                        <td><i class="radio_box radio_box_red"></i></td>
+                        <td class="blue">信息化系统信息化系统信息</td>
+                        <td>XM-20190422-026</td>
+                        <td>新系统开发类</td>
+                        <td class="blue">启动</td>
+                        <td>北京分公司</td>
+                        <td>汇金科技</td>
+                        <td>汇金科技</td>
+                        <td>2019-12-23</td>
+                        <td>2020-12-23</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="managementCheckbox"></td>
+                        <td>1</td>
+                        <td><i class="radio_box radio_box_red"></i></td>
+                        <td class="blue">信息化系统信息化系统信息</td>
+                        <td>XM-20190422-026</td>
+                        <td>新系统开发类</td>
+                        <td class="blue">启动</td>
+                        <td>北京分公司</td>
+                        <td>汇金科技</td>
+                        <td>汇金科技</td>
+                        <td>2019-12-23</td>
+                        <td>2020-12-23</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="managementCheckbox"></td>
+                        <td>1</td>
+                        <td><i class="radio_box radio_box_red"></i></td>
+                        <td class="blue">信息化系统信息化系统信息</td>
+                        <td>XM-20190422-026</td>
+                        <td>新系统开发类</td>
+                        <td class="blue">启动</td>
+                        <td>北京分公司</td>
+                        <td>汇金科技</td>
+                        <td>汇金科技</td>
+                        <td>2019-12-23</td>
+                        <td>2020-12-23</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="managementCheckbox"></td>
+                        <td>1</td>
+                        <td><i class="radio_box radio_box_red"></i></td>
+                        <td class="blue">信息化系统信息化系统信息</td>
+                        <td>XM-20190422-026</td>
+                        <td>新系统开发类</td>
+                        <td class="blue">启动</td>
+                        <td>北京分公司</td>
+                        <td>汇金科技</td>
+                        <td>汇金科技</td>
+                        <td>2019-12-23</td>
+                        <td>2020-12-23</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="managementCheckbox"></td>
+                        <td>1</td>
+                        <td><i class="radio_box radio_box_red"></i></td>
+                        <td class="blue">信息化系统信息化系统信息</td>
+                        <td>XM-20190422-026</td>
+                        <td>新系统开发类</td>
+                        <td class="blue">启动</td>
+                        <td>北京分公司</td>
+                        <td>汇金科技</td>
+                        <td>汇金科技</td>
+                        <td>2019-12-23</td>
+                        <td>2020-12-23</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="managementCheckbox"></td>
+                        <td>1</td>
+                        <td><i class="radio_box radio_box_red"></i></td>
+                        <td class="blue">信息化系统信息化系统信息</td>
+                        <td>XM-20190422-026</td>
+                        <td>新系统开发类</td>
+                        <td class="blue">启动</td>
+                        <td>北京分公司</td>
+                        <td>汇金科技</td>
+                        <td>汇金科技</td>
+                        <td>2019-12-23</td>
+                        <td>2020-12-23</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="managementCheckbox"></td>
+                        <td>1</td>
+                        <td><i class="radio_box radio_box_red"></i></td>
+                        <td class="blue">信息化系统信息化系统信息</td>
+                        <td>XM-20190422-026</td>
+                        <td>新系统开发类</td>
+                        <td class="blue">启动</td>
+                        <td>北京分公司</td>
+                        <td>汇金科技</td>
+                        <td>汇金科技</td>
+                        <td>2019-12-23</td>
+                        <td>2020-12-23</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="managementCheckbox"></td>
+                        <td>1</td>
+                        <td><i class="radio_box radio_box_red"></i></td>
+                        <td class="blue">信息化系统信息化系统信息</td>
+                        <td>XM-20190422-026</td>
+                        <td>新系统开发类</td>
+                        <td class="blue">启动</td>
+                        <td>北京分公司</td>
+                        <td>汇金科技</td>
+                        <td>汇金科技</td>
+                        <td>2019-12-23</td>
+                        <td>2020-12-23</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="managementCheckbox"></td>
+                        <td>1</td>
+                        <td><i class="radio_box radio_box_red"></i></td>
+                        <td class="blue">信息化系统信息化系统信息</td>
+                        <td>XM-20190422-026</td>
+                        <td>新系统开发类</td>
+                        <td class="blue">启动</td>
+                        <td>北京分公司</td>
+                        <td>汇金科技</td>
+                        <td>汇金科技</td>
+                        <td>2019-12-23</td>
+                        <td>2020-12-23</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="managementCheckbox"></td>
+                        <td>1</td>
+                        <td><i class="radio_box radio_box_red"></i></td>
+                        <td class="blue">信息化系统信息化系统信息</td>
+                        <td>XM-20190422-026</td>
+                        <td>新系统开发类</td>
+                        <td class="blue">启动</td>
+                        <td>北京分公司</td>
+                        <td>汇金科技</td>
+                        <td>汇金科技</td>
+                        <td>2019-12-23</td>
+                        <td>2020-12-23</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="managementCheckbox"></td>
+                        <td>1</td>
+                        <td><i class="radio_box radio_box_red"></i></td>
+                        <td class="blue">信息化系统信息化系统信息</td>
+                        <td>XM-20190422-026</td>
+                        <td>新系统开发类</td>
+                        <td class="blue">启动</td>
+                        <td>北京分公司</td>
+                        <td>汇金科技</td>
+                        <td>汇金科技</td>
+                        <td>2019-12-23</td>
+                        <td>2020-12-23</td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="checkbox" name="managementCheckbox"></td>
+                        <td>1</td>
+                        <td><i class="radio_box radio_box_red"></i></td>
+                        <td class="blue">信息化系统信息化系统信息</td>
+                        <td>XM-20190422-026</td>
+                        <td>新系统开发类</td>
+                        <td class="blue">启动</td>
+                        <td>北京分公司</td>
+                        <td>汇金科技</td>
+                        <td>汇金科技</td>
+                        <td>2019-12-23</td>
+                        <td>2020-12-23</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="managementCheckbox"></td>
+                        <td>1</td>
+                        <td><i class="radio_box radio_box_yellow"></i></td>
+                        <td class="blue">信息化系统信息化系统信息</td>
+                        <td>XM-20190422-026</td>
+                        <td>新系统开发类</td>
+                        <td class="blue">启动</td>
+                        <td>北京分公司</td>
+                        <td>汇金科技</td>
+                        <td>汇金科技</td>
+                        <td>2019-12-23</td>
+                        <td>2020-12-23</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="managementCheckbox"></td>
+                        <td>1</td>
+                        <td><i class="radio_box radio_box_green"></i></td>
+                        <td class="blue">信息化系统信息化系统信息</td>
+                        <td>XM-20190422-026</td>
+                        <td>新系统开发类</td>
+                        <td class="red">禁止</td>
+                        <td>北京分公司</td>
+                        <td>汇金科技</td>
+                        <td>汇金科技</td>
+                        <td>2019-12-23</td>
+                        <td>2020-12-23</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="management_page " >
+                    <span><img src="./img/index/management/icon_L.png" alt=""></span>
+                    <span class="br"><img src="./img/index/management/icon_L_L.png" alt=""></span>
+                    <span class="br">第
+                        <input type="text" value="8" class="page_input">
+                        共3页
+                    </span>
+                    <span><img src="./img/index/management/icon_R_R.png" alt=""></span>
+                    <span class="br"><img src="./img/index/management/icon_R.png" alt=""></span>
+                    <span><img src="./img/index/management/icon_reload.png" alt=""></span>
+                </div>
+                <div class="management_page_rt">
+                    显示1到20，共50条记录
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
+<script src="./js/jquery-migrate-1.2.1.js"></script>
+<script src="./js/jquery.ztree.all-3.5.min.js"></script>
+<script>
+  $().ready(function () {
+    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    var side_left = document.getElementById('management_left');
+	
+    var main_center = document.getElementById('managementBox');
+    side_left.style.height = screenHeight - 80 + 'px';
+    main_center.style.height = screenHeight - 120 + 'px';
+    main_center.style.maxHeight = screenHeight - 120 + 'px';
+    main_center.style.overflowY = 'auto';
+
+
+    $(".navbar-nav li").click(function () {
+      var _index2 = $(this).index();
+      $(this).addClass("active").siblings().removeClass("active");
+      $(".management_left_cont .management_nav_left").eq(_index2).addClass('show').siblings().removeClass("show");
+    });
+
+function setFontCss(treeId, treeNode) {
+	return treeNode.level == 0 ? {color:"#000"} : {};
+};
+    // zTree 的参数配置，深入使用请参考 API 文档（setting 配置详解）
+    var setting = {
+		view: {
+				fontCss : setFontCss
+			}
+	};
+    // zTree 的数据属性，深入使用请参考 API 文档（zTreeNode 节点数据详解）
+    var zNodes = [{
+      name: "项目类型",
+      open: true,
+	  iconSkin:"diy01",
+      children: [
+        {name: "全部",iconSkin:"diy02",},
+        {name: "新系统开发类",iconSkin:"diy03",},
+        {name: "运维开发类",iconSkin:"diy04",},
+        {name: "资讯服务类",iconSkin:"diy05",},
+        ]
+    },
+      {
+        name: "项目状态",
+		 iconSkin:"diy01",
+        open: true,
+        children: [ {name: "运维开发类",iconSkin:"diy04",},
+        {name: "资讯服务类",iconSkin:"diy05",},
+		]
+      },
+      {
+        name: "项目年度",
+        open: true,
+		 iconSkin:"diy01",
+        children: [
+			{name: "运维开发类",iconSkin:"diy04",},
+			{name: "资讯服务类",iconSkin:"diy05",},
+		]
+      }
+    ];
+    $(function() {
+      $.fn.zTree.init($("#tree"), setting, zNodes);
+    });
+
+
+
+    var settingLeft = {
+      view: {
+        dblClickExpand: false,//双击节点时，是否自动展开父节点的标识
+        showLine: false,//是否显示节点之间的连线
+        showIcon: true,
+        fontCss: { 'color': 'white', 'font-weight': 'normal' },//字体样式函数
+        selectedMulti: false //设置是否允许同时选中多个节点
+      },
+      check: {
+        //chkboxType: { "Y": "ps", "N": "ps" },
+        chkStyle: "checkbox",//复选框类型
+        enable: false //每个节点上是否显示 CheckBox
+      },
+      data: {
+        simpleData: {//简单数据模式
+          enable: true,
+          idKey: "id",
+          pIdKey: "pId",
+          rootPId: ""
+        }
+      },
+      callback: {
+
+        beforeClick: function (treeId, treeNode) {
+          zTree = $.fn.zTree.getZTreeObj("menu_tree_vehicle");
+          if (treeNode.isParent) {
+            zTree.expandNode(treeNode);//如果是父节点，则展开该节点
+          } else {
+            zTree.checkNode(treeNode, !treeNode.checked, true, true);//单击勾选，再次单击取消勾选
+          }
+        }//,
+        // onCheck: onCheck
+
+      }
+    };
+
+    $(function () {
+      //初始化菜单树
+      var zNodes = [
+        { id: 0, pId: -1, name: "一级部门", open: true },
+        { id: 1, pId: 0, name: "二级部门1", open: false },
+        { id: 2, pId: 1, name: "三级部门1" },
+        { id: 3, pId: 1, name: "三级部门2" },
+        { id: 4, pId: 0, name: "二级部门2", open: false },
+        { id: 5, pId: 4, name: "三级部门3" },
+        { id: 6, pId: 4, name: "三级部门4", open: false },
+        { id: 7, pId: 6, name: "四级部门1" },
+        { id: 8, pId: 6, name: "四级部门2" },
+        { id: 9, pId: 0, name: "二级部门3" },
+        { id: 10, pId: 0, name: "二级部门4" }
+      ];
+      $.fn.zTree.init($("#menu_tree_left"), settingLeft, zNodes);
+    });
+
+  });
+
+
+
+
+</script>
+</body>
+
+</html>
