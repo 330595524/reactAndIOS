@@ -2028,6 +2028,7 @@ input[disabled] {
     background: #FFF;
     z-index: 3;
     opacity: 1;
+    left: 20px;
 }
 .btm8{
     bottom: 8px;
