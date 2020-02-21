@@ -1,13 +1,13 @@
 @import 'normalize.css';
 
 html, body {
-    /*height: 100%;*/
+    height: 100%;
 }
 
 body {
     padding-top: 53px;
     background: #eef1f3;
-    /*overflow: hidden;*/
+    overflow: hidden;
 }
 
 i {
@@ -155,6 +155,8 @@ p {
 /*主体*/
 .container_content {
     height: 100%;
+    padding: 0;
+    overflow-y: auto;
 }
 
 .container_content .row-fluid {
@@ -369,6 +371,7 @@ p {
 
 .meet_list_cont li:hover, .meet_list_cont li.active {
     border: 1px solid #3caaff;
+    cursor:pointer
 }
 
 .meet_sign_bg img {
@@ -476,6 +479,7 @@ p {
 }
 
 /*主体*/
+
 .main_center {
     height: 100%;
     /*border: 1px solid #e5e5e5;*/
@@ -483,7 +487,9 @@ p {
     background: #fff;
     padding: 0 15px;
 }
-
+.row-fluid [class*="span"].main_center{
+    margin-left: 10px;
+}
 .main_center .meet_none_img {
     width: 700px;
     height: 530px;
@@ -1162,7 +1168,7 @@ h3.title {
 
 .visit_nav li:hover a,.visit_nav li.active a {
     background: #fff;
-    color: #333;
+    color: #609eee;
 }
 
 .base_left_title {
@@ -1425,7 +1431,8 @@ input[disabled] {
 }
 
 .home_notice_cont .list-group-item:hover, .home_notice_cont .list-group-item.active {
-    color: #3d82d9;
+    color: #609eee;
+    cursor: pointer;
 }
 .home_notice_cont .date img{
 	display: none;
@@ -1492,12 +1499,14 @@ input[disabled] {
 }
 
 .todoList .item p {
-    font-size: 14px;
+    font-size: 10px;
     text-align: right;
     color: #fff;
     padding-right: 10px;
 }
-
+.todoList .item .mt20{
+    font-size: 18px;
+}
 /*领导 start*/
 .leaderTable {
     background: #FFF;
@@ -2012,16 +2021,16 @@ input[disabled] {
     font-size: 12px;
 }
 .management_page{
-    height: 40px;
-    line-height: 40px;
+    height: 34px;
+    line-height: 34px;
     position: absolute;
     bottom: 0;
     background: #FFF;
     z-index: 3;
     opacity: 1;
 }
-.btm10{
-    bottom: 10px;
+.btm8{
+    bottom: 8px;
     background: #fff;
 }
 #managementBox{background: #fff}
@@ -2066,6 +2075,17 @@ input[disabled] {
 }
 /* 项目管理  end*/
 /*最近访问  start*/
+.fixed_head{
+    position: fixed;
+    z-index: 9;
+    width: 100%;
+    background: #fff;
+    margin-right: 20px;
+}
+.visit_right_cont{
+    padding-top: 45px;
+    overflow: hidden;
+}
 .visit_base_cont{
     display: none;
 }

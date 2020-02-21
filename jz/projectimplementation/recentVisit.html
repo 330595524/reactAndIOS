@@ -32,7 +32,7 @@
             <div class="nav navbar-nav navbar-right user_cont">
                 <div class="row">
                     <div class="col-md-6 clearfix user_cont_left">
-                        <img src="./img/index/user_img.jpg" alt="头像" class="img-circle user_img">
+                        <img src="./img/index/user_img.png" alt="头像" class="img-circle user_img">
                         <div class="login_name">
                             <p class="login_name_top">小明</p>
                             <p class="login_name_time">2019.11.23 09:39:20</p>
@@ -53,7 +53,7 @@
 <!--主体内容-->
 <div class="container-fluid container_content">
     <div id="cont_8" name="最近访问" class="row-fluid container_content_bg ">
-        <div class="span3 side_left" id="side_left">
+        <div class="span3 side_left" id="side_left" style="margin-left: 10px;">
             <!--边栏内容-->
             <!--  空 start-->
             <!--            meet_hide 处理空值状态-->
@@ -82,7 +82,7 @@
 
                 </div>
                 <div class="list_box">
-                    <ul class="list-group meet_list_cont">
+                    <ul class="list-group meet_list_cont" id="meet_list_cont">
                         <li class="list-group-item">
 
                             <div class="meet_sign">
@@ -323,7 +323,7 @@
                     <li><a href="#">5</a></li>
                     <li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
                 </ul>-->
-                <div class=" management_page small btm10" >
+                <div class=" management_page small btm8" >
                     <span><img src="./img/index/management/icon_L.png" alt=""></span>
                     <span class="br"><img src="./img/index/management/icon_L_L.png" alt=""></span>
                     <span class="br">第
@@ -345,7 +345,7 @@
             <!--  空 end-->
 
             <!--      最近访问，属性 start      -->
-            <div class="visit_nav">
+            <div class="visit_nav fixed_head" id="fixed_head">
                 <ul class="nav navbar-nav ">
                     <li class="active"><a href="#">主页</a></li>
                     <li><a href="#">属性</a></li>
@@ -1003,7 +1003,13 @@
     var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     var side_left = document.getElementById('side_left');
     var main_center = document.getElementById('main_center');
+    var fixed_head = document.getElementById('fixed_head');
+    var meet_list_cont = document.getElementById('meet_list_cont');
     side_left.style.height = screenHeight - 80 + 'px';
+    meet_list_cont.style.maxHeight = screenHeight - 160 + 'px';
+    side_left.style.width = 350 + 'px';
+    fixed_head.style.width =  screenWidth - 360 -44 + 'px';
+    main_center.style.width = screenWidth - 360-15 + 'px';
     main_center.style.height = screenHeight - 80 + 'px';
     main_center.style.maxHeight = screenHeight - 80 + 'px';
     main_center.style.overflowY = 'auto';

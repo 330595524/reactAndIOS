@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
        
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/index.css">
     <link href="./css/zTreeStyle/zTreeStyle.css" rel="stylesheet" />
@@ -35,7 +36,7 @@
             <div class="nav navbar-nav navbar-right user_cont">
                 <div class="row">
                     <div class="col-md-6 clearfix user_cont_left">
-                        <img src="./img/index/user_img.jpg" alt="头像" class="img-circle user_img">
+                        <img src="./img/index/user_img.png" alt="头像" class="img-circle user_img">
                         <div class="login_name">
                             <p class="login_name_top">小明</p>
                             <p class="login_name_time">2019.11.23 09:39:20</p>
@@ -67,7 +68,7 @@
             </div>
             <div class="management_left_cont clearfix">
                 <div class="management_nav_left ">
-                    <ul id="tree" class="ztree"></ul>
+                    <ul id="tree" class="ztree" style="padding-left: 20px"></ul>
                 </div>
                 <div class="management_nav_left show">
                     <!--          查询          -->
@@ -428,8 +429,9 @@
                     <span><img src="./img/index/management/icon_R_R.png" alt=""></span>
                     <span class="br"><img src="./img/index/management/icon_R.png" alt=""></span>
                     <span><img src="./img/index/management/icon_reload.png" alt=""></span>
+                    <!--        分页      -->
                 </div>
-                <div class="management_page_rt">
+                <div class="management_page_rt" style="padding-right: 20px;">
                     显示1到20，共50条记录
                 </div>
             </div>
@@ -448,6 +450,8 @@
     var side_left = document.getElementById('management_left');
 	
     var main_center = document.getElementById('managementBox');
+    var management_right = document.getElementById('management_right');
+    management_right.style.width = screenWidth  + 'px';
     side_left.style.height = screenHeight - 80 + 'px';
     main_center.style.height = screenHeight - 120 + 'px';
     main_center.style.maxHeight = screenHeight - 120 + 'px';
