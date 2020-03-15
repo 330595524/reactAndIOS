@@ -1,0 +1,65 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "settings": {
+    "import/core-modules": [
+      "src"
+    ],
+    "import/ignore": [
+      "node_modules"
+    ]
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "rules": {
+    "no-class-assign": 2,       //禁止给类赋值
+    "no-cond-assign": 2,       //禁止在条件表达式中使用赋值语句
+    "no-const-assign": 2,       //禁止修改const声明的变量
+    "no-return-assign": 0,
+    "semi": 0,
+    "no-debugger": 2,         //禁止使用debugger
+    "no-dupe-keys": 2,        //在创建对象字面量时不允许键重复 {a:1,a:1}
+    "no-empty": 2,          //块语句中的内容不能为空
+    "no-eq-null": 2,         //禁止对null使用==或!=运算符
+    "no-func-assign": 2,       //禁止重复的函数声明
+    "linebreak-style": "off",
+    "no-multiple-empty-lines": [1, {"max": 2}],   //空行最多不能超过2行
+    "func-names": 0,
+    "no-redeclare": 2,        //禁止重复声明变量
+    "no-sparse-arrays": 2,      //禁止稀疏数组， [1,,2]
+    "no-this-before-super": 0,    //在调用super()之前不能使用this或super
+    "no-useless-call": 2,       //禁止不必要的call和apply
+    "curly": [2, "all"],       //必须使用 if(){} 中的{}
+    "indent": [2],         //缩进风格
+    "init-declarations": 0,      //声明时必须赋初值
+    "quote-props":[2, "always"],   //对象字面量中的属性名是否强制双引号
+    "react/no-deprecated":1,//不使用弃用的方法
+    "no-shadow": 1,//禁止 var 声明 与外层作用域的变量同名
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "camelcase": ["error", {"allow": ["aa_bb"]}],
+    "import/no-unresolved":2,
+    "react/prefer-stateless-function":2,
+    "react/self-closing-comp": 0,
+    "use-isnan": 2         //禁止比较时使用NaN，只能用isNaN()
+
+  },
+  "plugins": [
+    "jsx-a11y"
+  ],
+  "globals": {
+    "_": true,
+    "CSSModule": true,
+    "Streamy": true,
+    "ReactClass": true,
+    "SyntheticKeyboardEvent": true
+  }
+}
