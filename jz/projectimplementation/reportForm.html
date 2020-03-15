@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>报表</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/reportForm.css">
+</head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid nav_container">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse clearfix" id="bs-example-navbar-collapse-1">
+            <a class="navbar-brand logo" href="#">LOGO</a>
+            <ul class="nav navbar-nav nav_link">
+                <li><a href="index.html">工怍台</a></li>
+                <li><a href="#">销售管理</a></li>
+                <li><a href="projectManagement.html">项目管理</a></li>
+                <li><a href="#">采购管理</a></li>
+                <li><a href="#">知识库</a></li>
+                <li class="active"><a href="reportForm.html">报表</a></li>
+                <li><a href="#">系统管理</a></li>
+                <li><a href="index.html">最近访问</a></li>
+            </ul>
+
+            <div class="nav navbar-nav navbar-right user_cont">
+                <div class="row">
+                    <div class="col-md-6 clearfix user_cont_left">
+                        <img src="./img/index/user_img.png" alt="头像" class="img-circle user_img">
+                        <div class="login_name">
+                            <p class="login_name_top">小明</p>
+                            <p class="login_name_time">2019.11.23 09:39:20</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <span class="right_icon notice" id="notice" aria-hidden="true"></span>
+                        <span class="right_icon help" aria-hidden="true"></span>
+                        <span class="right_icon off" aria-hidden="true"></span>
+                    </div>
+                </div>
+
+            </div>
+        </div><!-- /.container-fluid -->
+
+    </div><!-- /.container-fluid -->
+</div>
+
+<!--主体内容-->
+<div class="container-fluid container_content">
+    <div id="cont_8" name="最近访问" class="row-fluid container_content_bg ">
+        <div class="span3 side_left" id="side_left" style="margin-left: 10px;">
+            <!--边栏内容-->
+            <!--  空 start-->
+            <!--            meet_hide 处理空值状态-->
+            <div class="meet_none hidden">
+                <img src="./img/index/imgjpg_02.jpg" alt="" class="meet_none_img">
+                <button class="btn btn-default meet_create_btn" type="submit">安排会议</button>
+            </div>
+            <!--  空 end-->
+            <!--  列表 -->
+            <div class="meet_many">
+                <div class="meet_search">
+                    <div class="meet_search_cont">
+                        <!--                        <div class="form-group has-success has-feedback table_search_box newproject">-->
+                        <!--                            <input type="text" class="form-control text_input">-->
+                        <!--                            <span class="glyphicon-search_bg"-->
+                        <!--                                  aria-hidden="true"></span>-->
+                        <!--                        </div>-->
+
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="项目名称">
+                            <span class="input-group-btn search_btn">
+                                <button class="btn btn-default glyphicon-search_bg" type="button"></button>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="list_box">
+                    <ul class="list-group meet_list_cont" id="meet_list_cont">
+                        <li class="list-group-item">
+
+                            <div class="meet_sign">
+                            <span class="caret meet_sign_bg">
+                                <img src="./img/index/img_icon_tips__01.jpg" alt="">
+                            </span>
+                            </div>
+                            <h3>
+                                中旅银行国资委项目管理平台建设
+                                <div class="meet_tips">视频会议</div>
+                            </h3>
+                            <div class="row meet_people">
+                                <div class="col-md-7">
+                                    编号：<i>XM-20171227-017</i>
+                                </div>
+                                <div class="col-md-5 zheight">
+                                    负责人：<i>杨海龙</i>
+                                </div>
+                            </div>
+                            <div class="row meet_people">
+                                <div class="col-md-6">
+                                    类型：<i>运维开发类</i>
+                                </div>
+                                <div class="col-md-6 ">
+                                    状态：<i>亚太中国北区</i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="meet_sign">
+                            <span class="caret meet_sign_bg ">
+                                <img src="./img/index/img_icon_tips__02.jpg" alt="">
+                            </span>
+                            </div>
+                            <h3>
+                                中旅银行国资委项目管理平台建设
+                                <div class="meet_tips">视频会议</div>
+                            </h3>
+                            <div class="row meet_people">
+                                <div class="col-md-7">
+                                    编号：<i>XM-20171227-017</i>
+                                </div>
+                                <div class="col-md-5 zheight">
+                                    负责人：<i>杨海龙</i>
+                                </div>
+                            </div>
+                            <div class="row meet_people">
+                                <div class="col-md-6">
+                                    类型：<i>运维开发类</i>
+                                </div>
+                                <div class="col-md-6 ">
+                                    状态：<i>亚太中国北区</i>
+                                </div>
+                            </div>
+
+                        </li>
+
+                        <li class="list-group-item">
+
+                            <div class="meet_sign">
+                            <span class="caret meet_sign_bg">
+                                <img src="./img/index/img_icon_tips__01.jpg" alt="">
+                            </span>
+                            </div>
+                            <h3>
+                                中旅银行国资委项目管理平台建设
+                                <div class="meet_tips">视频会议</div>
+                            </h3>
+                            <div class="row meet_people">
+                                <div class="col-md-7">
+                                    编号：<i>XM-20171227-017</i>
+                                </div>
+                                <div class="col-md-5 ">
+                                    负责人：<i>杨海龙</i>
+                                </div>
+                            </div>
+                            <div class="row meet_people">
+                                <div class="col-md-6">
+                                    类型：<i>运维开发类</i>
+                                </div>
+                                <div class="col-md-6">
+                                    状态：<i>亚太中国北区</i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="meet_sign">
+                            <span class="caret meet_sign_bg ">
+                                <img src="./img/index/img_icon_tips__02.jpg" alt="">
+                            </span>
+                            </div>
+                            <h3>
+                                中旅银行国资委项目管理平台建设
+                                <div class="meet_tips">视频会议</div>
+                            </h3>
+                            <div class="row meet_people">
+                                <div class="col-md-7">
+                                    编号：<i>XM-20171227-017</i>
+                                </div>
+                                <div class="col-md-5 zheight">
+                                    负责人：<i>杨海龙</i>
+                                </div>
+                            </div>
+                            <div class="row meet_people">
+                                <div class="col-md-6">
+                                    类型：<i>运维开发类</i>
+                                </div>
+                                <div class="col-md-6 zheight">
+                                    状态：<i>亚太中国北区</i>
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="list-group-item">
+
+                            <div class="meet_sign">
+                            <span class="caret meet_sign_bg">
+                                <img src="./img/index/img_icon_tips__01.jpg" alt="">
+                            </span>
+                            </div>
+                            <h3>
+                                中旅银行国资委项目管理平台建设
+                                <div class="meet_tips">视频会议</div>
+                            </h3>
+                            <div class="row meet_people">
+                                <div class="col-md-7">
+                                    编号：<i>XM-20171227-017</i>
+                                </div>
+                                <div class="col-md-5 ">
+                                    负责人：<i>杨海龙</i>
+                                </div>
+                            </div>
+                            <div class="row meet_people">
+                                <div class="col-md-6">
+                                    类型：<i>运维开发类</i>
+                                </div>
+                                <div class="col-md-6">
+                                    状态：<i>亚太中国北区</i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="meet_sign">
+                            <span class="caret meet_sign_bg ">
+                                <img src="./img/index/img_icon_tips__02.jpg" alt="">
+                            </span>
+                            </div>
+                            <h3>
+                                中旅银行国资委项目管理平台建设
+                                <div class="meet_tips">视频会议</div>
+                            </h3>
+                            <div class="row meet_people">
+                                <div class="col-md-7">
+                                    编号：<i>XM-20171227-017</i>
+                                </div>
+                                <div class="col-md-5 zheight">
+                                    负责人：<i>杨海龙</i>
+                                </div>
+                            </div>
+                            <div class="row meet_people">
+                                <div class="col-md-6">
+                                    类型：<i>运维开发类</i>
+                                </div>
+                                <div class="col-md-6 zheight">
+                                    状态：<i>亚太中国北区</i>
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="list-group-item">
+
+                            <div class="meet_sign">
+                            <span class="caret meet_sign_bg">
+                                <img src="./img/index/img_icon_tips__01.jpg" alt="">
+                            </span>
+                            </div>
+                            <h3>
+                                中旅银行国资委项目管理平台建设
+                                <div class="meet_tips">视频会议</div>
+                            </h3>
+                            <div class="row meet_people">
+                                <div class="col-md-7">
+                                    编号：<i>XM-20171227-017</i>
+                                </div>
+                                <div class="col-md-5 ">
+                                    负责人：<i>杨海龙</i>
+                                </div>
+                            </div>
+                            <div class="row meet_people">
+                                <div class="col-md-6">
+                                    类型：<i>运维开发类</i>
+                                </div>
+                                <div class="col-md-6">
+                                    状态：<i>亚太中国北区</i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="meet_sign">
+                            <span class="caret meet_sign_bg ">
+                                <img src="./img/index/img_icon_tips__02.jpg" alt="">
+                            </span>
+                            </div>
+                            <h3>
+                                中旅银行国资委项目管理平台建设
+                                <div class="meet_tips">视频会议</div>
+                            </h3>
+                            <div class="row meet_people">
+                                <div class="col-md-7">
+                                    编号：<i>XM-20171227-017</i>
+                                </div>
+                                <div class="col-md-5 zheight">
+                                    负责人：<i>杨海龙</i>
+                                </div>
+                            </div>
+                            <div class="row meet_people">
+                                <div class="col-md-6">
+                                    类型：<i>运维开发类</i>
+                                </div>
+                                <div class="col-md-6 zheight">
+                                    状态：<i>亚太中国北区</i>
+                                </div>
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--      分页     -->
+            <div class="meet_foot_page">
+                <div class=" management_page small btm8">
+                    <span><img src="./img/index/management/icon_L.png" alt=""></span>
+                    <span class="br"><img src="./img/index/management/icon_L_L.png" alt=""></span>
+                    <span class="br">第
+                        <input type="text" value="8" class="page_input">
+                        共3页
+                    </span>
+                    <span><img src="./img/index/management/icon_R_R.png" alt=""></span>
+                    <span class="br"><img src="./img/index/management/icon_R.png" alt=""></span>
+                    <span><img src="./img/index/management/icon_reload.png" alt=""></span>
+                </div>
+            </div>
+        </div>
+        <div class="span9 main_center form_main_center" id="main_center">
+            <!--主体内容-->
+
+            <!--      报表，商机 start      -->
+
+            <div class="visit_right_cont form_right_cont">
+                <div class="visit_base_cont show" name="商机">
+                    <div class="formHead">
+                        项目年度分析
+                        <div class="management_select pull-right">
+                            <div data-toggle="dropdown" class="select_div_name">
+                                2020年度
+                                <span class="caret pull-right" style="margin-top: 8px"></span>
+                            </div>
+                            <ul class="dropdown-menu right_p" aria-labelledby="dLabel">
+                                <li><a href="#">2020年度</a></li>
+                                <li><a href="#">2019年度</a></li>
+                                <li><a href="#">2028年度</a></li>
+                                <li><a href="#">2017年度</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--          商机内容   start          -->
+                    <div class="container-fluid reportFormCont formPd10">
+                        <div class="row">
+                            <div class="col-md-4 cont_top_left" style="padding-right: 10px">
+                                <div class="bg_ff height210">
+                                    <div class="cont_top_left_title">项目总数</div>
+                                    <div class="cont_top_left_num">50</div>
+                                    <p>实施中项目数：21</p>
+                                </div>
+                            </div>
+                            <div class="col-md-8 visit_home_cont_R cont_top_right">
+                                <div class="bg_ff height210">
+                                    <div class="home_cont_R_top container-fluid pt30 mb32">
+                                        <div class="col-md-2" align="right" style="padding-right: 15px">
+                                            <div class="fraction">
+                                                <span>82<i>分</i></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8 home_cont_R_title">
+                                            <h4>总共体验10项，其中严重2项，警公4项</h4>
+                                            <p>上次体检时间：2019.12.31 18:23</p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button class="btn btn-default btn_experience">立即体验</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="home_cont_R_cont">
+                                        <div class="home_cont_R_cont_nav">
+                                            <a href="#"><img src="./img/index/visit/sr.png" alt=""><span>收入</span></a>
+                                            <a href="#"><img src="./img/index/visit/td.png" alt=""><span>团队</span></a>
+                                            <a href="#"><img src="./img/index/visit/jd.png" alt=""><span>进度</span></a>
+                                            <a href="#"><img src="./img/index/visit/cb.png" alt=""><span>成本</span></a>
+                                            <a href="#"><img src="./img/index/visit/rw.png" alt=""><span>任务</span></a>
+                                            <a href="#"><img src="./img/index/visit/gzl.png" alt=""><span>工作量</span></a>
+                                            <a href="#"><img src="./img/index/visit/wd.png" alt=""><span>文档</span></a>
+                                            <a href="#"><img src="./img/index/visit/lc.png" alt=""><span>流程</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="container-fluid reportFormCont">
+                        <div class="row">
+                            <div class="col-md-4 cont_top_left" style="padding-right: 10px">
+                                <div class="bg_ff pd25">
+                                    <div class="col-md-7 form_cont">
+                                        <div class="form_cont_top">本周新立项</div>
+                                        <div class="form_cont_cont">362</div>
+                                        <div class="form_cont_fot">上一周新立项：473</div>
+                                    </div>
+                                    <div class="col-md-5 form_cont_right clearfix">
+                                        <img class="formImg pull-right" src="./img/form/form_icon_1.jpg" alt="">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4 cont_top_left" style="padding-right: 10px">
+                                <div class="bg_ff pd25">
+                                    <div class="col-md-7 form_cont">
+                                        <div class="form_cont_top">本周新立项</div>
+                                        <div class="form_cont_cont">362</div>
+                                        <div class="form_cont_fot">上一周新立项：473</div>
+                                    </div>
+                                    <div class="col-md-5 form_cont_right clearfix">
+                                        <img class="formImg pull-right" src="./img/form/form_icon_2.png" alt="">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4 cont_top_left" style="padding-right: 10px">
+                                <div class="bg_ff pd25">
+                                    <div class="col-md-7 form_cont">
+                                        <div class="form_cont_top">本周新立项</div>
+                                        <div class="form_cont_cont">362</div>
+                                        <div class="form_cont_fot">上一周新立项：473</div>
+                                    </div>
+                                    <div class="col-md-5 form_cont_right clearfix">
+                                        <img class="formImg pull-right" src="./img/form/form_icon_2.png" alt="">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid reportFormCont formPd10">
+                    <div class="row">
+                        <div class="col-md-5" style="padding-right: 10px">
+                            <div class="bg_ff formPdLR10">
+                                <div class="echart_head_title">实施中项目类型占比</div>
+                                <div class="echart_cont_form_box" id="echart_cont_form_box1" name="实施中项目类型占比">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="bg_ff formPdLR10">
+                                <div class="echart_head_title">实施中项目类型占比</div>
+                                <div class="echart_cont_form_box" id="echart_cont_form_box2" name="实施中项目状态分布">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--          商机内容   end          -->
+            </div>
+            <div class="visit_base_cont" name="项目">
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+
+<script>
+  function pageSetStyle() {
+    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    var side_left = document.getElementById('side_left');
+    var main_center = document.getElementById('main_center');
+    var meet_list_cont = document.getElementById('meet_list_cont');
+    side_left.style.height = screenHeight - 80 + 'px';
+    meet_list_cont.style.maxHeight = screenHeight - 160 + 'px';
+    side_left.style.width = 350 + 'px';
+    main_center.style.width = screenWidth - 360 - 15 + 'px';
+    main_center.style.height = screenHeight - 80 + 'px';
+    main_center.style.maxHeight = screenHeight - 80 + 'px';
+    main_center.style.overflowY = 'auto';
+  }
+
+  $(window).resize(function () {
+    console.log('9999')
+    pageSetStyle();
+  });
+  $().ready(function () {
+    pageSetStyle();
+
+    $(".visit_nav li").click(function () {
+      var _index2 = $(this).index();
+      $(this).addClass("active").siblings().removeClass("active");
+      $(".visit_right_cont .visit_base_cont").eq(_index2).addClass('show').siblings().removeClass("show");
+    });
+
+
+    function move(percent, right, left) {
+      if (percent <= 0.5) { //红色区域不超过一半
+        right.style.transform = `rotate(${percent * 360}deg)`
+      } else { //红色区域超过一半的情况，重点部分
+        right.style.transform = `rotate(180deg)`
+        right.style.transition = `opacity 0s step-end 1s, transform 1s linear` //timing-function需要设为linear来达到视觉上的平缓过渡
+        right.style.opacity = 0
+
+        left.style.transition = `transform ${(percent - 0.5) / 0.5}s linear 1s`
+        left.style.transform = `rotate(${percent * 360 - 180}deg)`
+      }
+    }
+
+    //  图表
+    // 类型占比图表
+// 柱状图
+    var chartBox = document.getElementById('echart_cont_form_box1');
+    var myChart = echarts.init(chartBox);
+    var option = null;
+
+    option = {
+
+      tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b}: {c} ({d}%)'
+      },
+      legend: {
+        orient: 'horizontal',
+        bottom: 10,
+        data: ['咨询服务类', '运维开发类', '新系统开发类',]
+      },
+      //设置饼状图每个颜色块的颜色
+      color : [ '#de5145', '#1da261', '#ffce44',],
+      series: [
+        {
+          name: '名称',
+          type: 'pie',
+          radius: ['50%', '70%'],
+          avoidLabelOverlap: false,
+          label: {
+            normal: {
+              show: false,
+              position: 'center'
+            },
+            emphasis: {
+              show: true,
+              textStyle: {
+                fontSize: '20',
+                fontWeight: 'bold'
+              },
+              itemStyle: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: 'rgba(0, 0, 0, 0.5)'
+              }
+            }
+          },
+          labelLine: {
+            normal: {
+              lineStyle: {
+                color: 'rgba(255, 255, 255, 0.3)'
+              },
+              smooth: 0.2,
+              length: 10,
+              length2: 20
+            }
+          },
+
+          data: [
+            {value: 335, name: '咨询服务类'},
+            {value: 310, name: '运维开发类'},
+            {value: 234, name: '新系统开发类'},
+          ]
+        }
+      ]
+    };
+
+    if (option && typeof option === "object") {
+      myChart.setOption(option, true);
+    }
+
+    // 状态分布
+    var chartBox2 = document.getElementById('echart_cont_form_box2');
+    var myChart2 = echarts.init(chartBox2);
+    var option2 = null;
+
+    option2 = {
+
+      legend: {},
+      tooltip: {},
+      dataset: {
+        dimensions: ['product', '项目状态',],
+        source: [
+          {
+          product: '启动中',
+          '项目状态': 43.3,
+          },
+          {
+            product: '执行中',
+            '项目状态': 86.4,
+          },
+          {
+            product: '质保中',
+            '项目状态': 26.4,
+          },
+          {
+            product: '待结项',
+            '项目状态': 86.4,
+          },
+
+        ]
+      },
+      xAxis: {
+        type: 'category'
+      },
+      yAxis: {},
+      series: [{
+        type: 'bar',
+        barWidth : 60,//柱图宽度
+        itemStyle: {
+          //通常情况下：
+          normal: {
+            //每根柱子颜色设置
+            color: function(params) {
+              let colorList = [
+                "#72aefc",
+                "#f6af47",
+                "#9eadee",
+                "#477bff",
+              ];
+              return colorList[params.dataIndex];
+            }
+          },
+          //鼠标悬停时：
+          emphasis: {
+            shadowBlur: 10,
+            shadowOffsetX: 0,
+            shadowColor: 'rgba(0, 0, 0, 0.5)'
+          }
+        }
+      }
+      ]
+    };
+
+    if (option2 && typeof option2=== "object") {
+      myChart2.setOption(option2, true);
+    }
+    // 成本费用
+
+
+    // 项目月度成本
+
+
+
+
+
+
+
+
+
+
+
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+/*报表css样式*/
+
+.formHead{
+    position: relative;
+    background-color: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+    padding: 14px 10px;
+}
+.formHead .management_select {
+    border: 1px solid #e5e5e5;
+    margin-top: -4px;
+}
+.formHead .select_div_name{
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: 14px;
+}
+
+.form_right_cont{
+    padding-top: 0;
+}
+.form_main_center{
+    padding: 0;
+}
+.reportFormCont{
+    background-color: #f9fcfe;
+    overflow: hidden;
+}
+.bg_ff{
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.cont_top_left{
+    text-align: center;
+}
+
+.cont_top_left_title{
+    font-size: 20px;
+    padding-top: 30px;
+}
+
+.cont_top_left_num{
+    font-size: 35px;
+    color: #72aefc;
+    padding: 20px 0 27px 0;
+}
+
+.cont_top_left p{
+    font-size: 14px;
+    color: #999;
+}
+.pd20
+{
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.height210{
+    height: 200px;
+}
+
+.pt30{
+    padding-top: 30px;
+}
+
+.form_cont_top{
+    font-size: 16px;
+}
+.form_cont_cont{
+    font-size: 26px;
+    padding: 20px 0 10px;
+}
+.form_cont_fot{
+    font-size: 12px;
+    color: #999;
+}
+.formImg{
+    width: 75px;
+    height: 75px;
+    display: block;
+}
+.pd25{
+    padding: 25px 30px;
+}
+.form_cont{
+    text-align: left;
+}
+
+.form_cont_right{
+    text-align: right;
+}
+
+.formPd10{
+    padding: 10px;
+}
+.formPdLR10{
+    padding:0 10px;
+}
+
+.echart_head_title{
+    font-size: 14px;
+    padding: 12px;
+    text-align: center;
+    color: #666;
+    border-bottom: 1px solid #e5e5e5;
+}
+.echart_cont_form_box{
+    height: 306px;
+    background: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
