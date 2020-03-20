@@ -16,10 +16,17 @@
                          rel="noopener">Clara.io ThreeJS Export Documentation</a>
 </div>
 
+<script src="./js/THREE.MeshLine.js"></script>
 <script type="module">
 
   import * as THREE from '../build/three.module.js';
+  import * as MeshLine from './js/THREE.MeshLine.js';
   import {OrbitControls} from './jsm/controls/OrbitControls.js';
+
+  import { Line2 } from './jsm/lines/Line2.js';
+  import { LineMaterial } from './jsm/lines/LineMaterial.js';
+  import { LineGeometry } from './jsm/lines/LineGeometry.js';
+  import { GeometryUtils } from './jsm/utils/GeometryUtils.js';
 
   var container;
 
@@ -89,11 +96,63 @@
 
     var points = path.getPoints();
 
-    var geometry = new THREE.BufferGeometry().setFromPoints( points );
-    var material = new THREE.LineBasicMaterial( { color: 0xffffff } );
+    var geometry = new THREE.BufferGeometry(100, 100, 100).setFromPoints( points );
+    var material = new THREE.LineBasicMaterial( { color: 0xffffff ,linewidth: 100,} );
 
     var line = new THREE.Line( geometry, material );
     scene.add( line );
+
+
+
+    var arr = [[110.506788,-18.53260566666667],[110.506788,-21.03260566666666],[110.506788,-23.53260566666666],[110.506788,-26.03260566666666],[108.006788,-26.03260566666666],[105.506788,-26.03260566666666],[105.506788,-28.53260566666666],[103.006788,-28.53260566666666],[100.506788,-28.53260566666666],[98.006788,-28.53260566666666],[98.006788,-32.53260566666666],[94.34012133333333,-32.53260566666666],[92.006788,-32.53260566666666],[89.17345466666667,-32.53260566666666],[86.34012133333333,-32.53260566666666],[84.17345466666667,-32.53260566666666],[82.006788,-32.53260566666666],[79.17345466666667,-32.53260566666666],[75.67345466666667,-32.53260566666666],[75.67345466666667,-37.19927233333333],[75.67345466666667,-39.69927233333333],[75.67345466666667,-42.19927233333333],[75.67345466666667,-44.69927233333333],[75.67345466666667,-42.19927233333333],[75.67345466666667,-39.69927233333333],[75.67345466666667,-37.19927233333333],[75.67345466666667,-32.53260566666666],[79.17345466666667,-32.53260566666666],[82.006788,-32.53260566666666],[84.17345466666667,-32.53260566666666],[86.34012133333333,-32.53260566666666],[89.17345466666667,-32.53260566666666],[92.006788,-32.53260566666666],[94.34012133333333,-32.53260566666666],[98.006788,-32.53260566666666],[98.006788,-37.03260566666666],[98.006788,-39.53260566666666],[98.006788,-42.03260566666666],[98.006788,-44.53260566666666],[98.006788,-47.03260566666666],[100.506788,-47.03260566666666],[103.006788,-47.03260566666666],[105.506788,-47.03260566666666],[108.006788,-47.03260566666666],[110.506788,-47.03260566666666],[110.506788,-49.53260566666666],[110.506788,-52.03260566666666],[110.506788,-54.53260566666667]]
+     var mesh = ''
+     function createLines(arr) {
+       if(mesh){
+         scene.remove(mesh)
+       }
+       var line = new THREE.Geometry();
+       line.vertices = []
+       $.each(arr, function(index,content) {
+         var a = scene.getObjectByName(content)
+         line.vertices.push( a.position );
+       });
+       makeLine( line, 3 );
+     }
+
+     var resolution = new THREE.Vector2( window.innerWidth, window.innerHeight );
+     function makeLine( geo, c ) {
+       var g = new MeshLine();
+
+       g.setGeometry( geo );
+
+       var material = new MeshLineMaterial( {
+         useMap: false,
+         color: new THREE.Color( 0xed6a5a ),
+         opacity: 1,
+         resolution: resolution,
+         sizeAttenuation: !false,
+         lineWidth: 0.5,
+         near: camera.near,
+         far: camera.far
+       });
+       mesh = new THREE.Mesh( g.geometry, material );
+       scene.add( mesh );
+     }
+     //arr为line在场景中经过的模型名称的数组
+     createLines(arr)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -118,6 +177,8 @@
     window.addEventListener('resize', onWindowResize, false);
 
   }
+
+
 
   function onWindowResize() {
 

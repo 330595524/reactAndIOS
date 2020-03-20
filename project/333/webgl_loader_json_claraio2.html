@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>three.js webgl - loaders - Clara.io JSON loader</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="main.css">
+</head>
+
+<body>
+<div id="info">
+    <a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> - <a href="https://clara.io"
+                                                                                  target="_blank" rel="noopener">Clara.io</a>
+    JSON THREE.Scene/Object Load Test<br/>
+    More Information: <a href="https://clara.io/learn/user-guide/data_exchange/threejs_export" target="_blank"
+                         rel="noopener">Clara.io ThreeJS Export Documentation</a>
+</div>
+
+<script type="module">
+
+  import * as THREE from './node_modules/three/build/three.module.js';
+  import {OrbitControls} from './node_modules/three/examples/jsm/controls/OrbitControls.js';
+
+  var container;
+
+  var camera, scene, renderer, controls;
+
+  var mouseX = 0, mouseY = 0;
+
+  var windowHalfX = window.innerWidth / 2;
+  var windowHalfY = window.innerHeight / 2;
+
+
+  init();
+  animate();
+
+
+  function init() {
+
+    container = document.createElement('div');
+    document.body.appendChild(container);
+
+    camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
+    camera.position.set(0, 270, 0);
+    // scene
+
+    scene = new THREE.Scene();
+
+
+
+    // lights
+    var light = new THREE.AmbientLight(0x222222);
+    scene.add(light);
+
+
+    var ambient = new THREE.AmbientLight(0x444444);
+    scene.add(ambient);
+
+    var directionalLight = new THREE.DirectionalLight(0xffeedd);
+    directionalLight.position.set(0, 0, 1).normalize();
+    scene.add(directionalLight);
+
+
+    let data = [{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000022","positionZ":0.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"1_1","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-66.85325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000000","positionZ":0.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"1_2","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-65.75325000000001]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000002","positionZ":1,"rotation":90,"cargoData":[0.9,1,1.8,"#E6CEB9","hp"],"cargoGridId":"1_3","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-64.65325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000001","positionZ":2.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"1_4","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-66.85325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000005","positionZ":2.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"1_6","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-64.65325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000003","positionZ":4.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"1_7","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-66.85325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000006","positionZ":4.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"1_9","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-64.65325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000016","positionZ":6.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"1_11","cargoRackLayer":4,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-65.75325000000001]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000008","positionZ":4.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"1_8","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-65.75325000000001]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000013","positionZ":2.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"1_5","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-65.75325000000001]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000012","positionZ":0.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"2_2","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-65.75325000000001]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000004","positionZ":6.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"1_12","cargoRackLayer":4,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-64.65325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000009","positionZ":2.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"2_4","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-66.85325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000019","positionZ":6.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"1_10","cargoRackLayer":4,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-66.85325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000007","positionZ":0.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"2_1","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-66.85325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000010","positionZ":4.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"2_7","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-66.85325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000017","positionZ":0.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"2_3","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-64.65325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000011","positionZ":2.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"2_5","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-65.75325000000001]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000015","positionZ":4.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"2_9","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-64.65325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000032","positionZ":2.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"2_6","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-64.65325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000018","positionZ":4.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"2_8","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-65.75325000000001]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000024","positionZ":6.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"2_12","cargoRackLayer":4,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-64.65325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000020","positionZ":6.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"2_10","cargoRackLayer":4,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-66.85325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000021","positionZ":0.81,"rotation":90,"cargoData":[0.9,1,1.43,"#E6CEB9","hp"],"cargoGridId":"3_1","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-63.553250000000006]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000014","positionZ":0.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"3_2","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-62.453250000000004]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000040","positionZ":4.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"3_7","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-63.553250000000006]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000031","positionZ":6.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"2_11","cargoRackLayer":4,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-65.75325000000001]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000023","positionZ":2.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"3_6","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-61.35325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000028","positionZ":0.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"3_3","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-61.35325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000027","positionZ":6.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"3_12","cargoRackLayer":4,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-61.35325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000026","positionZ":6.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"3_11","cargoRackLayer":4,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-62.453250000000004]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000025","positionZ":2.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"3_5","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-62.453250000000004]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000029","positionZ":3,"rotation":90,"cargoData":[0.9,1,1.8,"#E6CEB9","hp"],"cargoGridId":"4_5","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-62.453250000000004]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000045","positionZ":2.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"4_4","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-63.553250000000006]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000035","positionZ":5,"rotation":90,"cargoData":[0.9,1,1.8,"#E6CEB9","hp"],"cargoGridId":"3_8","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-62.453250000000004]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000047","positionZ":4.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"4_9","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-61.35325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000030","positionZ":7,"rotation":90,"cargoData":[0.9,1,1.8,"#E6CEB9","hp"],"cargoGridId":"3_10","cargoRackLayer":4,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-63.553250000000006]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000033","positionZ":0.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"4_3","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-61.35325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000042","positionZ":0.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"5_2","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-59.15325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000036","positionZ":2.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"3_4","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-63.553250000000006]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000053","positionZ":5,"rotation":90,"cargoData":[0.9,1,1.8,"#E6CEB9","hp"],"cargoGridId":"5_7","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-60.25325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000034","positionZ":4.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"4_8","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-62.453250000000004]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000058","positionZ":6.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"5_12","cargoRackLayer":4,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-58.05325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000039","positionZ":4.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"3_9","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-61.35325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000038","positionZ":0.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"4_1","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-63.553250000000006]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000067","positionZ":2.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"6_5","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-59.15325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000043","positionZ":0.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"4_2","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-62.453250000000004]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000073","positionZ":6.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"6_10","cargoRackLayer":4,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-60.25325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000041","positionZ":0.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"5_1","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-60.25325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000037","positionZ":7,"rotation":90,"cargoData":[0.9,1,1.8,"#E6CEB9","hp"],"cargoGridId":"4_10","cargoRackLayer":4,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-63.553250000000006]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000056","positionZ":2.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"4_6","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-61.35325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000050","positionZ":4.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"4_7","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-63.553250000000006]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000044","positionZ":0.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"5_3","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-58.05325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000083","positionZ":0.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"7_3","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-54.75325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000051","positionZ":7,"rotation":90,"cargoData":[0.9,1,1.8,"#E6CEB9","hp"],"cargoGridId":"4_12","cargoRackLayer":4,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-61.35325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000086","positionZ":4.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"7_8","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-55.85325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000054","positionZ":2.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"5_6","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-58.05325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000088","positionZ":0.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"8_1","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-56.953250000000004]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000048","positionZ":7,"rotation":90,"cargoData":[0.9,1,1.8,"#E6CEB9","hp"],"cargoGridId":"4_11","cargoRackLayer":4,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-62.453250000000004]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000092","positionZ":3,"rotation":90,"cargoData":[0.9,1,1.8,"#E6CEB9","hp"],"cargoGridId":"8_6","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-54.75325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000046","positionZ":4.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"5_8","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-59.15325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000071","positionZ":2.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"5_5","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-59.15325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000104","positionZ":6.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"8_11","cargoRackLayer":4,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-55.85325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000052","positionZ":6.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"5_11","cargoRackLayer":4,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-59.15325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000131","positionZ":2.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"9_4","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-53.65325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000055","positionZ":2.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"5_4","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-60.25325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000112","positionZ":4.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"9_9","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-51.45325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000049","positionZ":1,"rotation":90,"cargoData":[0.9,1,1.8,"#E6CEB9","hp"],"cargoGridId":"6_1","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-60.25325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000126","positionZ":1,"rotation":90,"cargoData":[0.9,1,1.8,"#E6CEB9","hp"],"cargoGridId":"10_2","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-52.55325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000077","positionZ":6.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"5_10","cargoRackLayer":4,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-60.25325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000123","positionZ":4.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"10_7","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-53.65325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000060","positionZ":2.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"6_4","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-60.25325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000130","positionZ":6.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"10_12","cargoRackLayer":4,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-51.45325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000064","positionZ":2.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"6_6","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-58.05325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000066","positionZ":4.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"6_9","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-58.05325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000124","positionZ":2.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"11_5","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-49.25325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000065","positionZ":0.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"6_3","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-58.05325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000057","positionZ":4.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"5_9","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-58.05325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000129","positionZ":6.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"11_10","cargoRackLayer":4,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-50.35325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000059","positionZ":6.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"6_11","cargoRackLayer":4,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-59.15325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000145","positionZ":0.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"12_3","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-48.15325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000081","positionZ":0.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"7_2","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-55.85325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000134","positionZ":4.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"12_8","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-49.25325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000062","positionZ":0.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"6_2","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-59.15325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000069","positionZ":4.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"6_8","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-59.15325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000140","positionZ":0.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"13_1","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-47.05325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000061","positionZ":4.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"6_7","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-60.25325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000074","positionZ":4.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"7_7","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-56.953250000000004]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000141","positionZ":2.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"13_6","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-44.853249999999996]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000072","positionZ":2.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"7_4","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-56.953250000000004]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000149","positionZ":6.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"13_11","cargoRackLayer":4,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-45.95325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000078","positionZ":1,"rotation":90,"cargoData":[0.9,1,1.8,"#E6CEB9","hp"],"cargoGridId":"7_1","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-56.953250000000004]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000090","positionZ":6.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"7_12","cargoRackLayer":4,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-54.75325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000076","positionZ":6.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"6_12","cargoRackLayer":4,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-58.05325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000079","positionZ":4.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"7_9","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-54.75325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000155","positionZ":2.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9",""],"cargoGridId":"14_4","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-47.05325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000063","positionZ":2.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"7_5","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-55.85325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000116","positionZ":0.11,"rotation":90,"cargoData":[0.9,1,0.02,"#E6CEB9","hp"],"cargoGridId":"8_2","cargoRackLayer":1,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-55.85325]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000162","positionZ":4.68,"rotation":90,"cargoData":[0.9,1,1.16,"#E6CEB9","hp"],"cargoGridId":"14_9","cargoRackLayer":3,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[29.128206,-44.853249999999996]}},{"type":"Feature","properties":{"type":"cargo","name":"","binLocation":"HP-0000082","positionZ":3,"rotation":90,"cargoData":[0.9,1,1.8,"#E6CEB9","hp"],"cargoGridId":"7_6","cargoRackLayer":2,"rackElementId":"41","volume":1.8,"height":2},"geometry":{"type":"Point","coordinates":[28.128206,-54.75325]}}]
+    let group = new THREE.Group();
+    for (let i = 0; i < data.length; i++) {
+
+      let cargo = new THREE.BoxBufferGeometry(
+        data[i].properties.cargoData[0],
+        data[i].properties.cargoData[1],
+        data[i].properties.cargoData[2]
+      );
+
+        //去除搜索黑色高亮结果的白色顶部
+        let cargoMaterial = new THREE.MeshBasicMaterial({
+          color: data[i].properties.cargoData[3]
+        });
+
+        let cargoMaterial1 = new THREE.MeshMatcapMaterial({
+          color: data[i].properties.cargoData[3]
+        });
+
+        let cargoMaterials = [cargoMaterial1, cargoMaterial1, cargoMaterial1,
+          cargoMaterial1, cargoMaterial, cargoMaterial1
+        ]
+
+        let cargoMeshModel = new THREE.Mesh(cargo, cargoMaterials);
+
+          cargoMeshModel.position.x = data[i].geometry.coordinates[0]
+          cargoMeshModel.position.y = data[i].geometry.coordinates[1]
+          cargoMeshModel.position.z = data[i].properties.positionZ;
+        group.add(cargoMeshModel);
+      }
+
+    group.rotation.x = -Math.PI * 0.5;
+    scene.add(group);
+
+
+
+    let matrix = camera.toJSON().object.matrix;
+    var width = window.innerWidth, height = window.innerHeight;
+    var widthHalf = width / 2, heightHalf = height / 2;
+
+    var _camera = new THREE.PerspectiveCamera();
+
+    _camera.matrixWorld.set(matrix[0], matrix[4],matrix[8],matrix[12],
+      matrix[1],matrix[5],matrix[9],matrix[13],
+      matrix[2],matrix[6],matrix[10],matrix[14],
+      matrix[3],matrix[7],matrix[11],matrix[15]);
+    var pos = new THREE.Vector3(0, 0, 0)
+    pos.project(_camera);
+    pos.x = ( pos.x * widthHalf ) + widthHalf;
+    pos.y = - ( pos.y * heightHalf ) + heightHalf;
+    console.log(pos)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    renderer = new THREE.WebGLRenderer();
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    container.appendChild(renderer.domElement);
+
+    controls = new OrbitControls(camera, renderer.domElement);
+    controls.maxPolarAngle = Math.PI * 0.5;
+    controls.minPolarAngle = 0;
+    controls.minDistance = 20;
+    controls.maxDistance = 400;
+    controls.mouseButtons = {LEFT: 2, MIDDLE: 1, RIGHT: 0};
+    controls.touches.ONE = 1;
+    controls.touches.TWO = 3;
+    controls.saveState()
+
+    document.addEventListener('mousemove', onDocumentMouseMove, false);
+
+    window.addEventListener('resize', onWindowResize, false);
+  }
+
+  function onWindowResize() {
+
+    windowHalfX = window.innerWidth / 2;
+    windowHalfY = window.innerHeight / 2;
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+  }
+
+  function onDocumentMouseMove(event) {
+
+    mouseX = (event.clientX - windowHalfX) / 2;
+    mouseY = (event.clientY - windowHalfY) / 2;
+
+  }
+
+  //
+
+  function animate() {
+
+    requestAnimationFrame(animate);
+    render();
+
+  }
+
+  function render() {
+
+    // camera.position.x += ( mouseX - camera.position.x ) * .05;
+    // camera.position.y += ( - mouseY - camera.position.y ) * .05;
+    controls.update();
+    camera.lookAt(scene.position);
+
+    renderer.render(scene, camera);
+
+  }
+
+
+</script>
+
+</body>
+</html>
