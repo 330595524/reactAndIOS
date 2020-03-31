@@ -14,6 +14,7 @@ export default class UiComponent extends Component {
     render() {
         return (
             <div>
+                 {/* 受控 */}
                 <Input 
                     size='small'
                     value = {this.state.value}
@@ -23,6 +24,7 @@ export default class UiComponent extends Component {
                         })
                     }}
                 /> 
+                {/* 非受控 */}
                 <Input
                     deaultValue = {this.value} 
                 />     

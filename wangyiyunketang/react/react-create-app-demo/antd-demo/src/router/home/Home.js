@@ -15,6 +15,12 @@ class Home extends Component {
             name:this.state.name
         }
     }
+    componentWillReceiveProps(){
+        console.log('Home componentWillReceiveProps')
+    }
+    componentWillMount(){
+        console.log('Home componentWillMount')
+    }
 
     componentDidMount() {
         console.log('Home mounet')
@@ -71,6 +77,10 @@ Home.childContextTypes = {//检测的数据类型，传递给下一级
 
 
 class Child1 extends Component {
+    componentWillMount(){
+        console.log('Child1 componentWillMount')
+    }
+
     componentDidMount() {
         console.log('Child1 mounet')
     }
@@ -94,6 +104,9 @@ class Child1 extends Component {
 class Child2 extends Component {
     constructor(props){
         super(props);
+    }
+    componentWillReceiveProps(){
+        console.log('Child2 componentWillReceiveProps')
     }
     componentDidMount() {
         console.log('Child2 mounet')
