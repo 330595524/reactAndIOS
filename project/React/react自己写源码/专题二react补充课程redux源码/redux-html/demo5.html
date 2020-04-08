@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>applyMiddleware</title>
+</head>
+<body>
+
+</body>
+<script>
+	function compose(...funcs) {
+		if (funcs.length === 0) {
+			return arg => arg
+		}
+		if (funcs.length === 1) {
+			return funcs[0]
+		}
+		return funcs.reduce((a, b) => (...args) => {
+			return a(b(...args))
+		})
+	}
+
+	const f1 = (next) => (n) =>{
+			console.log(n,'f1')
+			setTimeout(() => {
+				next(n-1)
+			},200)
+		}
+
+		const f2 = (next) => (n) => {
+			console.log(n,'f2')
+			setTimeout(() => {
+				next(n+5)
+			},500)
+		}
+
+		const  f3 =(next) =>(n) =>{
+			setTimeout(() => {
+				next(n*10)
+			},1000)
+		}
+    // 至少是二阶 可传递
+
+	let chain = compose(f1,f2,f3)((res) => console.log('last middleware',res))
+
+</script>
+
+</html>

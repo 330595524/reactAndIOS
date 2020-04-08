@@ -6,6 +6,7 @@ import About from './router/home/About'
 import Myechartsvg from './router/Myechartsvg/Myechartsvg';
 import FormComponent from './component/form/FormComponent'
 import UiComponent from './component/form/uiComponent/UiComponent'
+import Confirm from './component/Confirm/Confirm'
 function App() {
   return (
     <div className="App">
@@ -13,10 +14,10 @@ function App() {
       
         {/* <Myechartsvg/> */}
         {/* <Home/> */}
-        <About/>
+        {/* <About/> */}
         {/* <FormComponent/> */}
         {/* <UiComponent/> */}
-        
+        <Confirm/> 
       </header>
     </div>
   );

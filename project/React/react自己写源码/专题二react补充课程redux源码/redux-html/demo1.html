@@ -1,0 +1,37 @@
+<html>
+<body>
+<div id='title'></div>
+<div id='content'></div>
+</body>
+</html>
+<script>
+	const appState = {
+		title: {
+			text: 'color red',
+			color: 'red',
+		},
+		content: {
+			text: 'color blue',
+			color: 'blue'
+		}
+	}
+</script>
+<script>
+	function renderApp (appState) {
+		renderTitle(appState.title)
+		renderContent(appState.content)
+	}
+
+	function renderTitle (title) {
+		const titleDOM = document.getElementById('title')
+		titleDOM.innerHTML = title.text
+		titleDOM.style.color = title.color
+	}
+
+	function renderContent (content) {
+		const contentDOM = document.getElementById('content')
+		contentDOM.innerHTML = content.text
+		contentDOM.style.color = content.color
+	}
+	renderApp(appState)
+</script>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id='title'></div>
+<div id='content'></div>
+</body>
+<script>
+
+	function renderApp (appState) {
+		renderTitle(appState.title)
+		renderContent(appState.content)
+	}
+
+	function renderTitle (title) {
+		const titleDOM = document.getElementById('title')
+
+		titleDOM.innerHTML = title.text
+		titleDOM.style.color = title.color
+	}
+
+	function renderContent (content) {
+		const contentDOM = document.getElementById('content')
+		contentDOM.innerHTML = content.text
+		contentDOM.style.color = content.color
+	}
+
+	function createStore (reducer) {
+		let state
+		const listeners = []
+		const subscribe = (listener) => listeners.push(listener)
+		const getState = () => state
+		const dispatch = (action) => {
+			// 只要有指定过来，就做一件事（监听的事）
+			state = reducer(state,action)
+			listeners.forEach((listener) => listener())
+		}
+		dispatch({}) // 初始化 state
+		return { getState, dispatch, subscribe }
+	}
+
+    const initTitle = {
+        text: 'color red',
+        color: 'red'
+    }
+    const initContent = {
+        text: 'color blue',
+        color: 'blue'
+    }
+    function titleReducer(state=initTitle,action) {
+        switch (action.type) {
+            case 'UPDATE_TITLE_TEXT':
+
+                let title = {color:state.color,text:action.text}
+                let res = Object.assign({},state,title)
+                console.log(res,'res')
+                return res
+            case 'UPDATE_TITLE_COLOR':
+                let color = {text:state.text,color:action.color}
+                return Object.assign({},state,color)
+            default:
+                return state
+        }
+    }
+    function contentReducer(state=initContent,action) {
+        let content
+        let title
+        let res
+        switch (action.type) {
+            case 'UPDATE_CONTENT_TEXT':
+
+                content = {color:state.color,text:action.text}
+                res = Object.assign({},state,content)
+                console.log(res,'res')
+                return res
+            case 'UPDATE_CONTENT_COLOR':
+                content = {text:state.text,color:action.color}
+                res = Object.assign({},state,content)
+                return res
+            default:
+                return state
+        }
+    }
+    // {title:()=>{switch;case},content:()=>{switch:case}}
+    const combineReducers = reducers => (state={}, action) => {
+        let res = {}
+        for(let key in  reducers) {
+        	res[key] = reducers[key](state[key],action)
+        }
+        return res
+    }
+
+	const store = createStore(combineReducers({title: titleReducer,content:contentReducer}))
+	store.subscribe(() => renderApp(store.getState()))
+	renderApp(store.getState())
+	store.dispatch({ type: 'UPDATE_TITLE_TEXT', text: 'aaa' })
+	store.dispatch({ type: 'UPDATE_TITLE_COLOR', color: 'yellow' })
+
+
+
+</script>
+</html>

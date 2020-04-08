@@ -1,0 +1,14 @@
+1. appState数据渲染到 title,content标签
+2. appState数据变化时 页面重绘
+3. 多个模块，多个业务 combineReducers
+
+
+// combine reducer
+// crete stroe
+
+// connect
+// provder
+
+
+
+// applyMiddleware -> 异步编程的思路和 Promise有很大区别， Express中间件实现原理

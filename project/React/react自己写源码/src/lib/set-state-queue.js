@@ -1,0 +1,3 @@
+import { renderComponent } from './tool'
+
+
