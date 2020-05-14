@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>自定义窗体</title>
+  <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+    <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+            src="http://webapi.amap.com/maps?v=1.3&key=您申请的key值"></script>
+	<!-- 下一行是左边的放大缩小移动操作台 -->
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<script type="text/javascript">
+    //初始化地图对象，加载地图
+    var map = new AMap.Map("container", {resizeEnable: true});
+    var lnglats = [
+        [116.968904, 39.999923],
+        [116.382122, 39.921176],
+		[116.372122, 39.921176],
+        [116.968904, 39.900001],
+        [117.418258, 39.914600]
+    ];
+	
+ 
+	
+	
+    var infoWindow = new AMap.InfoWindow({offset: new AMap.Pixel(0, -30)});
+    for (var i = 0, marker; i < lnglats.length; i++) {
+        var marker = new AMap.Marker({
+            position: lnglats[i],
+            map: map
+        });
+        marker.content = '<h3>我是第' + (i + 1) + '个XXX</h3>';
+        marker.content += '<div>经度：'+lnglats[i][0]+'</div>';
+        marker.content += '<div>纬度：'+lnglats[i][1]+'</div>';
+        marker.content += '<div><button  class="btn btn-suucess btn-xs">历史轨迹</button>';
+        marker.content += '&nbsp;<button class="btn btn-warning btn-xs">实时跟踪&nbsp;</button>';
+        marker.content += '&nbsp;<button  class="btn btn-danger btn-xs">设置</button></div>';
+ 
+        marker.on('mouseover', infoOpen);
+		//注释后打开地图时默认关闭信息窗体
+        //marker.emit('mouseover', {target: marker});
+		marker.on('mouseout', infoClose);
+		marker.on('click', newMAp);
+    }  
+ 
+ 
+	
+	//鼠标点击事件,设置地图中心点及放大显示级别
+	function newMAp(e) {
+		//map.setCenter(e.target.getPosition());
+		map.setZoomAndCenter(15, e.target.getPosition());
+		
+		var infoWindow = new AMap.InfoWindow({offset: new AMap.Pixel(0, -30)});
+		infoWindow.setContent(e.target.content);
+		infoWindow.open(map, e.target.getPosition());	
+	}
+	
+	
+	function infoClose(e) {
+		infoWindow.close(map, e.target.getPosition());
+	}
+    function infoOpen(e) {
+        infoWindow.setContent(e.target.content);
+        infoWindow.open(map, e.target.getPosition());
+    }
+    map.setFitView();
+</script>
+</body>
+</html>

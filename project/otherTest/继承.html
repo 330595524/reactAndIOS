@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			
+			
+			
+			class A {
+			  constructor() {
+			    this.x = 1;
+			  }
+			  set(cc) {
+				  this.x = cc;
+			    console.log(this.x);
+			  }
+			}
+			
+			class B extends A {
+			  constructor() {
+			    super();
+				
+				this.set(99);
+				console.log(this.x);
+			  }
+			}
+			
+			class C extends A {
+			  constructor() {
+			    super();
+				
+				// this.set(99);
+				console.log(this.x);
+			  }
+			}
+			
+			new B()
+			new C()
+			
+		</script>
+	</body>
+</html>
