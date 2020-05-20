@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#triangle {
+			    width: 0;
+			    height: 0;
+			    /* border-top: 100px solid red; */
+			    border-bottom: 100px solid transparent;
+			    /* border-left: 100px solid lawngreen; */
+			    border-right: 100px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="triangle"></div>
+		<script type="text/javascript">
+			function myNew (fn){
+				let obj = {};
+				obj.__proto__ = fn.prototype;
+				let result = fn.call(obj);
+				return typeof result === 'object' ? result: obj;
+			}
+				
+			function parent (){
+				this.kk = 'xiaoming'
+			}	
+			
+			let cc = myNew(parent);
+			cc.kk = 'hahha';
+			console.log(cc.kk)
+
+			let cb = myNew(parent);
+			cb.kk ='xixi';
+			console.log(cb.kk)
+			console.log(cc.kk)
+			console.log('=====================================')
+			
+			// 数组扁平化
+			let arr = [1,2,,3,4,5,[1,2,3,4,[7,8,9,0,[2,3,4],1,2,3]]];
+			let arrresult = arr.flat(3);
+			console.log(arrresult)
+			// reduce
+			let arrReduce = arr.reduce((all,current)=>all.concat(current),[]);
+			console.log(arrReduce)
+			// 多层
+			function deepFlat(arr){
+				return arr.reduce((all,current)=>Array.isArray(current)?all.concat(deepFlat(current)): all.concat(current),[]);
+			}
+			let arrdeepFlat = deepFlat(arr);
+			console.log(arrdeepFlat);
+			// console.log('============');
+			//使用栈
+			function flatten (arr){
+				let stack = [...arr];
+				const resutl = [];
+				while(stack.length>0){
+					const next = stack.pop();
+					if(Array.isArray(next)){
+						// push数组项，不会修改原始输入
+						stack.push(...next)
+					}else if(typeof next !== 'undefined'){
+						resutl.push(next)
+					}
+				}
+				return resutl.reverse();
+			}
+			console.log(flatten(arr))
+			
+			// 递归版本反嵌套
+			function flatFn (arr) {
+				let result = [];
+				(function flat (arr) {
+					arr.forEach(item=>{
+						if(Array.isArray(item)){
+							flat(item)
+						}else{
+							result.push(item);
+						}
+					})
+				})(arr)
+				return result
+			}
+			console.log('递归版本反嵌套',flatFn(arr))
+			
+			/*
+			position 属性值  relative相对
+							absolute  绝对
+							fixed     固定定位
+							sticky    粘性的
+							static    默认没有定位
+							inherit   从父元素继承
+							initial   默认值
+							
+			
+			*/ 
+			// 快排
+			var quckArr =[1,2,3,4,2,1,4,2,4,1];
+			
+			function jsQuickSort(array){
+			    if(array.length<=1){
+					return array
+				}
+				let sprit = Math.floor(array.length/2);
+				let temp = array.splice(sprit,1)[0]; // 参考
+				let left = [],right=[];
+				for(let i =0;i<array.length;i++){
+					if(array[i]<temp){
+						left.push(array[i])
+					}else{
+						right.push(array[i])
+					}
+				}
+				return jsQuickSort(left).concat(temp,jsQuickSort(right));
+			}
+			console.log(jsQuickSort(quckArr))
+			console.log('jsQuickSort(quckArr)')
+			
+			console.log(aaa)
+			function aaa(){
+				console.log('aaaa')
+			}
+			console.log(aaa)
+			var aaa = 111;
+			console.log(aaa)
+			
+			// ==========================
+			function instance_of (l,R) {
+				let P = R.prototype;
+				L = L.__proto__;
+				while(true){
+					if(L===null){
+						return false
+					}
+					if(L === P){
+						return true;
+					}
+					// 如果是没有找到再去当前实例的
+					L = L.__proto__;
+				}
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>
