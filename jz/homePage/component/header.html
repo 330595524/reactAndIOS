@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<div class="home_header">
+    <div class="logo navbar-left"><img src="./img/home/logo_common_nav.png" class="img_1" alt=""><img class="img_2" src="./img/home/common_nav_logo_r.png" alt=""></div>
+    <div class="header_cont navbar-left">
+        <div class="a_li">首页</div>
+        <div class="a_li hasChild">
+            产品功能
+            <ul class="menu">
+                <li class="clearfix w200">
+                    <h4>基础能力</h4>
+                    <div class="menu_cont">
+                        <a><img src="./img/home/icon/icon_nav_数据对象自定义.png" alt="">数据对象自定义</a>
+                        <a><img src="./img/home/icon/icon_nav_图形化工作流.png" alt="">图形化工作流</a>
+                        <a><img src="./img/home/icon/icon_nav_灵活的权限.png" alt="">灵活的权限</a>
+                        <a><img src="./img/home/icon/icon_nav_部署方式.png" alt="">部署方式</a>
+                    </div>
+                </li>
+                <li class="clearfix w158 padding_none">
+                    <h4 class="pdl20">通用功能</h4>
+                    <div class="menu_cont boder1 pd20">
+                        <a><img src="./img/home/icon/icon_nav_进度管理.png" alt="">进度管理</a>
+                        <a><img src="./img/home/icon/icon_nav_成本管理.png" alt="">成本管理</a>
+                        <a><img src="./img/home/icon/icon_nav_风险和问题.png" alt="">风险和问题</a>
+                        <a><img src="./img/home/icon/icon_nav_工时管理.png" alt="">工时管理</a>
+                        <a><img src="./img/home/icon/icon_nav_文档管理.png" alt="">文档管理</a>
+                    </div>
+                </li>
+                <li class="clearfix w300 padding_none">
+                    <h4 class="pdl20">拓展功能</h4>
+                    <div class="menu_cont pdl20">
+                        <a><img src="./img/home/icon/icon_nav_预算管理.png" alt="">预算管理</a>
+                        <a><img src="./img/home/icon/icon_nav_供应商外包.png" alt="">供应商外包</a>
+                        <a><img src="./img/home/icon/icon_nav_需求管理.png" alt="">需求管理</a>
+                        <a><img src="./img/home/icon/icon_nav_市场管理.png" alt="">市场管理</a>
+                        <a><img src="./img/home/icon/icon_nav_缺陷管理.png" alt="">缺陷管理</a>
+                        <a><img src="./img/home/icon/icon_nav_销售管理.png" alt="">销售管理</a>
+                        <a><img src="./img/home/icon/icon_nav_需求管理.png" alt="">需求管理</a>
+                        <a><img src="./img/home/icon/icon_nav_采购管理.png" alt="">采购管理</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="a_li hasChild">
+            解决方案
+            <ul class="menu small">
+                <li class="clearfix w200">
+                    <div class="menu_cont">
+                        <a><img src="./img/jjfa/icon_nav_金融科技.png" alt="">金融科技</a>
+                        <a><img src="./img/jjfa/icon_nav_实施服务.png" alt="">专业服务</a>
+                        <a><img src="./img/jjfa/icon_nav_产品研发.png" alt="">产品研发</a>
+                        <a><img src="./img/jjfa/icon_nav_工程管理.png" alt="">工程管理</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="a_li hasChild">
+            用户中心
+            <ul class="menu small little">
+                <li class="clearfix w200">
+                    <div class="menu_cont">
+                        <a><img src="./img/yhzx/icon_nav_客户服务.png" alt="">客户服务</a>
+                        <a><img src="./img/yhzx/icon_nav_视频学习.png" alt="">视频学习</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="a_li hasChild">
+            关于我们
+            <ul class="menu small">
+                <li class="clearfix w200">
+                    <div class="menu_cont">
+                        <a><img src="./img/gywm/icon_nav_公司介绍.png" alt="">公司介绍</a>
+                        <a><img src="./img/gywm/icon_nav_企业文化.png" alt="">企业文化</a>
+                        <a><img src="./img/gywm/icon_nav_加入我们.png" alt="">加入我们</a>
+                        <a><img src="./img/gywm/icon_nav_联系我们.png" alt="">联系我们</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="header_right navbar-left">
+        <a href="javascript:void(0);">体验DEMO</a>
+    </div>
+</div>
+</body>
+<script>
+  $(".home_header .a_li").click(function() {
+    console.log('执行了')
+    var _index = $(this).index();
+    // $(".model_cont_box .model_div").eq(_index).addClass('show').siblings().removeClass("show");
+    //改变选中时候的选项框的样式，移除其他几个选项的样式
+    $(this).addClass("active").siblings().removeClass("active");
+
+  });
+
+</script>
+</html>
