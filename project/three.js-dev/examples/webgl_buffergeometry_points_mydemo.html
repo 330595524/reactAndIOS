@@ -26,6 +26,31 @@
 			init();
 			animate();
 
+            function createParticles(){
+
+              var vertices = [];
+
+              for ( var i = 0; i < 10000; i ++ ) {
+
+                var x = THREE.MathUtils.randFloatSpread( 2000 );
+                var y = THREE.MathUtils.randFloatSpread( 2000 );
+                var z = THREE.MathUtils.randFloatSpread( 2000 );
+
+                vertices.push( x, y, z );
+
+              }
+
+              var geometry = new THREE.BufferGeometry();
+              geometry.setAttribute( 'position', new THREE.Float32BufferAttribute( vertices, 3 ) );
+
+              var material = new THREE.PointsMaterial( { color: 0x888888 } );
+
+              var points = new THREE.Points( geometry, material );
+
+              scene.add( points );
+            }
+            createParticles();
+
 			function init() {
 
 				container = document.getElementById( 'container' );
@@ -81,10 +106,10 @@
 
 				//
 
-				var material = new THREE.PointsMaterial( { size: 15, vertexColors: THREE.VertexColors } );
+				var material = new THREE.PointsMaterial( { size: 10, vertexColors: THREE.VertexColors } );
 
 				points = new THREE.Points( geometry, material );
-				scene.add( points );
+				// scene.add( points );
 
 				//
 

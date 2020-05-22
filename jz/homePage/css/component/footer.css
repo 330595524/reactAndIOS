@@ -11,7 +11,7 @@
 .footer_cont li{
     float: left;
     /*text-align: center;*/
-    width: 240px;
+    width: 250px;
 }
 .footer_cont li.w350{
     width: 330px;

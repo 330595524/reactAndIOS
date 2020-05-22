@@ -4,13 +4,13 @@
     line-height: 80px;
 }
 .logo{
-    width: 420px;
+    width: 380px;
 }
 .logo img.img_1{
      display: inline-block;
      width: 189px;
      height: 47px;
-     margin: 15px 0 0 70px;
+     margin: 15px 0 0 0px;
  }
 .logo img.img_2{
     display: inline-block;
@@ -158,7 +158,6 @@
     margin-top: 22px;
     background: rgba(255,255,255,0.2);
     border-radius: 4px;
-
 }
 
 
