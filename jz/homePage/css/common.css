@@ -1901,28 +1901,32 @@ textarea.form-control {
     border-bottom-width: 2px;
 }
 
-
-.ztree li span.button.diy01_ico_open, .ztree li span.button.diy01_ico_close{
-	background: url(../img/index/management/11.png) no-repeat center;
-}
-.ztree li span.button.diy02_ico_docu{
-	background: url(../img/index/management/12_all.png) no-repeat center;
-}
-.ztree li span.button.diy03_ico_docu{
-	background: url(../img/index/management/13_xxt.png) no-repeat center;
-}
-.ztree li span.button.diy04_ico_docu{
-	background: url(../img/index/management/14_jkyw.png) no-repeat center;
-}
-.ztree li span.button.diy05_ico_docu{
-	background: url(../img/index/management/15_zx.png) no-repeat center ;
-}
-
 /*公共样式*/
 .boxContain{
     background: #fff;
+    width: 100%;
 }
 .w1200{
     width: 1200px;
     margin: 0 auto;
+}
+.contHeadTittle{
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 70px;
+}
+.contHeadTittle h2{
+    font-size: 38px;
+    font-weight: 400;
+    margin-bottom: 40px;
+    margin-top: 0;
+}
+.contHeadTittle p{
+    font-size: 16px;
+    margin: 0;
+    font-weight: 200;
+}
+h3{
+    margin: 0;
+    padding: 0;
 }

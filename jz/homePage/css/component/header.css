@@ -2,6 +2,15 @@
     height: 80px;
     background: #2c2d41;
     line-height: 80px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    left: 0;
+    right: 0;
+}
+#header[myType=index] .home_header{
+    background: transparent;
 }
 .logo{
     width: 380px;

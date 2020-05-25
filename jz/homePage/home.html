@@ -5,23 +5,151 @@
     <title>首页</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/component/header.css">
     <link rel="stylesheet" href="./css/component/footer.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body style="background: green">
-    <div id="header"></div>
-    123131231312
+    <div id="header" myType='index'></div>
+
+    <div class="swiper-container myLoop">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide1">
+                <div class="home1">
+                    <h1>帮助10万家企业</h1>
+                    <p>实现运营管理体系的工具落地</p>
+                    <div class="btns">
+                        <a class="btn1 btn">体验DEMO</a>
+                        <a class="btan2 btn">查看视频</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide slide2">
+                <div class="home2">
+                    <h1>一体化项目运营管理系统</h1>
+                    <p>适用行业：金融可以、实施服务、产品研发、工程管理</p>
+                    <div class="btns">
+                        <a class="btn1 btn">体验DEMO</a>
+                        <a class="btan2 btn">查看视频</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="boxContain">
+        <div class="w1200">
+            <div class="contHeadTittle">
+                <h2>系统核心业务功能</h2>
+                <p>构建以项目为核心的端到端一体化信息管控</p>
+            </div>
+            <ul class="system_core_list clearfix">
+                <li>
+                    <img src="./img/home/system/icon_home_进度管理_nor.png" alt="">
+                    <h3>进度管理</h3>
+                    <p>
+                        项目管理系统软件多层次计划管理，支持多级协同计划管理模式。项目计划管理的闭环管控
+                    </p>
+                </li>
+                <li>
+                    <img src="./img/home/system/icon_home_成本管理_nor.png" alt="">
+                    <h3>成本管理</h3>
+                    <p>
+                       项目成本预算、资金计划、实际成本核算、成本监控
+                    </p>
+                </li>
+                <li>
+                    <img src="./img/home/system/icon_home_风险和问题_nor.png" alt="">
+                    <h3>风险和问题</h3>
+                    <p>
+                        完善的风险知识库，闭环的全生命周期跟踪管理
+                    </p>
+                </li>
+                <li>
+                    <img src="./img/home/system/icon_home_工时管理_nor.png" alt="">
+                    <h3>工时管理</h3>
+                    <p>
+                        支持项目及非项目的公司填报，工时审核和多维度的工时统计查询功能
+                    </p>
+                </li>
+                <li>
+                    <img src="./img/home/system/icon_home_文档管理_nor.png" alt="">
+                    <h3>文档管理</h3>
+                    <p>
+                        项目文档的剪裁、文档提交、文档检查、文档归档
+                    </p>
+                </li>
+
+                <li>
+                    <img src="./img/home/system/icon_home_市场管理_nor.png.png" alt="">
+                    <h3>市场管理</h3>
+                    <p>
+                        项目管理系统360度客户信息管理：商机、合同、收款、联系人、项目等
+                    </p>
+                </li>
+                <li>
+                    <img src="./img/home/system/icon_home_销售管理_nor.png" alt="">
+                    <h3>销售管理</h3>
+                    <p>
+                        项目管理系统软件合同的录入登记、审批、履约管理、监控执行、评估、查询、统计等
+                    </p>
+                </li>
+                <li>
+                    <img src="./img/home/system/icon_home_采购管理_nor.png" alt="">
+                    <h3>采购管理</h3>
+                    <p>
+                        从采购申请到采购执行，详尽的记录最终采购结果。可追踪到过往的采购次数、报价、采购价以及相关的订单和合同
+                    </p>
+                </li>
+                <li>
+                    <img src="./img/home/system/icon_home_管理驾驶舱_nor.png" alt="">
+                    <h3>管理驾驶舱</h3>
+                    <p>
+                        项目进度、成本、风险、资源利用率等各维度等统计报表
+                    </p>
+                </li>
+                <li>
+                    <img src="./img/home/system/icon_home_系统核心业务功能_nor.png" alt="">
+                    <h3>移动APP</h3>
+                    <p>
+                        支持消息接收、工时填报、审批流程、统计报表等功能
+                    </p>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
     <div id="footer"></div>
 </body>
 <script src="js/jquery-1.9.1.min.js"></script>
+<script src="https://unpkg.com/swiper/js/swiper.min.js"> </script>
 <script src="js/common.js"></script>
 <script>
-	$(function() { 
-		$("#header").load("component/header.html");
-		$("#footer").load("component/footer.html");
-	})
+  $(document).ready(function () {
+    $(function() {
+      $("#header").load("component/header.html");
+      $("#footer").load("component/footer.html");
+    })
+
+    var mySwiper = new Swiper ('.swiper-container', {
+      loop: true, // 循环模式选项
+
+      // 如果需要分页器
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    })
+
+  })
+
 
 </script>
 </html>
