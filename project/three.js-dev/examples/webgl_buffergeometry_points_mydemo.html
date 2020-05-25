@@ -16,10 +16,10 @@
 			import * as THREE from '../build/three.module.js';
 
 			import Stats from './jsm/libs/stats.module.js';
-
+            import { OrbitControls } from './jsm/controls/OrbitControls.js';
 			var container, stats;
 
-			var camera, scene, renderer;
+			var camera, scene, renderer, controls;
 
 			var points;
 
@@ -32,9 +32,9 @@
 
               for ( var i = 0; i < 10000; i ++ ) {
 
-                var x = THREE.MathUtils.randFloatSpread( 2000 );
-                var y = THREE.MathUtils.randFloatSpread( 2000 );
-                var z = THREE.MathUtils.randFloatSpread( 2000 );
+                var x = THREE.randFloatSpread( 2000 );
+                var y = THREE.randFloatSpread( 2000 );
+                var z = THREE.randFloatSpread( 2000 );
 
                 vertices.push( x, y, z );
 
@@ -49,7 +49,64 @@
 
               scene.add( points );
             }
-            createParticles();
+            // createParticles();
+            addGemtroy();
+            function addGemtroy() {
+              //生成一千个立方体
+              let group = new THREE.Group();
+              let arr = []; //生成一个速度的数组
+              for(let i=0; i<1000; i++){
+                group.add(randomCube());
+                arr.push({
+                  speed:Math.random(),
+                  y:-3
+                });
+              }
+              scene.add(group);
+            }
+
+            //随机一个立方体
+            function randomCube() {
+              let material = new THREE.MeshBasicMaterial({color:0xffffff * Math.random()});
+              let boxSize = Math.random()*0.5;
+              let geometry = new THREE.BoxGeometry(boxSize, boxSize,boxSize);
+              let mesh = new THREE.Mesh(geometry, material);
+              mesh.position.set(Math.random()*100-50, -3, Math.random()*100-50);
+              mesh.speed = Math.random();
+              return mesh;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 			function init() {
 
@@ -64,7 +121,10 @@
 				scene.background = new THREE.Color( 0x050505 );
 				scene.fog = new THREE.Fog( 0x050505, 2000, 3500 );
 
-				//
+              controls = new OrbitControls( camera, renderer.domElement );
+              control.target.set(0, 15, 0);
+              controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
+              //
 
 				var particles = 500000;
 
@@ -101,15 +161,15 @@
 
 				geometry.setAttribute( 'position', new THREE.Float32BufferAttribute( positions, 3 ) );
 				geometry.setAttribute( 'color', new THREE.Float32BufferAttribute( colors, 3 ) );
-
-				geometry.computeBoundingSphere();
+              console.log('kkkkkkk',geometry);
+              geometry.computeBoundingSphere();
 
 				//
 
 				var material = new THREE.PointsMaterial( { size: 10, vertexColors: THREE.VertexColors } );
 
 				points = new THREE.Points( geometry, material );
-				// scene.add( points );
+				scene.add( points );
 
 				//
 
