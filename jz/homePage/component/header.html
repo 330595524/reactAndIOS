@@ -5,8 +5,8 @@
     <div class="w1200">
         <div class="logo navbar-left"><img src="./img/home/logo_common_nav.png" class="img_1" alt=""><img class="img_2" src="./img/home/common_nav_logo_r.png" alt=""></div>
         <div class="header_cont navbar-left">
-            <div class="a_li">首页</div>
-            <div class="a_li hasChild">
+            <div class="a_li" name="首页">首页</div>
+            <div class="a_li hasChild" name="产品功能">
                 产品功能
                 <ul class="menu">
                     <li class="clearfix w200">
@@ -43,7 +43,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="a_li hasChild">
+            <div class="a_li hasChild"  name="解决方案">
                 解决方案
                 <ul class="menu small">
                     <li class="clearfix w200">
@@ -56,7 +56,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="a_li hasChild">
+            <div class="a_li hasChild" name="用户中心">
                 用户中心
                 <ul class="menu small little">
                     <li class="clearfix w200">
@@ -67,7 +67,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="a_li hasChild">
+            <div class="a_li hasChild" name="关于我们">
                 关于我们
                 <ul class="menu small">
                     <li class="clearfix w200">
@@ -89,14 +89,35 @@
 </div>
 </body>
 <script>
+var objArr = {
+  '首页':'home.html',
+  '产品功能':'production.html',
+  '解决方案':'solution.html',
+  '用户中心':'user.html',
+  '关于我们':'about.html',
+}
   $(".home_header .a_li").click(function() {
     console.log('执行了')
     var _index = $(this).index();
     // $(".model_cont_box .model_div").eq(_index).addClass('show').siblings().removeClass("show");
     //改变选中时候的选项框的样式，移除其他几个选项的样式
     $(this).addClass("active").siblings().removeClass("active");
-
+    var name = $(this).attr('name');
+    window.location.href=objArr[name];
   });
+
+  window.onscroll = function(){
+    // 获取窗口滚动的距离
+    var scrolDis = document.documentElement.scrollTop || document.body.scrollTop;
+    // 获取首屏窗口的高度
+    var firHei = document.documentElement.clientHeight || document.body.clientHeight;
+    if(scrolDis > 200){
+      $("#header").addClass('bg_bb');
+    }else {
+      $("#header").removeClass('bg_bb');
+    }
+  }
+
 
 </script>
 </html>

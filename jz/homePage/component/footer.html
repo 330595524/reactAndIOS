@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
+<div class="boxContain bg_42">
+    <div class="w1200 fot_cont">
+        <div class="fot_txt">给我们一次机会，让我们携手共同推动企业的高效运营</div>
+        <a href="#" class="btntry" id="btntry"> 申请试用</a>
+    </div>
+</div>
 
 <div class="boxContain bg_b">
     <div class="w1200 footer">
@@ -41,5 +47,71 @@
 
     </div>
 </div>
+
+<div id="model">
+    <div class="close" id="close">X</div>
+    <h3>我要试用</h3>
+    <table class="tableModel">
+        <tbody>
+        <tr>
+            <td class="lable">姓名：</td>
+            <td class="input"><input type="text" placeholder="请输入您的姓名"></td>
+            <td class="lable">手机：</td>
+            <td class="input"><input type="text" placeholder="请输入您的手机"></td>
+        </tr>
+        <tr>
+            <td class="lable">邮箱：</td>
+            <td class="input"><input type="text" placeholder="请输入您的邮箱"></td>
+            <td class="lable">公司：</td>
+            <td class="input"><input type="text" placeholder="请输入您的公司"></td>
+        </tr>
+        <tr>
+            <td class="lable">所属行业：</td>
+            <td colspan="4" class="tdChecked1">
+                <a href="#"><input type="radio" style="vertical-align:middle; margin-top:0;">IT</a>
+                <a href="#"><input type="radio" style="vertical-align:middle; margin-top:0;">医药</a>
+                <a href="#"><input type="radio" style="vertical-align:middle; margin-top:0;">金融</a>
+                <a href="#"><input type="radio" style="vertical-align:middle; margin-top:0;">制造</a>
+                <a href="#"><input type="radio" style="vertical-align:middle; margin-top:0;">工程</a>
+                <a href="#"><input type="radio" style="vertical-align:middle; margin-top:0;">教育</a>
+                <a href="#"><input type="radio" style="vertical-align:middle; margin-top:0;">咨询</a>
+                <a href="#"><input type="radio" style="vertical-align:middle; margin-top:0;">设计</a>
+                <a href="#"><input type="radio" style="vertical-align:middle; margin-top:0;">其他</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="lable">企业规模：</td>
+            <td colspan="4" class="tdChecked1">
+                <a href="#"><input type="radio" style="vertical-align:middle; margin-top:0;">小于30人</a>
+                <a href="#"><input type="radio" style="vertical-align:middle; margin-top:0;">30-50人</a>
+                <a href="#"><input type="radio" style="vertical-align:middle; margin-top:0;">50--100人</a>
+                <a href="#"><input type="radio" style="vertical-align:middle; margin-top:0;">100-300人</a>
+                <a href="#"><input type="radio" style="vertical-align:middle; margin-top:0;">300-500人</a>
+                <a href="#"><input type="radio" style="vertical-align:middle; margin-top:0;">500人以上</a>
+            </td>
+        </tr>
+        <tr style="margin-top: -73px;">
+            <td class="lable">您的关注：</td>
+            <td colspan="3" class="tdText pd50">
+                        <textarea placeholder="请输入您关注的功能或需求，或者输入您需要向我们咨询的问题">
+
+                        </textarea>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div style="text-align: center">
+        <a href="#" class="btntry model_btn">提交申请</a>
+    </div>
+
+</div>
 </body>
+<script>
+  $('#btntry').on('click',function () {
+    $("#model").show();
+  })
+  $('#close').on('click',function () {
+    $("#model").hide();
+  })
+</script>
 </html>

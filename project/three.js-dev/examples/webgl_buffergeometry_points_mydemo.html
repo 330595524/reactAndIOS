@@ -63,6 +63,18 @@
                 });
               }
               scene.add(group);
+
+              //然后生成一个新的线程
+              let myWorker = new Worker('worker.js');
+
+              //通过web worker对象将数据传递给web worker线程
+              myWorker.postMessage([1,2,3,4,5]);
+              //使用onmessage以响应worker回传的消息
+              myWorker.onmessage = function(e) {
+                let data = e.data;
+                console.log('获取到从worker里面传递来的信息',data);
+              }
+
             }
 
             //随机一个立方体
@@ -120,10 +132,10 @@
 				scene = new THREE.Scene();
 				scene.background = new THREE.Color( 0x050505 );
 				scene.fog = new THREE.Fog( 0x050505, 2000, 3500 );
-
-              controls = new OrbitControls( camera, renderer.domElement );
-              control.target.set(0, 15, 0);
-              controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
+              //
+              // controls = new OrbitControls( camera, renderer.domElement );
+              // control.target.set(0, 15, 0);
+              // controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
               //
 
 				var particles = 500000;

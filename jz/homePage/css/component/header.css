@@ -2,7 +2,6 @@
     height: 80px;
     background: #2c2d41;
     line-height: 80px;
-    overflow: hidden;
     position: fixed;
     top: 0;
     z-index: 3;
@@ -11,6 +10,9 @@
 }
 #header[myType=index] .home_header{
     background: transparent;
+}
+#header[myType=index].bg_bb .home_header{
+    background: #2c2d41;
 }
 .logo{
     width: 380px;
@@ -43,6 +45,9 @@
 .header_cont .a_li:hover,.header_cont .a_li.active{
     color: #f4be42;
     cursor: pointer;
+}
+.header_cont .a_li:hover ul{
+    display: block;
 }
 .header_cont .a_li.hasChild{
     position: relative;

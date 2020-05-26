@@ -1930,3 +1930,108 @@ h3{
     margin: 0;
     padding: 0;
 }
+.bg_black{
+    background: #2c2d41;
+    color: #fff;
+}
+.bg_f4{
+    background: #f4f7fc;
+}
+.bg_42{
+    background: #4291d6;
+}
+
+/*model*/
+
+.fot_cont {
+    text-align: center;
+    padding-bottom: 40px;
+}
+.fot_txt {
+    color: #fff;
+    font-size: 30px;
+    padding-top: 54px;
+}
+.btntry{
+    display: inline-block;
+    font-size: 18px;
+    padding: 10px 50px;
+    color: #fff;
+    border: 1px solid #fff;
+    margin: 38px auto 0;
+    border-radius: 4px;
+}
+.model_btn{
+    border: 2px solid #4d9df4;
+    color: #4d9df4;
+    margin-top: 33px;
+}
+
+#model{
+    display: none;
+    position: fixed;
+    width: 1200px;
+    height: 600px;
+    left: 50%;
+    top: 50%;
+    margin-top: -325px;
+    margin-left: -600px;
+    background: #fafbff;
+    z-index: 10;
+    padding: 40px 30px;
+}
+#model .close{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    text-align:center;
+    line-height: 20px;
+    right: 20px;
+    top: 20px;
+}
+#model h3{
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 40px;
+}
+.tableModel td.lable{
+    width: 130px;
+    text-align: right;
+    padding-right: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.tableModel td.input{
+    width: 420px;
+}
+
+.tableModel td.input input{
+    padding: 10px 0 10px 20px;
+    border: 2px solid #e5e5e5;
+    display: block;
+    width: 380px;
+}
+
+.tableModel tbody tr{
+    margin-bottom: 15px;
+    display: block;
+}
+
+.tdChecked1 a{
+    padding-right: 30px;
+    font-size: 20px;
+    color: #333;
+}
+.tdChecked1 a input{
+    margin-right: 10px;
+}
+
+.tdText textarea{
+    width: 930px;
+    height: 100px;
+    border: 2px solid #e5e5e5;
+}
+.pd50{
+    padding-top: 80px;
+}

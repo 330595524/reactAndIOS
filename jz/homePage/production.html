@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>产品中心</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/component/header.css">
+    <link rel="stylesheet" href="./css/component/footer.css">
+    <link rel="stylesheet" href="./css/product.css">
+</head>
+<body style="background: green">
+    <div id="header" myType='index'></div>
+
+
+
+    <div id="footer"></div>
+
+
+
+</body>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/common.js"></script>
+<script>
+  $(document).ready(function () {
+    $(function() {
+      $("#header").load("component/header.html");
+      $("#footer").load("component/footer.html");
+    })
+    window.onscroll = function(){
+      // 获取窗口滚动的距离
+      var scrolDis = document.documentElement.scrollTop || document.body.scrollTop;
+      // 获取首屏窗口的高度
+      var firHei = document.documentElement.clientHeight || document.body.clientHeight;
+      if(scrolDis > 200){
+        $("#header").addClass('bg_bb');
+      }else {
+        $("#header").removeClass('bg_bb');
+      }
+    }
+
+  })
+
+</script>
+</html>
