@@ -1940,6 +1940,9 @@ h3{
 .bg_42{
     background: #4291d6;
 }
+.bg_black .prod_title p{
+    color: #fff;
+}
 
 /*model*/
 
