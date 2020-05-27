@@ -28,10 +28,7 @@
 .prod_nav a:last-child::after{
     display: none;
 }
-.head_prod_bg img{
-    display: block;
-    width: 100%;
-}
+
 .prod_title{
     padding:85px 0 75px 0;
     text-align: center;
@@ -67,4 +64,7 @@
 }
 .pd80{
     padding-bottom: 80px;
+}
+.solution_nav a{
+    width: 24.6%;
 }

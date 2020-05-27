@@ -11,7 +11,7 @@
 #header[myType=index] .home_header{
     background: transparent;
 }
-#header[myType=index].bg_bb .home_header{
+#header[myType=index].bg_bb .home_header,#header[myType=index].bg_bbc .home_header{
     background: #2c2d41;
 }
 .logo{

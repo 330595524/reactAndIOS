@@ -1906,6 +1906,7 @@ textarea.form-control {
     background: #fff;
     width: 100%;
 }
+
 .w1200{
     width: 1200px;
     margin: 0 auto;
@@ -1943,6 +1944,7 @@ h3{
 .bg_black .prod_title p{
     color: #fff;
 }
+
 
 /*model*/
 
@@ -2037,4 +2039,8 @@ h3{
 }
 .pd50{
     padding-top: 80px;
+}
+.head_prod_bg img{
+    display: block;
+    width: 100%;
 }
