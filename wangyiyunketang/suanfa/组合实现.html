@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组合无序</title>
+</head>
+<body>
+    <script>
+
+// 组合要去重
+    var arr= ['A','B','C']
+    // 每种情况输出
+    function show3(arr, num) {
+
+        var iNow = 1;
+        var resultArr = [];
+
+        if (num === 1) {
+            arr.psuh(arr.length);
+            return arr;
+        }
+
+        function change(arr, iNow, str) {
+            for (let i = 0; i < arr.length; i++) {
+                var result = arr.concat();
+                var strClone = str;
+                strClone += result.splice(i, 1);
+
+                if (iNow === num) { 
+
+                    for (let j = 0; j < result.length; j++) {
+                        resultArr.push(strClone + result[j])
+
+                    }
+                } else {
+                    change(result, iNow + 1, strClone)
+                }
+
+            }
+        }
+        change(arr, iNow + 1, '');  // 加一，而不是改变值，所以不用iNow++,因为这个只是影响递归
+
+        // console.log(resultArr);
+
+        function unique(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                arr[i] = arr[i].split('').sort().join('');
+                
+            }
+            console.log(arr)
+            var result = [];
+            var obj = {};
+            for (let i = 0; i < arr.length; i++) {
+               if(!obj[arr[i]]){
+                result.push(arr[i])
+                obj[arr[i]] = 1;
+               }
+                
+            }
+            return result ;
+            console.log(arr)
+        }
+       resultArr = unique(resultArr);
+
+        resultArr.push(resultArr.length)
+        return resultArr;
+    }
+
+    console.log(show3(arr, 3));  // 三个值中选2个
+
+
+
+    //数学角度去组合
+
+    function C(m,n){
+        return f(m)/(f(m-n)*f(n))
+    }
+
+    function f(num){
+        if(num<=1){
+            return 1
+        }
+        return num*f(num-1)
+    }
+
+    console.log(C(3,2))
+
+
+
+
+    function show4 (arr , num){
+        var resultNum = 0;
+        var isNow = 1;
+        var resultArr =[];
+        if(num===1) return arr;
+        function change(arr, isNow,str){
+
+           for (let i = 0; i < arr.length; i++) {
+               let result = arr.concat();
+
+              var strClone = str;
+               strClone += result.splice(i, 1);
+              if(isNow === num){
+               resultNum +=result.length;
+               for (let j = 0; j < result.length; j++) {
+                    resultArr.push(strClone + result[j])
+               }
+              
+              }else{
+                  change(result, isNow+1,str)
+              }
+               
+           }
+        }
+        change(arr , isNow+1 ,'')
+        return resultArr;
+    }
+
+    console.log(show4(arr,2));
+    </script>
+</body>
+</html>

@@ -58,14 +58,14 @@
     width: 10px;
     height: 6px;
     padding-right: 20px;
-    background: url("../../img/home/header_s_01.jpg") no-repeat;
+    background: url("../../img/home/sj_03.png") no-repeat;
     background-size: 10px 6px;
     margin: 0px 0 0 10px;
     vertical-align: middle;
 
 }
 .header_cont .a_li.hasChild:hover::after,.header_cont .a_li.hasChild.active::after{
-    background: url("../../img/home/header_s_02.jpg") no-repeat;
+    background: url("../../img/home/sj_02.png") no-repeat;
 }
 
 .a_li ul{

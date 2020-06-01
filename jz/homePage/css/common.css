@@ -1941,6 +1941,9 @@ h3{
 .bg_42{
     background: #4291d6;
 }
+.bg_ed{
+    background: #edf4fc;
+}
 .bg_black .prod_title p{
     color: #fff;
 }
