@@ -142,10 +142,20 @@
 				}
 			}
 			
-			
-			
-			
-			
+			function Person(name, age) {
+					this.name =[1,name];
+					this.age = age;
+					this.introduce = function () {
+						alert('我是' + this.name)
+					};
+				}
+
+console.log(new Person().name)
+
+				var p1 = new Person(2);
+					var p2 = new Person(3);
+console.log(p1.name,p2.name, )
+	console.log(new Person().name)		
 			
 			
 			

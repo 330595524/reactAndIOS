@@ -31,8 +31,8 @@
 }
 .footer_cont img{
     display: inline-block;
-    width: 111px;
-    height: 111px;
+    width: 111px!important;
+    height: 111px!important;;
 }
 .footer_cont a.mb40{
     margin-bottom: 40px;

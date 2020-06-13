@@ -47,7 +47,7 @@
 
     </div>
 </div>
-
+<div id="model_base"></div>
 <div id="model">
     <div class="close" id="close">X</div>
     <h3>我要试用</h3>
@@ -109,9 +109,11 @@
 <script>
   $('#btntry').on('click',function () {
     $("#model").show();
+    $("#model_base").show();
   })
   $('#close').on('click',function () {
     $("#model").hide();
+    $("#model_base").hide();
   })
 </script>
 </html>

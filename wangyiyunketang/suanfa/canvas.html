@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+</head>
+
+<body onload="displayImage()">
+    <p>原始图片：</p>
+    <img id="myPhoto" src="./logo.png" onerror="noPhoto()">
+    <p>Canvas图片：</p>
+    <canvas id="myCanvas" width="200" height="200"></canvas>
+    <button id="btn" onclick="colorChange()">变颜色啦！</button>
+</body>
+<script type="text/javascript">
+    var c, ctx, myImage;
+    function displayImage() {
+        myImage = new Image();
+        myImage.src = "./logo.png";
+        c = document.getElementById("myCanvas");
+        if (c.getContext) {
+            ctx = c.getContext("2d");
+            myImage.onload = function () {
+                ctx.drawImage(myImage, 0, 0);
+            }
+        }
+    }
+    function getColorData(r) {
+        imageD = ctx.getImageData(0, 0, myImage.width, myImage.height);
+        var pdata = imageD.data;
+        var colorArr = r.split(",");
+        for (var j = 0; j < pdata.length; j += 4) {
+            pdata[j] = colorArr[0];
+            pdata[j + 1] = colorArr[1];
+            pdata[j + 2] = colorArr[2];
+        }
+        ctx.putImageData(imageD, 0, 0);
+    }
+
+    function noPhoto() {
+        alert("Please put a .png file in this folder and name it kestral.png.");
+    }
+    var i = 0;
+    function colorChange() {
+        i++;
+        var c = "0,255,0";
+        switch (i % 3) {
+            case 1:
+                c = "255,0,0";
+                break;
+            case 2:
+                c = "255,245,0";
+                break;
+        }
+        getColorData(c);
+    }
+
+</script>
+</html>

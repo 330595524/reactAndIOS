@@ -182,7 +182,35 @@
                 <h2>我们服务的行业客户</h2>
                 <p>每个客户的项目交付都是我们一次重新学习的机会</p>
             </div>
-            <img src="./img/home/solution/other_img.jpg" class="base_home_img" alt="">
+            <div class="foot_list_c">
+                <img src="./img/home/foot_list/foot_list_logo_1.png" alt="">
+                <img src="./img/home/foot_list/foot_list_logo_2.png" alt="">
+                <img src="./img/home/foot_list/foot_list_logo_3.png" alt="">
+                <img src="./img/home/foot_list/foot_list_logo_4.png" alt="">
+                <img src="./img/home/foot_list/foot_list_logo_5.png" alt="">
+                <img src="./img/home/foot_list/foot_list_logo_6.png" alt="" class="mgn">
+
+                <img src="./img/home/foot_list/foot_list_logo_21.png" alt="">
+                <img src="./img/home/foot_list/foot_list_logo_22.png" alt="">
+                <img src="./img/home/foot_list/foot_list_logo_23.png" alt="">
+                <img src="./img/home/foot_list/foot_list_logo_24.png" alt="">
+                <img src="./img/home/foot_list/foot_list_logo_25.png" alt="">
+                <img src="./img/home/foot_list/foot_list_logo_26.png" alt="" class="mgn">
+
+                <img src="./img/home/foot_list/foot_list_logo_31.png" alt="">
+                <img src="./img/home/foot_list/foot_list_logo_32.png" alt="">
+                <img src="./img/home/foot_list/foot_list_logo_33.png" alt="">
+                <img src="./img/home/foot_list/foot_list_logo_34.png" alt="">
+                <img src="./img/home/foot_list/foot_list_logo_35.png" alt="">
+                <img src="./img/home/foot_list/foot_list_logo_36.png" alt="" class="mgn">
+
+                <img src="./img/home/foot_list/foot_list_logo_41.png" alt="">
+                <img src="./img/home/foot_list/foot_list_logo_42.png" alt="">
+                <img src="./img/home/foot_list/foot_list_logo_43.png" alt="">
+                <img src="./img/home/foot_list/foot_list_logo_44.png" alt="">
+                <img src="./img/home/foot_list/foot_list_logo_45.png" alt="">
+                <img src="./img/home/foot_list/foot_list_logo_46.png" alt="" class="mgn">
+            </div>
         </div>
     </div>
 
@@ -202,7 +230,11 @@
 
     var mySwiper = new Swiper ('.swiper-container', {
       loop: true, // 循环模式选项
-
+      speed: 300,
+      autoplay: {
+        disableOnInteraction: false, //手动滑动之后不打断播放
+        delay: 2000
+      },
       // 如果需要分页器
       pagination: {
         el: '.swiper-pagination',

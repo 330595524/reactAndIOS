@@ -117,6 +117,18 @@ var objArr = {
       $("#header").removeClass('bg_bb');
     }
   }
+    var url  = window.location.href;
+console.log(url);
+for (let key in objArr) {
+      let value = objArr[key];
+
+      if(url.indexOf(value)>-1){
+        console.log(url);
+        console.log(key);
+        $('.home_header .a_li[name="'+key+'"]').addClass("active");
+      }
+    }
+
 
 
 </script>

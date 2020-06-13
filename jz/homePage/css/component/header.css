@@ -74,7 +74,7 @@
     left: -80px;
     width: 700px;
     height:360px;
-    background: #fff;
+    background: #f8f8f8;
     padding: 20px 0 0 20px;
     border-radius: 4px;
     z-index: 3;
@@ -89,9 +89,9 @@
 .a_li ul.little{
     height: 120px;
 }
-.header_cont .a_li.hasChild.active ul{
-    display: block;
-}
+/*.header_cont .a_li.hasChild.active ul{*/
+/*    display: block;*/
+/*}*/
 .a_li ul li {
     float: left;
     padding-left: 20px;

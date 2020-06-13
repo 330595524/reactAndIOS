@@ -1944,6 +1944,9 @@ h3{
 .bg_ed{
     background: #edf4fc;
 }
+.bg_f2{
+    background: #f2f2f2;
+}
 .bg_black .prod_title p{
     color: #fff;
 }
@@ -1974,16 +1977,26 @@ h3{
     color: #4d9df4;
     margin-top: 33px;
 }
-
+#model_base{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0.6;
+    z-index: 9;
+    display: none;
+}
 #model{
     display: none;
     position: fixed;
-    width: 1200px;
+    width: 1000px;
     height: 600px;
     left: 50%;
     top: 50%;
-    margin-top: -325px;
-    margin-left: -600px;
+    margin-top: -300px;
+    margin-left: -500px;
     background: #fafbff;
     z-index: 10;
     padding: 40px 30px;
@@ -2005,20 +2018,20 @@ h3{
 .tableModel td.lable{
     width: 130px;
     text-align: right;
-    padding-right: 30px;
+    padding-right: 20px;
     font-size: 18px;
     font-weight: bold;
 }
 
 .tableModel td.input{
-    width: 420px;
+    width: 320px;
 }
 
 .tableModel td.input input{
     padding: 10px 0 10px 20px;
     border: 2px solid #e5e5e5;
     display: block;
-    width: 380px;
+    width: 280px;
 }
 
 .tableModel tbody tr{
@@ -2027,8 +2040,8 @@ h3{
 }
 
 .tdChecked1 a{
-    padding-right: 30px;
-    font-size: 20px;
+    padding-right: 20px;
+    font-size: 18px;
     color: #333;
 }
 .tdChecked1 a input{
@@ -2036,7 +2049,7 @@ h3{
 }
 
 .tdText textarea{
-    width: 930px;
+    width: 811px;
     height: 100px;
     border: 2px solid #e5e5e5;
 }
@@ -2046,4 +2059,8 @@ h3{
 .head_prod_bg img{
     display: block;
     width: 100%;
+}
+.bg_img{
+    display: block;
+    width: 1200px;
 }
