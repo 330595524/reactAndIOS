@@ -38,8 +38,8 @@
     display: inline-block;
     font-size: 18px;
     color: #fff;
-    padding: 0 10px;
-    margin: 0 10px;
+    padding: 0 5px;
+    margin: 0 8px;
     position: relative;
 }
 .header_cont .a_li:hover,.header_cont .a_li.active{
@@ -60,7 +60,7 @@
     padding-right: 20px;
     background: url("../../img/home/sj_03.png") no-repeat;
     background-size: 10px 6px;
-    margin: 0px 0 0 10px;
+    margin-left: 5px;
     vertical-align: middle;
 
 }
