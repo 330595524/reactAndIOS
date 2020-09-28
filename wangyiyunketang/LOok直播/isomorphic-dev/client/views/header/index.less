@@ -1,0 +1,35 @@
+.m-header{
+    height: 50px;
+    margin-bottom: 20px;
+    border-bottom: 1px #ccc solid;
+
+    &_ul {
+        height: 100%;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+    }
+
+    &_li {
+        padding: 0 20px;
+    }
+
+    &_link {
+        color: #333;
+    }
+
+    &_sel {
+        color: #f00;
+        position: relative;
+
+        &:after {
+            content: ' ';
+            position: absolute;
+            left: 0;
+            bottom: calc(100%/2 - 50px/2 - 1px);
+            width: 100%;
+            height: 2px;
+            background-color: #f00;
+        }
+    }
+}
