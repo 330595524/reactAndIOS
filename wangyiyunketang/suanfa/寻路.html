@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寻路算法</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #ul {
+            height: auto;
+            overflow: hidden;
+            margin: 20px auto;
+            border: 1px solid #000;
+            border-bottom: 0;
+            border-right: 0;
+        }
+
+        #ul li {
+            border: 1px solid #000;
+            border-top: 0;
+            border-left: 0;
+            float: left;
+        }
+
+        #ul li.style1 {
+            background-color: red;
+        }
+
+        #ul li.style2 {
+            background-color: green;
+        }
+
+        #ul li.style3 {
+            background-color: blue;
+        }
+
+        #button {
+            width: 100px;
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="ul">
+    </ul>
+    <input type="button" value="开始寻路" id="button">
+</body>
+<script>
+    var oUl = document.getElementById('ul');
+    var aLi = oUl.getElementsByTagName('li');
+    var oInput = document.getElementById('button');
+    var beginLi = oUl.getElementsByClassName('style1')
+    var endLi = oUl.getElementsByClassName('style2')
+    
+
+
+    var map = [
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    ]
+
+    var cols = Math.sqrt(map.length);
+    var sizeGrird = 20;
+    var openArr = [];   // 可能要走的路线
+    var closeArr = [];  // 已经关闭的路线
+    init();
+    function init() {
+        createMap();
+        oInput.onclick = function (  ) {
+            openFn();
+        }
+    }
+    function createMap() {
+        oUl.style.width = cols * (sizeGrird + 1) + 1 + 'px';
+        for (let i = 0; i < map.length; i++) {
+            var oLi = document.createElement('li');
+            oLi.style.width = sizeGrird + 'px';
+            oLi.style.height = sizeGrird + 'px';
+            oUl.appendChild(oLi);
+
+            if (map[i] == 1) {
+                oLi.className = 'style1';
+                openArr.push(oLi)
+            } else if (map[i] == 2) {
+                oLi.className = 'style2';
+            }else if (map[i] == 3) {
+                oLi.className = 'style3';
+                 closeArr.push(oLi)
+            }
+        }
+    }
+
+    function openFn(params) {
+        var nowLi = openArr.shift();
+        if(nowLi == endLi[0]){
+            showLine()
+            return
+        }
+        closeFn(nowLi);
+
+        findLi(nowLi);
+
+        openArr.sort(function(li1,li2){
+            return li1.num-li2.num;
+        })
+
+           console.log(openArr) 
+        openFn();
+       
+
+
+    }
+
+    function closeFn(nowLi) {
+        closeArr.push(nowLi);
+    }
+
+    function findLi(nowLi) {
+        var result = [];
+        for (let i = 0; i < aLi.length; i++) {
+            if(filter(aLi[i])){
+                result.push(aLi[i]);
+            }
+            
+        }
+        function filter (li){
+            for (let i = 0; i < closeArr.length; i++) {
+                if(closeArr[i] == li){
+                    return false;
+                }
+            }
+            for (let i = 0; i < openArr.length; i++) {
+                if(openArr[i] == li){
+                    return false;
+                }
+            }
+            return true;
+        }
+        
+        for (let i = 0; i < result.length; i++) {
+            if((Math.abs(nowLi.offsetLeft-result[i].offsetLeft)<=sizeGrird+1)&&(Math.abs(nowLi.offsetTop-result[i].offsetTop)<=sizeGrird+1)){
+
+                result[i].num = f(result[i]);// 把估计值挂载上
+                result[i].parent = nowLi;// 挂载父节点指针
+
+                openArr.push(result[i])
+            }
+            
+        }
+    }
+
+    function showLine(params) {
+        var lastLit = closeArr.pop();
+        var result = [];
+       let  iNow = 0;
+        findParent(lastLit);
+        function findParent(li) {
+            result.unshift(li);
+            if(li.parent==beginLi[0]){
+                return;
+            }
+            findParent(li.parent)
+        }
+        var timer = setInterval(() => {
+            result[iNow] .style.background = 'red';
+            iNow++;
+            if(iNow==result.length){
+                clearInterval(timer);
+            }
+        }, 500);
+    }
+
+
+    function f(nodeli) {
+        return g(nodeli) + h(nodeli)
+    }
+    function g(nodeli) {
+        let a  = beginLi[0].offsetLeft - nodeli.offsetLeft;
+        let b  = beginLi[0].offsetTop - nodeli.offsetTop;
+        return Math.sqrt(a*a+b*b)
+    }
+    function h(nodeli) { // 可以不是最短路径
+        let a  = endLi[0].offsetLeft - nodeli.offsetLeft;
+        let b  = endLi[0].offsetTop - nodeli.offsetTop;
+        return Math.sqrt(a*a+b*b)
+    }
+
+   
+
+    
+
+</script>
+
+</html>

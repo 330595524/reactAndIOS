@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>找最长公共子串-多组</title>
+</head>
+
+<body>
+    <script>
+        var arr_str = ['asdshow', 'helloshow', 'showhi', 'hahashowhehe'];
+       //找到最短的, 最短的正则匹配更高效
+        function show(arr) {
+            arr = sortStr(arr)
+
+            var firstStr = arr.shift();
+            var strArr =[];
+            var count =0;
+            var result = [];
+            for (let i = 0; i < firstStr.length; i++) {
+               for (let j = i+1; j <= firstStr.length; j++) {
+                   strArr.push(firstStr.substring(i,j));
+               }
+            }
+
+            for (let i = 0; i < strArr.length; i++) {
+                //使用正则匹配
+                var wholeArr = [];
+                var re = new RegExp(strArr[i]);
+                //剩下的3项
+                for (let j = 0; j < arr.length; j++) {
+                    var reArr = arr[j].match(re);
+                    if(reArr){
+                        wholeArr = wholeArr.concat(reArr);
+                    }
+                    
+                }
+
+                if(wholeArr.length == arr.length){
+                    if(wholeArr[0].length>count){
+                        count = wholeArr[0].length;
+                        result = wholeArr[0];
+                    }
+                }
+            }
+
+            return result;
+
+
+
+
+
+        }
+        console.log(show(arr_str))
+//找到最短的
+function sortStr (arr){
+    arr.sort(function(str1, str2) {
+        return str1.length - str2.length
+    })
+    return arr;
+}
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>three.js webgl - loaders - Clara.io JSON loader</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="main.css">
+</head>
+
+<body>
+<div id="info">
+    <a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> - <a href="https://clara.io"
+                                                                                  target="_blank" rel="noopener">Clara.io</a>
+    JSON THREE.Scene/Object Load Test<br/>
+    More Information: <a href="https://clara.io/learn/user-guide/data_exchange/threejs_export" target="_blank"
+                         rel="noopener">Clara.io ThreeJS Export Documentation</a>
+</div>
+
+<script src="./js/THREE.MeshLine.js"></script>
+<script type="module">
+
+  import * as THREE from '../build/three.module.js';
+  import * as MeshLine from './js/THREE.MeshLine.js';
+  import {OrbitControls} from './jsm/controls/OrbitControls.js';
+
+  import { Line2 } from './jsm/lines/Line2.js';
+  import { LineMaterial } from './jsm/lines/LineMaterial.js';
+  import { LineGeometry } from './jsm/lines/LineGeometry.js';
+  import { GeometryUtils } from './jsm/utils/GeometryUtils.js';
+
+  var container;
+
+  var camera, scene, renderer, controls;
+
+  var mouseX = 0, mouseY = 0;
+
+  var windowHalfX = window.innerWidth / 2;
+  var windowHalfY = window.innerHeight / 2;
+
+
+  init();
+  animate();
+
+
+  function init() {
+
+    container = document.createElement('div');
+    document.body.appendChild(container);
+
+    camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 2000);
+    camera.position.z = 4;
+
+    // scene
+
+    scene = new THREE.Scene();
+
+
+    // lights
+
+    var light = new THREE.DirectionalLight(0xffffff);
+    light.position.set(1, 1, 1);
+    scene.add(light);
+
+    var light = new THREE.DirectionalLight(0x002288);
+    light.position.set(-1, -1, -1);
+    scene.add(light);
+
+    var light = new THREE.AmbientLight(0x222222);
+    scene.add(light);
+
+
+    var ambient = new THREE.AmbientLight(0x444444);
+    scene.add(ambient);
+
+    var directionalLight = new THREE.DirectionalLight(0xffeedd);
+    directionalLight.position.set(0, 0, 1).normalize();
+    scene.add(directionalLight);
+
+  /*  // BEGIN Clara.io JSON loader code
+    var objectLoader = new THREE.ObjectLoader();
+    // objectLoader.load( "models/json/teapot-claraio.json", function ( obj ) {
+    objectLoader.load("json/1006all.json", function (obj) {
+      console.log(JSON.stringify(obj.toJSON()));
+      scene.add(obj);
+
+    });*/
+    // END Clara.io JSON loader code
+
+
+
+    var path = new THREE.Path();
+
+    path.lineTo( 0, 0.8 );
+    path.quadraticCurveTo( 0, 1, 0.2, 1 );
+    path.lineTo( 1, 1 );
+
+    var points = path.getPoints();
+
+    var geometry = new THREE.BufferGeometry(100, 100, 100).setFromPoints( points );
+    var material = new THREE.LineBasicMaterial( { color: 0xffffff ,linewidth: 100,} );
+
+    var line = new THREE.Line( geometry, material );
+    scene.add( line );
+
+
+
+    var arr = [[110.506788,-18.53260566666667],[110.506788,-21.03260566666666],[110.506788,-23.53260566666666],[110.506788,-26.03260566666666],[108.006788,-26.03260566666666],[105.506788,-26.03260566666666],[105.506788,-28.53260566666666],[103.006788,-28.53260566666666],[100.506788,-28.53260566666666],[98.006788,-28.53260566666666],[98.006788,-32.53260566666666],[94.34012133333333,-32.53260566666666],[92.006788,-32.53260566666666],[89.17345466666667,-32.53260566666666],[86.34012133333333,-32.53260566666666],[84.17345466666667,-32.53260566666666],[82.006788,-32.53260566666666],[79.17345466666667,-32.53260566666666],[75.67345466666667,-32.53260566666666],[75.67345466666667,-37.19927233333333],[75.67345466666667,-39.69927233333333],[75.67345466666667,-42.19927233333333],[75.67345466666667,-44.69927233333333],[75.67345466666667,-42.19927233333333],[75.67345466666667,-39.69927233333333],[75.67345466666667,-37.19927233333333],[75.67345466666667,-32.53260566666666],[79.17345466666667,-32.53260566666666],[82.006788,-32.53260566666666],[84.17345466666667,-32.53260566666666],[86.34012133333333,-32.53260566666666],[89.17345466666667,-32.53260566666666],[92.006788,-32.53260566666666],[94.34012133333333,-32.53260566666666],[98.006788,-32.53260566666666],[98.006788,-37.03260566666666],[98.006788,-39.53260566666666],[98.006788,-42.03260566666666],[98.006788,-44.53260566666666],[98.006788,-47.03260566666666],[100.506788,-47.03260566666666],[103.006788,-47.03260566666666],[105.506788,-47.03260566666666],[108.006788,-47.03260566666666],[110.506788,-47.03260566666666],[110.506788,-49.53260566666666],[110.506788,-52.03260566666666],[110.506788,-54.53260566666667]]
+     var mesh = ''
+     function createLines(arr) {
+       if(mesh){
+         scene.remove(mesh)
+       }
+       var line = new THREE.Geometry();
+       line.vertices = []
+       $.each(arr, function(index,content) {
+         var a = scene.getObjectByName(content)
+         line.vertices.push( a.position );
+       });
+       makeLine( line, 3 );
+     }
+
+     var resolution = new THREE.Vector2( window.innerWidth, window.innerHeight );
+     function makeLine( geo, c ) {
+       var g = new MeshLine();
+
+       g.setGeometry( geo );
+
+       var material = new MeshLineMaterial( {
+         useMap: false,
+         color: new THREE.Color( 0xed6a5a ),
+         opacity: 1,
+         resolution: resolution,
+         sizeAttenuation: !false,
+         lineWidth: 0.5,
+         near: camera.near,
+         far: camera.far
+       });
+       mesh = new THREE.Mesh( g.geometry, material );
+       scene.add( mesh );
+     }
+     //arr为line在场景中经过的模型名称的数组
+     createLines(arr)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    renderer = new THREE.WebGLRenderer();
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    container.appendChild(renderer.domElement);
+
+    controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
+    controls.dampingFactor = 0.05;
+
+    controls.screenSpacePanning = false;
+
+    controls.maxPolarAngle = Math.PI / 2;
+
+    document.addEventListener('mousemove', onDocumentMouseMove, false);
+
+    //
+
+    window.addEventListener('resize', onWindowResize, false);
+
+  }
+
+
+
+  function onWindowResize() {
+
+    windowHalfX = window.innerWidth / 2;
+    windowHalfY = window.innerHeight / 2;
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+  }
+
+  function onDocumentMouseMove(event) {
+
+    mouseX = (event.clientX - windowHalfX) / 2;
+    mouseY = (event.clientY - windowHalfY) / 2;
+
+  }
+
+  //
+
+  function animate() {
+
+    requestAnimationFrame(animate);
+    render();
+
+  }
+
+  function render() {
+
+    // camera.position.x += ( mouseX - camera.position.x ) * .05;
+    // camera.position.y += ( - mouseY - camera.position.y ) * .05;
+    controls.update();
+    camera.lookAt(scene.position);
+
+    renderer.render(scene, camera);
+
+  }
+
+</script>
+
+</body>
+</html>

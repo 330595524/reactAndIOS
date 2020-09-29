@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id='title'></div>
+<div id='content'></div>
+</body>
+<script>
+
+	function renderApp (appState) {
+		renderTitle(appState.title)
+		renderContent(appState.content)
+	}
+
+	function renderTitle (title) {
+		const titleDOM = document.getElementById('title')
+
+		titleDOM.innerHTML = title.text
+		titleDOM.style.color = title.color
+	}
+
+	function renderContent (content) {
+		const contentDOM = document.getElementById('content')
+		contentDOM.innerHTML = content.text
+		contentDOM.style.color = content.color
+	}
+
+	function createStore (reducer) {
+		let state
+		const listeners = []
+		const subscribe = (listener) => listeners.push(listener)
+		const getState = () => state
+		const dispatch = (action) => {
+			// 只要有指定过来，就做一件事（监听的事）
+			state = reducer(state,action)
+			listeners.forEach((listener) => listener())
+		}
+		dispatch({}) // 初始化 state
+		return { getState, dispatch, subscribe }
+	}
+
+	const initState = {
+		title: {
+			text: 'color red',
+			color: 'red',
+		},
+		content: {
+			text: 'color blue',
+			color: 'blue'
+		}
+	}
+	function reducer(state=initState,action) {
+		switch (action.type) {
+			case 'UPDATE_TITLE_TEXT':
+
+				let title = {color:state.title.color,text:action.text}
+				let res = Object.assign({},state,{title})
+				console.log(res,state,{title},'---')
+				return res
+			case 'UPDATE_TITLE_COLOR':
+				let color = {text:state.title.text,color:action.color}
+				return Object.assign({},state,{color})
+			default:
+				return state
+		}
+	}
+
+    //解决的问题： 数据的变化-》 页面的重绘
+    // 全局store封装，保护store
+	const store = createStore(reducer)
+	store.subscribe(() => renderApp(store.getState()))
+	renderApp(store.getState())
+	store.dispatch({ type: 'UPDATE_TITLE_TEXT', text: 'aaa' })
+	store.dispatch({ type: 'UPDATE_TITLE_COLOR', color: 'bbb' })
+
+</script>
+</html>

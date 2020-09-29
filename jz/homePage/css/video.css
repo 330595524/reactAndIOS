@@ -1,0 +1,78 @@
+.video_cont{
+    padding-top: 70px;
+}
+.video_cont h3{
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 40px;
+}
+
+.user_video_list{
+    margin-bottom: 0;
+    padding-left: 0;
+}
+.bdtm1{
+    padding-bottom: 100px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.user_video_list li{
+    position: relative;
+    border-radius: 4px;
+    /*box-shadow: 0px 10px 1px #f7f7f7;*/
+    float: left;
+    margin-right: 25px;
+}
+.user_video_list li.mr0{
+    margin-right: 0;
+}
+.user_video_list.hot li{
+    margin-bottom: 30px;
+}
+
+.user_video_list li a,.user_video_list li img{
+    display: block;
+}
+.user_video_list li a{
+    width: 380px;
+    height: 370px;
+    overflow: hidden;
+    background: #fff;
+}
+.user_video_list li h4{
+    margin: 30px auto 20px;
+    font-size: 26px;
+    color: #000;
+    padding-left: 15px;
+}
+.user_video_list li p{
+    font-size: 18px;
+    color: #666;
+    margin: 0;
+    padding-left: 15px;
+}
+.user_video_list li a:hover::before{
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    opacity: 0.3;
+    border-radius: 4px;
+}
+.user_video_list li a:hover::after{
+    display: block;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -36px 0 0 -36px;
+    background: url("../img/peopleServer/open.png") no-repeat;
+    width: 72px;
+    height: 72px;
+}
+.mt60{
+    margin-top: 60px;
+}

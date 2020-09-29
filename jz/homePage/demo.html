@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>行业解决方案demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/component/header.css">
+    <link rel="stylesheet" href="./css/component/footer.css">
+    <link rel="stylesheet" href="./css/product.css">
+    <link rel="stylesheet" href="./css/demo.css">
+</head>
+<body>
+    <div id="header" class="bg_bbc" myType='index'></div>
+    <div class="head_prod_bg demo_head_bg">
+        <img src="./img/demo/bg.png" alt="">
+
+    </div>
+
+    <div class="boxContain bg_f4 pdb108">
+        <div class="w1200">
+            <div class="boxContain bg_tr">
+                <div class="w1200 pd120">
+                    <div class="prod_title">
+                        <h3>行业解决方案DEMO</h3>
+                    </div>
+
+                    <ul class="demo_list clearfix">
+                        <li>
+                            <img src="./img/demo/demo_01.jpg" alt="">
+                            <h3>金融科技 DEMO</h3>
+                            <p>神策普云的技术支持团队将提供客户全生命周期</p>
+                            <a href="#">体验DEMO</a>
+                        </li>
+                        <li>
+                            <img src="./img/demo/demo_01.jpg" alt="">
+                            <h3>实施服务DEMO</h3>
+                            <p>神策普云的技术支持团队将提供客户全生命周期</p>
+                            <a href="#">体验DEMO</a>
+                        </li>
+                        <li>
+                            <img src="./img/demo/demo_01.jpg" alt="">
+                            <h3>产品研发 DEMO</h3>
+                            <p>神策普云的技术支持团队将提供客户全生命周期</p>
+                            <a href="#">体验DEMO</a>
+                        </li>
+                        <li class="mr0">
+                            <img src="./img/demo/demo_01.jpg" alt="">
+                            <h3>工程管理 DEMO</h3>
+                            <p>神策普云的技术支持团队将提供客户全生命周期</p>
+                            <a href="#">体验DEMO</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+
+
+</body>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/common.js"></script>
+<script>
+  $(document).ready(function () {
+    $(function() {
+      $("#header").load("component/header.html");
+      $("#footer").load("component/footer.html");
+    })
+
+    $(".prod_nav a").click(function() {
+      var _index = $(this).index();
+      console.log(_index);
+      $(".prod_cont .prod_cont_box").eq(_index).addClass('show').siblings().removeClass("show");
+      //改变选中时候的选项框的样式，移除其他几个选项的样式
+      $(this).addClass("active").siblings().removeClass("active");
+    });
+
+
+
+
+
+  })
+
+</script>
+</html>
