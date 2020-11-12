@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>报表</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/reportForm.css">
+</head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid nav_container">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse clearfix" id="bs-example-navbar-collapse-1">
+            <a class="navbar-brand logo" href="#">LOGO</a>
+            <ul class="nav navbar-nav nav_link">
+                <li><a href="index.html">工怍台</a></li>
+                <li><a href="#">销售管理</a></li>
+                <li><a href="projectManagement.html">项目管理</a></li>
+                <li><a href="#">采购管理</a></li>
+                <li><a href="#">知识库</a></li>
+                <li class="active"><a href="reportForm.html">报表</a></li>
+                <li><a href="#">系统管理</a></li>
+                <li><a href="index.html">最近访问</a></li>
+            </ul>
+
+            <div class="nav navbar-nav navbar-right user_cont">
+                <div class="row">
+                    <div class="col-md-6 clearfix user_cont_left">
+                        <img src="./img/index/user_img.png" alt="头像" class="img-circle user_img">
+                        <div class="login_name">
+                            <p class="login_name_top">小明</p>
+                            <p class="login_name_time">2019.11.23 09:39:20</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <span class="right_icon notice" id="notice" aria-hidden="true"></span>
+                        <span class="right_icon help" aria-hidden="true"></span>
+                        <span class="right_icon off" aria-hidden="true"></span>
+                    </div>
+                </div>
+
+            </div>
+        </div><!-- /.container-fluid -->
+
+    </div><!-- /.container-fluid -->
+</div>
+
+<!--主体内容-->
+<div class="container-fluid container_content">
+    <div id="cont_8" name="最近访问" class="row-fluid container_content_bg ">
+        <div class="span3 side_left" id="side_left" style="margin-left: 10px;">
+            <!--边栏内容-->
+            <!--  空 start-->
+            <!--            meet_hide 处理空值状态-->
+            <div class="meet_none hidden">
+                <img src="./img/index/imgjpg_02.jpg" alt="" class="meet_none_img">
+                <button class="btn btn-default meet_create_btn" type="submit">安排会议</button>
+            </div>
+            <!--  空 end-->
+            <!--  列表 -->
+            <div class="meet_many">
+                <div class="meet_search form_search">
+                    <div class="meet_search_cont form_search_cont">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="项目名称">
+                            <span class="input-group-btn search_btn">
+                                <button class="btn btn-default glyphicon-search_bg" type="button"></button>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="list_box">
+                    <ul class="list-group meet_list_cont form_list_cont" id="meet_list_cont">
+                        <li class="list-group-item">
+
+                            <div class="meet_sign">
+                            <span class="caret meet_sign_bg">
+                                <img src="./img/form/left/form_left_01.png" alt="">
+                            </span>
+                            </div>
+                            <h3>
+                                商机综合看板
+                            </h3>
+                            <div class="row meet_people">
+                                <div class="col-md-11">
+                                    年度商机预计总金额、商机总数量、商机转化率及商机漏斗图等
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item active">
+                            <div class="meet_sign">
+                            <span class="caret meet_sign_bg ">
+                                <img src="./img/form/left/form_left_02.png" alt="">
+                            </span>
+                            </div>
+                            <h3>
+                                销售综合看板
+                            </h3>
+                            <div class="row meet_people">
+                                <div class="col-md-11">
+                                    年度销售金额、销售合同签约总数量、已汇款金额及销售合同区域分布、类型分布等
+                                </div>
+                            </div>
+
+                        </li>
+
+                        <li class="list-group-item">
+
+                            <div class="meet_sign">
+                            <span class="caret meet_sign_bg">
+                                <img src="./img/form/left/form_left_03.png" alt="">
+                            </span>
+                            </div>
+                            <h3>
+                                采购综合看板
+                            </h3>
+                            <div class="row meet_people">
+                                <div class="col-md-11">
+                                    年度采购金额、已付金额、已支付比例及采购合同各种维度的分类占比
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="meet_sign">
+                            <span class="caret meet_sign_bg ">
+                                <img src="./img/form/left/form_left_04.png" alt="">
+                            </span>
+                            </div>
+                            <h3>
+                                项目综合看板
+                            </h3>
+                            <div class="row meet_people">
+                                <div class="col-md-11">
+                                    实施类项目的综合健康状况及项目分类、成本分类的各种维度统计图
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="list-group-item">
+
+                            <div class="meet_sign">
+                            <span class="caret meet_sign_bg">
+                                <img src="./img/form/left/form_left_05.png" alt="">
+                            </span>
+                            </div>
+                            <h3>
+                                资源综合看板
+                            </h3>
+                            <div class="row meet_people">
+                                <div class="col-md-11">
+                                   人员的汇总统计，学历占比，司龄占比、员工月度在职折线图等
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="meet_sign">
+                            <span class="caret meet_sign_bg ">
+                                <img src="./img/form/left/form_left_06.png" alt="">
+                            </span>
+                            </div>
+                            <h3>
+                                工作量综合看板
+                            </h3>
+                            <div class="row meet_people">
+                                <div class="col-md-11">
+                                    工作量投入的综合汇总：工时汇总、工时分类占比、项目投入工时top10等
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="list-group-item">
+
+                            <div class="meet_sign">
+                            <span class="caret meet_sign_bg">
+                                <img src="./img/form/left/form_left_07.png" alt="">
+                            </span>
+                            </div>
+                            <h3>
+                                数据统计分析
+                            </h3>
+                            <div class="row meet_people">
+                                <div class="col-md-11">
+                                    提供商机、销售合同、采购合同、项目等基础数据的各种维度调查分析
+                                </div>
+                            </div>
+
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <!--      分页     -->
+            <div class="meet_foot_page">
+                <div class=" management_page small btm8">
+                    <span><img src="./img/index/management/icon_L.png" alt=""></span>
+                    <span class="br"><img src="./img/index/management/icon_L_L.png" alt=""></span>
+                    <span class="br">第
+                        <input type="text" value="8" class="page_input">
+                        共3页
+                    </span>
+                    <span><img src="./img/index/management/icon_R_R.png" alt=""></span>
+                    <span class="br"><img src="./img/index/management/icon_R.png" alt=""></span>
+                    <span><img src="./img/index/management/icon_reload.png" alt=""></span>
+                </div>
+            </div>
+        </div>
+        <div class="span9 main_center form_main_center" id="main_center">
+            <!--主体内容-->
+
+            <div class="visit_right_cont form_right_cont">
+                <!--      报表，商机 start      -->
+                <div class="visit_base_cont hidden" name="项目">
+                    <div class="visit_nav fixed_head formHead" id="formHead1">
+                        项目年度分析
+                        <div class="management_select pull-right">
+                            <div data-toggle="dropdown" class="select_div_name">
+                                2020年度
+                                <span class="caret pull-right" style="margin-top: 8px"></span>
+                            </div>
+                            <ul class="dropdown-menu right_p form_select_right" aria-labelledby="dLabel">
+                                <li><a href="#">2020年度</a></li>
+                                <li><a href="#">2019年度</a></li>
+                                <li><a href="#">2028年度</a></li>
+                                <li><a href="#">2017年度</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--          项目内容   start          -->
+                    <div class="container-fluid reportFormCont formPd10 pt63">
+                        <div class="row">
+                            <div class="col-md-4 cont_top_left" style="padding-right: 10px">
+                                <div class="bg_ff height210">
+                                    <div class="cont_top_left_title">项目总数</div>
+                                    <div class="cont_top_left_num">50</div>
+                                    <p>实施中项目数：21</p>
+                                </div>
+                            </div>
+                            <div class="col-md-8 visit_home_cont_R cont_top_right">
+                                <div class="bg_ff height210">
+                                    <div class="home_cont_R_top container-fluid pt30 mb32">
+                                        <div class="col-md-2"  style="padding-right: 5px">
+                                            <div class="fraction form_fraction">
+                                                <span>82<i>分</i></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8 home_cont_R_title">
+                                            <h4>总共体验10项，其中严重2项，警公4项</h4>
+                                            <p>上次体检时间：2019.12.31 18:23</p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button class="btn btn-default btn_experience">立即体验</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="home_cont_R_cont">
+                                        <div class="home_cont_R_cont_nav">
+                                            <a href="#"><img src="./img/form/form_icon_right_7.png"
+                                                             alt=""><span>资源</span></a>
+                                            <a href="#"><img src="./img/form/form_icon_right_5.png"
+                                                             alt=""><span>进度</span></a>
+                                            <a href="#"><img src="./img/form/form_icon_right_8.png"
+                                                             alt=""><span>成本</span></a>
+                                            <a href="#"><img src="./img/form/form_icon_right_1.png"
+                                                             alt=""><span>任务</span></a>
+                                            <a href="#"><img src="./img/form/form_icon_right_4.png"
+                                                             alt=""><span>交付物</span></a>
+                                            <a href="#"><img src="./img/form/form_icon_right_2.png"
+                                                             alt=""><span>风险</span></a>
+                                            <a href="#"><img src="./img/form/form_icon_right_6.png"
+                                                             alt=""><span>问题</span></a>
+                                            <a href="#"><img src="./img/form/form_icon_right_3.png"
+                                                             alt=""><span>工时</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="container-fluid reportFormCont">
+                        <div class="row">
+                            <div class="col-md-4 cont_top_left" style="padding-right: 10px">
+                                <div class="bg_ff pd25">
+                                    <div class="col-md-7 form_cont">
+                                        <div class="form_cont_top">本周新立项</div>
+                                        <div class="form_cont_cont">362</div>
+                                        <div class="form_cont_fot">上一周新立项：473</div>
+                                    </div>
+                                    <div class="col-md-5 form_cont_right clearfix">
+                                        <img class="formImg pull-right" src="./img/form/form_icon_1.jpg" alt="">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4 cont_top_left" style="padding-right: 10px">
+                                <div class="bg_ff pd25">
+                                    <div class="col-md-7 form_cont">
+                                        <div class="form_cont_top">本周新立项</div>
+                                        <div class="form_cont_cont">362</div>
+                                        <div class="form_cont_fot">上一周新立项：473</div>
+                                    </div>
+                                    <div class="col-md-5 form_cont_right clearfix">
+                                        <img class="formImg pull-right" src="./img/form/form_icon_2.png" alt="">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4 cont_top_left" style="padding-right: 10px">
+                                <div class="bg_ff pd25">
+                                    <div class="col-md-7 form_cont">
+                                        <div class="form_cont_top">本周新立项</div>
+                                        <div class="form_cont_cont">362</div>
+                                        <div class="form_cont_fot">上一周新立项：473</div>
+                                    </div>
+                                    <div class="col-md-5 form_cont_right clearfix">
+                                        <img class="formImg pull-right" src="./img/form/form_icon_2.png" alt="">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container-fluid reportFormCont formPd10">
+                        <div class="row">
+                            <div class="col-md-5" style="padding-right: 10px">
+                                <div class="bg_ff formPdLR10">
+                                    <div class="echart_head_title">实施中项目类型占比</div>
+                                    <div class="echart_cont_form_box" style="height: 306px; width: 420px" id="echart_cont_form_box1" name="实施中项目类型占比">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="bg_ff formPdLR10">
+                                    <div class="echart_head_title">实施中项目类型占比</div>
+                                    <div class="echart_cont_form_box" style="height: 306px; width: 600px"  id="echart_cont_form_box2" name="实施中项目状态分布">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container-fluid reportFormCont formPdbm10">
+                        <div class="row">
+                            <div class="col-md-5" style="padding-right: 10px">
+                                <div class="bg_ff formPdLR10">
+                                    <div class="echart_head_title">项目成本费用</div>
+                                    <div class="echart_cont_form_box" style="height: 306px;width: 420px"  id="echart_cont_form_box3" name="项目成本费用">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="bg_ff formPdLR10">
+                                    <div class="echart_head_title">项目月度成本</div>
+                                    <div class="echart_cont_form_box" style="height: 306px;width: 600px"  id="echart_cont_form_box4" name="项目月度成本">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--          项目内容   end          -->
+
+                <div class="visit_base_cont show" name="商机">
+                    <div class=" visit_nav fixed_head formHead" id="formHead2">
+                        商机年度分析
+                        <div class="management_select pull-right">
+                            <div data-toggle="dropdown" class="select_div_name">
+                                2020年度
+                                <span class="caret pull-right" style="margin-top: 8px"></span>
+                            </div>
+                            <ul class="dropdown-menu right_p form_select_right" aria-labelledby="dLabel">
+                                <li><a href="#">2020年度</a></li>
+                                <li><a href="#">2019年度</a></li>
+                                <li><a href="#">2028年度</a></li>
+                                <li><a href="#">2017年度</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--          商机内容   start          -->
+                    <div class="container-fluid reportFormCont pt63">
+                        <div class="row">
+                            <div class="col-md-3 cont_top_left height135" style="padding-right: 10px">
+                                <div class="bg_ff pd20">
+                                    <div class="col-md-7 form_cont">
+                                        <div class="form_cont_top">商机金额</div>
+                                        <div class="form_cont_cont"><i>¥</i>3,624.93</div>
+                                        <div class="form_cont_fot">上一年商机金额：¥4734.06</div>
+                                    </div>
+                                    <div class="col-md-5 form_cont_right clearfix">
+                                        <img class="formImg pull-right" src="./img/form/form_icon_1.jpg" alt="">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3 cont_top_left height135" style="padding-right: 10px">
+                                <div class="bg_ff pd20">
+                                    <div class="col-md-7 form_cont">
+                                        <div class="form_cont_top">商机总数</div>
+                                        <div class="form_cont_cont">350</div>
+                                        <div class="form_cont_fot">上一年商机数：200</div>
+                                    </div>
+                                    <div class="col-md-5 form_cont_right clearfix">
+                                        <img class="formImg pull-right" src="./img/form/form_icon_2.png" alt="">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3 cont_top_left height135" style="padding-right: 10px">
+                                <div class="bg_ff pd20">
+                                    <div class="col-md-7 form_cont">
+                                        <div class="form_cont_top">已签约</div>
+                                        <div class="form_cont_cont"><i>¥</i>5,000.01</div>
+                                        <div class="form_cont_fot">上一年签约金额：¥4724.13</div>
+                                    </div>
+                                    <div class="col-md-5 form_cont_right clearfix">
+                                        <img class="formImg pull-right" src="./img/form/form_icon_1.jpg" alt="">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3 cont_top_left height135" style="padding-right: 10px">
+                                <div class="bg_ff pd20">
+                                    <div class="col-md-7 form_cont">
+                                        <div class="form_cont_top">签约率</div>
+                                        <div class="form_cont_cont">80%</div>
+                                        <div class="form_cont_fot">上一年签约率：60%</div>
+                                    </div>
+                                    <div class="col-md-5 form_cont_right clearfix">
+                                        <img class="formImg pull-right" src="./img/form/form_icon_2.png" alt="">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container-fluid reportFormCont formPd10">
+                        <div class="row">
+                            <div class="col-md-5" style="padding-right: 10px">
+                                <div class="bg_ff formPdLR10">
+                                    <div class="echart_head_title">商机行业分布概况</div>
+                                    <div class="echart_cont_form_box" style="height: 287px;"  id="echart_cont_form_box5" name="商机行业分布概况">
+
+                                    </div>
+                                </div>
+
+                                <div class="bg_ff formMgtp10">
+                                    <div class="echart_head_title">商机漏斗</div>
+                                    <div class="echart_cont_form_box" style="height: 350px;"  id="echart_cont_form_box5_2" name="商机漏斗">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-7">
+                                <div class="bg_ff formPdLR10">
+                                    <div class="echart_head_title">商机区域分布概况</div>
+                                    <div class="echart_cont_form_box" style="height: 418px;"  id="echart_cont_form_box6" name="商机区域分布概况">
+
+                                    </div>
+                                </div>
+                                <div class="bg_ff formMgtp10">
+                                    <div class="echart_head_title">商机月度统计表</div>
+                                    <div class="echart_cont_form_box" style="height: 219px;"  id="echart_cont_form_box6_2" name="商机月度统计表">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reportFormCont">
+                        <div class="bg_ff formPd10">
+                            <div class="echart_head_title Pdbm10">商机top10</div>
+                            <div class="form_fot_nav">
+                                <a href="#" class="active">最新登记</a>
+                                <a href="#">预估金额</a>
+                                <a href="#">签约金额</a>
+                                <a href="#">优质客户</a>
+                            </div>
+                            <div>
+                                <table class="table table-hover leaderTableCont formTableCont">
+                                    <thead>
+                                    <tr align="center">
+                                        <th>序号</th>
+                                        <th>客户名称</th>
+                                        <th>登记时间</th>
+                                        <th>产品名称</th>
+                                        <th>预估金额（元）</th>
+                                        <th>状态</th>
+                                        <th>可能性</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody align="center">
+                                    <tr>
+                                        <td>1</td>
+                                        <td>北京ABC集团股份有限公司</td>
+                                        <td>2020-01-21</td>
+                                        <td>中旅银行项目管理平台建设</td>
+                                        <td>444540.00</td>
+                                        <td>未开始</td>
+                                        <td>80%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>北京ABC集团股份有限公司</td>
+                                        <td>2020-01-21</td>
+                                        <td>中旅银行项目管理平台建设</td>
+                                        <td>444540.00</td>
+                                        <td>未开始</td>
+                                        <td>80%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>北京ABC集团股份有限公司</td>
+                                        <td>2020-01-21</td>
+                                        <td>中旅银行项目管理平台建设</td>
+                                        <td>444540.00</td>
+                                        <td>未开始</td>
+                                        <td>80%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>北京ABC集团股份有限公司</td>
+                                        <td>2020-01-21</td>
+                                        <td>中旅银行项目管理平台建设</td>
+                                        <td>444540.00</td>
+                                        <td>未开始</td>
+                                        <td>80%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>北京ABC集团股份有限公司</td>
+                                        <td>2020-01-21</td>
+                                        <td>中旅银行项目管理平台建设</td>
+                                        <td>444540.00</td>
+                                        <td>未开始</td>
+                                        <td>80%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>北京ABC集团股份有限公司</td>
+                                        <td>2020-01-21</td>
+                                        <td>中旅银行项目管理平台建设</td>
+                                        <td>444540.00</td>
+                                        <td>未开始</td>
+                                        <td>80%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>北京ABC集团股份有限公司</td>
+                                        <td>2020-01-21</td>
+                                        <td>中旅银行项目管理平台建设</td>
+                                        <td>444540.00</td>
+                                        <td>未开始</td>
+                                        <td>80%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>北京ABC集团股份有限公司</td>
+                                        <td>2020-01-21</td>
+                                        <td>中旅银行项目管理平台建设</td>
+                                        <td>444540.00</td>
+                                        <td>未开始</td>
+                                        <td>80%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>北京ABC集团股份有限公司</td>
+                                        <td>2020-01-21</td>
+                                        <td>中旅银行项目管理平台建设</td>
+                                        <td>444540.00</td>
+                                        <td>未开始</td>
+                                        <td>80%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>北京ABC集团股份有限公司</td>
+                                        <td>2020-01-21</td>
+                                        <td>中旅银行项目管理平台建设</td>
+                                        <td>444540.00</td>
+                                        <td>未开始</td>
+                                        <td>80%</td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+<script src=" http://gallery.echartsjs.com/dep/echarts/map/js/china.js"></script>
+<script>
+  function pageSetStyle() {
+    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    var side_left = document.getElementById('side_left');
+    var main_center = document.getElementById('main_center');
+    var meet_list_cont = document.getElementById('meet_list_cont');
+    var formHead1 = document.getElementById('formHead1');
+    var formHead2 = document.getElementById('formHead2');
+    side_left.style.height = screenHeight - 80 + 'px';
+    meet_list_cont.style.maxHeight = screenHeight - 160 + 'px';
+    side_left.style.width = 320 + 'px';
+    main_center.style.width = screenWidth - 330 - 15 - 15 + 'px';
+    main_center.style.height = screenHeight - 80 + 'px';
+    main_center.style.maxHeight = screenHeight - 80 + 'px';
+    main_center.style.overflowY = 'auto';
+
+    formHead1.style.width = main_center.style.width;
+    formHead2.style.width = main_center.style.width;
+  }
+
+  $(document).ready(function () {
+    pageSetStyle();
+    console.log($("#echart_cont_form_box1").width());
+    console.log($("#echart_cont_form_box5").width());
+
+
+    $(".visit_nav li").click(function () {
+      var _index2 = $(this).index();
+      $(this).addClass("active").siblings().removeClass("active");
+      $(".visit_right_cont .visit_base_cont").eq(_index2).addClass('show').siblings().removeClass("show");
+    });
+
+
+    function move(percent, right, left) {
+      if (percent <= 0.5) { //红色区域不超过一半
+        right.style.transform = `rotate(${percent * 360}deg)`
+      } else { //红色区域超过一半的情况，重点部分
+        right.style.transform = `rotate(180deg)`
+        right.style.transition = `opacity 0s step-end 1s, transform 1s linear` //timing-function需要设为linear来达到视觉上的平缓过渡
+        right.style.opacity = 0
+
+        left.style.transition = `transform ${(percent - 0.5) / 0.5}s linear 1s`
+        left.style.transform = `rotate(${percent * 360 - 180}deg)`
+      }
+    }
+
+    //  图表
+    // 类型占比图表
+    // 柱状图
+    var chartBox = document.getElementById('echart_cont_form_box1');
+    var myChart = echarts.init(chartBox);
+    var option = null;
+
+    option = {
+
+      tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b}: {c} ({d}%)'
+      },
+      legend: {
+        orient: 'horizontal',
+        bottom: 10,
+        data: ['咨询服务类', '运维开发类', '新系统开发类',]
+      },
+      //设置饼状图每个颜色块的颜色
+      color: ['#de5145', '#1da261', '#ffce44',],
+      series: [
+        {
+          name: '名称',
+          type: 'pie',
+          radius: ['50%', '70%'],
+          avoidLabelOverlap: false,
+          label: {
+            normal: {
+              show: false,
+              position: 'center'
+            },
+            emphasis: {
+              show: true,
+              textStyle: {
+                fontSize: '20',
+                fontWeight: 'bold'
+              },
+              itemStyle: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: 'rgba(0, 0, 0, 0.5)'
+              }
+            }
+          },
+          labelLine: {
+            normal: {
+              lineStyle: {
+                color: 'rgba(255, 255, 255, 0.3)'
+              },
+              smooth: 0.2,
+              length: 10,
+              length2: 20
+            }
+          },
+
+          data: [
+            {value: 335, name: '咨询服务类'},
+            {value: 310, name: '运维开发类'},
+            {value: 234, name: '新系统开发类'},
+          ]
+        }
+      ]
+    };
+
+    if (option && typeof option === "object") {
+      myChart.setOption(option, true);
+    }
+
+    // 状态分布
+    var chartBox2 = document.getElementById('echart_cont_form_box2');
+    var myChart2 = echarts.init(chartBox2);
+    var option2 = null;
+
+    option2 = {
+      dataset: {
+        dimensions: ['product', '项目状态',],
+        source: [
+          {
+            product: '启动中',
+            '项目状态': 43.3,
+          },
+          {
+            product: '执行中',
+            '项目状态': 86.4,
+          },
+          {
+            product: '质保中',
+            '项目状态': 26.4,
+          },
+          {
+            product: '待结项',
+            '项目状态': 86.4,
+          },
+
+        ]
+      },
+      xAxis: {
+        type: 'category',
+      },
+      yAxis: {
+        name: '单位：个',
+        position: 'center'
+      },
+      series: [{
+        type: 'bar',
+        barWidth: 60,//柱图宽度
+        itemStyle: {
+          //通常情况下：
+          normal: {
+            //每根柱子颜色设置
+            color: function (params) {
+              let colorList = [
+                "#72aefc",
+                "#f6af47",
+                "#9eadee",
+                "#477bff",
+              ];
+              return colorList[params.dataIndex];
+            }
+          },
+          //鼠标悬停时：
+          emphasis: {
+            shadowBlur: 10,
+            shadowOffsetX: 0,
+            shadowColor: 'rgba(0, 0, 0, 0.5)'
+          }
+        }
+      }
+      ],
+
+    };
+
+    if (option2 && typeof option2 === "object") {
+      myChart2.setOption(option2, true);
+    }
+    // 成本费用
+
+    var chartBox3 = document.getElementById('echart_cont_form_box3');
+    var myChart3 = echarts.init(chartBox3);
+    var option3 = null;
+
+    option3 = {
+      xAxis: {
+        type: 'value',
+        show: true,
+        "splitLine": {
+          "show": true,
+          lineStyle: {
+            type: 'dashed'
+          }
+        }
+      },
+      yAxis: [{
+        name: '实际成本合计：50万',
+        position: 'left',
+        nameTextStyle: {
+          padding: [0, 0, 0, 26],
+        },
+        data: ['材料', '人工', '一般'],
+      }, {
+        name: '单位：万元',
+        position: 'right',
+        data: ['¥4000', '¥7000', '¥6000'],
+      }
+      ],
+      series: [
+        {
+          name: '张三总业绩',
+          type: 'bar',
+          barWidth: 6,
+          itemStyle: {
+            normal: {
+              // barBorderRadius: 40,
+              color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                offset: 0,
+                color: '#f1f1f1'
+              }, {
+                offset: 1,
+                color: '#f1f1f1'
+              }]),
+              areaStyle: {type: 'default'},
+            },
+          },
+          barGap: '-100%',
+          data: [920, 920, 920],
+        },
+        {
+          name: '张三',
+          type: 'bar',
+          barWidth: 6,
+          itemStyle: {
+            normal: {
+              color: "#0094eb",
+              label: {
+                show: true,
+                position: 'top',
+                formatter: function (params) {
+                  console.log(params);
+                  return "￥" + params.data + "（20%）";
+                },
+
+                textStyle: {
+                  color: '#000'
+                }
+              },
+            },
+
+
+          },
+
+          data: [400, 232, 301, 134, 506, 360, 840, 386, 298, 640],
+
+        },
+
+      ]
+    };
+    if (option3 && typeof option3 === "object") {
+      myChart3.setOption(option3, true);
+    }
+
+    // 项目月度成本
+    var chartBox4 = document.getElementById('echart_cont_form_box4');
+    var myChart4 = echarts.init(chartBox4);
+    var option4 = null;
+
+    option4 = {
+      legend: {
+        top: 10
+      },
+      tooltip: {},
+      dataset: {
+        dimensions: ['product', '计划成本', '实际成本'],
+        source: [
+          {
+            product: '1月',
+            '计划成本': 43.3,
+            '实际成本': 85.8,
+          },
+          {
+            product: '2月',
+            '计划成本': 143.3,
+            '实际成本': 85.8,
+          },
+          {
+            product: '3月',
+            '计划成本': 243.3,
+            '实际成本': 85.8,
+          },
+          {
+            product: '4月',
+            '计划成本': 23.3,
+            '实际成本': 35.8,
+          },
+          {
+            product: '5月',
+            '计划成本': 53.3,
+            '实际成本': 65.8,
+          },
+          {
+            product: '6月',
+            '计划成本': 33.3,
+            '实际成本': 85.8,
+          },
+          {
+            product: '7月',
+            '计划成本': 93.3,
+            '实际成本': 45.8,
+          },
+          {
+            product: '8月',
+            '计划成本': 73.3,
+            '实际成本': 95.8,
+          },
+          {
+            product: '9月',
+            '计划成本': 63.3,
+            '实际成本': 55.8,
+          },
+          {
+            product: '10月',
+            '计划成本': 93.3,
+            '实际成本': 55.8,
+          },
+          {
+            product: '11月',
+            '计划成本': 133.3,
+            '实际成本': 85.8,
+          },
+          {
+            product: '12月',
+            '计划成本': 173.3,
+            '实际成本': 65.8,
+          },
+        ]
+      },
+      xAxis: {
+        type: 'category'
+      },
+      yAxis: {
+        name: '单位：万元'
+      },
+      series: [
+        {
+          type: 'line',
+          smooth: true,
+          itemStyle: {
+            //通常情况下：
+            normal: {
+              color: "#a0c2ff"
+            },
+            //鼠标悬停时：
+            emphasis: {
+              shadowBlur: 10,
+              shadowOffsetX: 0,
+              shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+          }
+
+        },
+        {
+          type: 'line',
+          smooth: true,
+          itemStyle: {
+            //通常情况下：
+            normal: {
+              color: "#f8b84f"
+            },
+            //鼠标悬停时：
+            emphasis: {
+              shadowBlur: 10,
+              shadowOffsetX: 0,
+              shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+          }
+
+        },
+      ]
+    };
+
+    if (option4 && typeof option4 === "object") {
+      myChart4.setOption(option4, true);
+    }
+
+    // 商机行业分布概况
+
+    var chartBox5 = document.getElementById('echart_cont_form_box5');
+    var myChart5 = echarts.init(chartBox5);
+    var option5 = null;
+
+    option5 = {
+
+      tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b}: {c} ({d}%)'
+      },
+      legend: {
+        orient: 'horizontal',
+        bottom: 10,
+        data: ['制造', '政府', '军工', '金融', 'IT',]
+      },
+      //设置饼状图每个颜色块的颜色
+      color: ['#e081d2', '#9884ff', '#436fff', '#00b5e7', '#00e3d2',],
+      series: [
+        {
+          name: '名称',
+          type: 'pie',
+          radius: ['50%', '70%'],
+          avoidLabelOverlap: false,
+          label: {
+            normal: {
+              show: false,
+              position: 'center'
+            },
+            emphasis: {
+              show: true,
+              textStyle: {
+                fontSize: '20',
+                fontWeight: 'bold'
+              },
+              itemStyle: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: 'rgba(0, 0, 0, 0.5)'
+              }
+            }
+          },
+          labelLine: {
+            normal: {
+              show: true,
+              lineStyle: {
+                color: 'rgba(255, 255, 255, 0.3)'
+              },
+              smooth: 0.2,
+              length: 10,
+              length2: 20
+            }
+          },
+
+          data: [
+            {value: 335, name: '制造'},
+            {value: 310, name: '政府'},
+            {value: 134, name: '军工'},
+            {value: 34, name: '金融'},
+            {value: 24, name: 'IT'},
+          ]
+        }
+      ]
+    };
+
+    if (option5 && typeof option5 === "object") {
+      myChart5.setOption(option5, true);
+    }
+
+    // 商机漏斗
+
+    var chartBox5_2 = document.getElementById('echart_cont_form_box5_2');
+    var myChart5_2 = echarts.init(chartBox5_2);
+    var option5_2 = null;
+
+    option5_2 = {
+      title: {
+        text: '漏斗图（现存商机数39）',
+        subtextStyle: {
+          fontSize: 12,
+          align: 'right'
+        },
+        textStyle: {
+          fontSize: 12,
+
+        },
+        padding: [10, 0, 0, 30],
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c}%"
+      },
+
+      legend: {
+        data: ['初期沟通', '意向需求', '关键人认同', '商务谈判', '签约'],
+        top: 30,
+        orient: 'horizontal', // 'vertical'
+        itemGap: 20,
+        textStyle: {
+          color: 'red',
+          fontSize: 12,
+        },
+        itemWidth: 10,
+        itemHeight: 10,
+
+      },
+      color: ['#0067c2', '#007de0', '#009af1', '#45aeff', '#5bceff',],
+      series: [
+        {
+          name: '漏斗图',
+          type: 'funnel',
+          left: '10%',
+          top: 60,
+          //x2: 80,
+          bottom: 10,
+          width: '80%',
+          // height: {totalHeight} - y - y2,
+          min: 0,
+          max: 100,
+          minSize: '0%',
+          maxSize: '100%',
+          sort: 'descending',
+          gap: 2,
+          label: {
+            show: true,
+            position: 'inside'
+          },
+          labelLine: {
+            length: 10,
+            lineStyle: {
+              width: 1,
+              type: 'solid'
+            }
+          },
+          itemStyle: {
+            borderColor: '#fff',
+            borderWidth: 1
+          },
+          emphasis: {
+            label: {
+              fontSize: 20
+            }
+          },
+          data: [
+            {value: 100, name: '初期沟通'},
+            {value: 80, name: '意向需求'},
+            {value: 60, name: '关键人认同'},
+            {value: 40, name: '商务谈判'},
+            {value: 20, name: '签约'}
+          ]
+        }
+      ]
+    };
+
+
+    if (option5_2 && typeof option5_2 === "object") {
+      myChart5_2.setOption(option5_2, true);
+    }
+
+
+    // 商机区域分布概况
+
+    var chartBox6 = document.getElementById("echart_cont_form_box6");
+    var myChart6 = echarts.init(chartBox6);
+    var option6 = null;
+    option6 = {
+      tooltip: {
+        trigger: 'item',
+      },
+      dataRange: {
+        orient: 'horizontal',
+        show: false,
+        min: 0,
+        max: 55000,
+        text: ['高', '低'], // 文本，默认为数值文本
+        splitNumber: 0,
+        color: ['#15417e', '#5895e3', '#8299e9', '#ebdbf8',],
+      },
+      series: [
+        {
+          name: '商机金额：30万',
+          type: 'map',
+          mapType: 'china',
+          mapLocation: {
+            x: 'left',
+          },
+          zoom: 1.2,
+          itemStyle: {
+            normal: {
+              label: {
+                show: true,
+                color: '#333'
+              },
+              borderWidth: 0
+            },
+          },
+          data: [
+            {name: '西藏', value: 605.83},
+            {name: '青海', value: 1670.44},
+            {name: '宁夏', value: 2102.21},
+            {name: '海南', value: 2522.66},
+            {name: '甘肃', value: 5020.37},
+            {name: '贵州', value: 5701.84},
+            {name: '新疆', value: 6610.05},
+            {name: '云南', value: 8893.12},
+            {name: '重庆', value: 10011.37},
+            {name: '吉林', value: 10568.83},
+            {name: '山西', value: 11237.55},
+            {name: '天津', value: 11307.28},
+            {name: '江西', value: 11702.82},
+            {name: '广西', value: 11720.87},
+            {name: '陕西', value: 12512.3},
+            {name: '黑龙江', value: 12582},
+            {name: '内蒙古', value: 14359.88},
+            {name: '安徽', value: 15300.65},
+            {name: '北京', value: 16251.93, selected: true},
+            {name: '福建', value: 17560.18},
+            {name: '上海', value: 19195.69, selected: true},
+            {name: '湖北', value: 19632.26},
+            {name: '湖南', value: 19669.56},
+            {name: '四川', value: 21026.68},
+            {name: '辽宁', value: 22226.7},
+            {name: '河北', value: 24515.76},
+            {name: '河南', value: 26931.03},
+            {name: '浙江', value: 32318.85},
+            {name: '山东', value: 45361.85},
+            {name: '江苏', value: 49110.27},
+            {name: '广东', value: 53210.28, selected: true},
+          ],
+        },
+      ],
+      animation: false,
+    };
+
+    myChart6.setOption(option6, true);
+
+
+    // 商机月度统计表
+    var chartBox6_2 = document.getElementById('echart_cont_form_box6_2');
+    var myChart6_2 = echarts.init(chartBox6_2);
+    var option6_2 = null;
+
+    option6_2 = {
+      legend: {
+        top: 10
+      },
+      grid:{
+        x:50,
+        y:50,
+        x2:20,
+        y2:30,
+        borderWidth:10
+      },
+      tooltip: {},
+      dataset: {
+        dimensions: ['product', '计划成本', '实际成本'],
+        source: [
+          {
+            product: '1月',
+            '计划成本': 43.3,
+            '实际成本': 85.8,
+          },
+          {
+            product: '2月',
+            '计划成本': 143.3,
+            '实际成本': 85.8,
+          },
+          {
+            product: '3月',
+            '计划成本': 243.3,
+            '实际成本': 85.8,
+          },
+          {
+            product: '4月',
+            '计划成本': 23.3,
+            '实际成本': 35.8,
+          },
+          {
+            product: '5月',
+            '计划成本': 53.3,
+            '实际成本': 65.8,
+          },
+          {
+            product: '6月',
+            '计划成本': 33.3,
+            '实际成本': 85.8,
+          },
+          {
+            product: '7月',
+            '计划成本': 93.3,
+            '实际成本': 45.8,
+          },
+          {
+            product: '8月',
+            '计划成本': 73.3,
+            '实际成本': 95.8,
+          },
+          {
+            product: '9月',
+            '计划成本': 63.3,
+            '实际成本': 55.8,
+          },
+          {
+            product: '10月',
+            '计划成本': 93.3,
+            '实际成本': 55.8,
+          },
+          {
+            product: '11月',
+            '计划成本': 133.3,
+            '实际成本': 85.8,
+          },
+          {
+            product: '12月',
+            '计划成本': 173.3,
+            '实际成本': 65.8,
+          },
+        ]
+      },
+      xAxis: {
+        type: 'category'
+      },
+      yAxis: {},
+      series: [
+        {
+          type: 'line',
+          smooth: true,
+          itemStyle: {
+            //通常情况下：
+            normal: {
+              color: "#a0c2ff"
+            },
+            //鼠标悬停时：
+            emphasis: {
+              shadowBlur: 10,
+              shadowOffsetX: 0,
+              shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+          }
+
+        },
+        {
+          type: 'line',
+          smooth: true,
+          itemStyle: {
+            //通常情况下：
+            normal: {
+              color: "#f8b84f"
+            },
+            //鼠标悬停时：
+            emphasis: {
+              shadowBlur: 10,
+              shadowOffsetX: 0,
+              shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+          }
+
+        },
+      ]
+    };
+
+    if (option6_2 && typeof option6_2 === "object") {
+      myChart6_2.setOption(option6_2, true);
+    }
+
+
+    $(".meet_list_cont li").click(function () {
+      var _index2 = $(this).index();
+      $(this).addClass("active").siblings().removeClass("active");
+      $(".form_right_cont .visit_base_cont").eq(_index2).addClass('show').siblings().removeClass("show");
+
+      let width =  $('.form_right_cont .visit_base_cont .col-md-5').width();
+      console.log(width);
+      if(width){
+
+      }
+    });
+
+  });
+
+  $(window).resize(function () {
+    console.log('9999')
+    pageSetStyle();
+  });
+</script>
+</body>
+</html>

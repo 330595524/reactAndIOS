@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Three.js Orbit Controller Example</title>
+        <script src="three.js"></script>
+        <script src="OrbitControls.js"></script>
+    </head>
+    <body>
+        <script src="scene.js"></script>
+        <script>
+        document.body.onclick = function(){
+            let width = window.innerWidth;
+            let height = window.innerHeight;
+            let widthHalf = width / 2, heightHalf = height / 2;
+            let pos = new THREE.Vector3(3.18125,-72.297513, 0);
+            pos.project(camera);
+            let x = ( pos.x * widthHalf ) + widthHalf;
+            let y = - ( pos.y * heightHalf ) + heightHalf;
+            console.log('中心点的坐标是：', x, y)
+        }
+        </script>
+    </body>
+</html>

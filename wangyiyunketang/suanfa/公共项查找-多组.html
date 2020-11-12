@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公共项查找--多组</title>
+</head>
+<body>
+    <script>
+        // 公共子项查找
+         var arr = [[2,8,4,4,2],[1,3,9,2,5,8],[ 9, 2, 5, 8], [ 5, 8]]  //公共子项 2,8,
+        function show (arr){
+            var wholeArr = [];
+            var json = {};
+            var result = [];
+            for (let i = 0; i < arr.length; i++) {
+                wholeArr=wholeArr.concat(unqiue(arr[i]));
+            }
+            for (let i = 0; i < wholeArr.length; i++) {
+              if(!json[wholeArr[i]]){
+                  json[wholeArr[i]] = [wholeArr[i]];
+              }else{
+                   json[wholeArr[i]].push(wholeArr[i])
+              }
+                
+            }
+            console.log(json)
+            for (const key in json) {
+                if (json[key].length === arr.length ) {
+                  result.push(key);
+                }
+            }
+            return result
+        }
+
+        function unqiue (arr){
+            var json ={};
+            var result =[];
+            for (let i = 0; i < arr.length; i++) {
+                if(!json[arr[i]]){
+                    json[arr[i]]=1;
+                    result.push(arr[i])
+                }
+                
+            }
+            return result;
+        }
+
+        console.log(show(arr))
+
+    </script>
+</body>
+</html>

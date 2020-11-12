@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排列组合</title>
+</head>
+<body>
+    <script>
+// 概念：从m个不同元素中，任取n(n<=m)个元素按照一定的顺序排列成一列，即A(m,n)
+// 排列算法
+//树形图法，程序实现，数学实现
+
+var arr= ['A','B','C',"D"];
+
+function show(arr,num) {
+    var resultNum = 0;
+    var iNow =1;
+
+    if(num ===1) return arr.length;
+
+    function change(arr,iNow) {
+        for (let i = 0; i < arr.length; i++) {
+            var result = arr.concat();
+            result.splice(i,1);
+          if(iNow === num){
+              resultNum+=result.length;
+          }else{
+            change(result,iNow+1)
+          }
+            
+        }
+    }
+    change(arr,iNow+1);  // 加一，而不是改变值，所以不用iNow++,因为这个只是影响递归
+
+
+    return resultNum;
+}
+
+console.log(show(arr,3))  ;  // 三个值中选2个
+
+
+
+
+
+    var arr = ['A', 'B', 'C', "D"];
+function show2(arr,num){
+    let resultNum = 0 ;
+    let isNow =1;
+     if (num === 1) return arr.length;
+    (function change(arr){
+        for (let i = 0; i < arr.length; i++) {
+           let result = arr.concat();
+           result.splice(i,1);
+           if(result.length === num){
+                resultNum += result.length
+           }else{
+               change(result,isNow+1)
+           }
+            
+        }
+
+    })(arr)
+
+    return resultNum;
+
+
+
+}
+
+console.log(show2(arr,2))
+
+
+
+
+
+
+
+
+// 每种情况输出
+    function show3(arr, num) {
+        var resultNum = 0;
+        var iNow = 1;
+        var resultArr= [];
+
+        if (num === 1) {
+            arr.psuh(arr.length);
+            return arr;
+        }
+
+        function change(arr, iNow,str) {
+            for (let i = 0; i < arr.length; i++) {
+                var result = arr.concat();
+                var strClone = str;
+                strClone+=result.splice(i, 1);
+                
+                if (iNow === num) {
+                    resultNum += result.length;
+                    for (let j = 0; j < result.length; j++) {
+                        resultArr.push(strClone +result[j])
+                        
+                    }
+                } else {
+                    change(result, iNow + 1,strClone)
+                }
+
+            }
+        }
+        change(arr, iNow + 1,'');  // 加一，而不是改变值，所以不用iNow++,因为这个只是影响递归
+
+        resultArr.push(resultNum)
+        return resultArr;
+    }
+
+    console.log(show3(arr, 3));  // 三个值中选2个
+
+
+
+    // 数学里
+    function A(m,n) {
+        return f(m)/f(m-n)
+    }
+    function f(num) {
+        if(num<=1) return 1;
+        return num*f(num-1)
+    }
+    console.log(A(4,3))
+
+    </script>
+</body>
+</html>

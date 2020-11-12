@@ -1,0 +1,267 @@
+/*报表css样式*/
+
+.formHead{
+    /*position: relative;*/
+    background-color: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+    padding: 17px 10px 35px;
+    /*z-index: 9999;*/
+}
+.formHead .management_select {
+    border: 1px solid #e5e5e5;
+    margin-top: -4px;
+}
+.formHead .select_div_name{
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: 14px;
+}
+
+.form_right_cont{
+    padding-top: 0;
+}
+.form_main_center{
+    padding: 0;
+}
+.reportFormCont{
+    background-color: #f9fcfe;
+    overflow: hidden;
+}
+
+.bg_ff{
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.cont_top_left{
+    text-align: center;
+}
+.height135
+{
+    height: 135px;
+    overflow: hidden;
+    /*background: #fff;*/
+}
+
+.cont_top_left_title{
+    font-size: 20px;
+    padding-top: 30px;
+}
+
+.cont_top_left_num{
+    font-size: 35px;
+    color: #72aefc;
+    padding: 20px 0 27px 0;
+}
+
+.cont_top_left p{
+    font-size: 14px;
+    color: #999;
+}
+.pd20
+{
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.height210{
+    height: 200px;
+}
+
+.pt30{
+    padding-top: 30px;
+}
+
+.form_cont_top{
+    font-size: 16px;
+}
+.form_cont_cont{
+    font-size: 26px;
+    padding: 20px 0 5px;
+    font-weight: bold;
+}
+.form_cont_cont i{
+    font-size: 14px;
+}
+.form_cont_fot{
+    font-size: 12px;
+    color: #999;
+}
+.formImg{
+    width: 65px;
+    height: 65px;
+    display: block;
+}
+.pd25{
+    padding: 25px 30px;
+}
+.pd20{
+    padding: 25px 20px;
+}
+.form_cont{
+    text-align: left;
+}
+
+.form_cont_right{
+    text-align: right;
+}
+
+.formPd10{
+    padding: 10px;
+}
+.formPdLR10{
+    padding:0 10px;
+}
+.formPdbm10{
+    padding-bottom: 10px;
+}
+.formMgtp10{
+    margin-top: 10px;
+}
+
+.echart_head_title{
+    font-size: 16px;
+    padding: 12px;
+    text-align: center;
+    color: #333;
+    border-bottom: 1px solid #e5e5e5;
+}
+.echart_cont_form_box{
+    height: 306px;
+    background: #fff;
+}
+.form_main_center .form_select_right{
+    width: 100px;
+}
+
+#echart_cont_form_box5{
+    height: 287px;
+}
+
+#echart_cont_form_box5_2{
+    height: 350px;
+}
+
+#echart_cont_form_box6{
+    height: 418px;
+}
+
+#echart_cont_form_box6_2{
+    height: 219px;
+}
+.formTableCont{
+    margin-bottom: 0px;
+}
+.formTableCont > thead > tr > th {
+    text-align: center;
+    font-weight: normal;
+    background: #f2f8fe;
+    font-size: 14px;
+    color: #999;
+}
+
+.formTableCont > tbody > tr > td {
+    color: #999;
+    font-size: 14px;
+}
+
+.formTableCont > tbody > tr > td.blue {
+    color: #a4cdfa;
+}
+
+.formTableCont > tbody > tr > td.red {
+    color: #f26e6c;
+}
+.Pdbm10{
+    padding: 0;
+    padding-bottom: 10px;
+}
+
+.form_fot_nav{
+    padding: 10px 0px;
+}
+.form_fot_nav a{
+    display: inline-block;
+    color: #dddddd;
+    border-right: 1px solid #ddd;
+    padding: 0px 5px;
+    font-size: 16px;
+}
+.form_fot_nav a:hover,.form_fot_nav a:active,.form_fot_nav a.active{
+    color: #007de0;
+}
+.form_fot_nav a:last-child{
+    border-right: 0;
+}
+
+.form_list_cont .list-group-item.active, .form_list_cont .list-group-item.active:hover,.form_list_cont .list-group-item.active:focus{
+    background: transparent;
+    color: #333;
+    border-left: 3px solid #ffbd0d !important;
+}
+
+.meet_list_cont li{
+
+}
+.visit_base_cont.hidden {
+    position: relative;
+    z-index: -1;
+    opacity: 0;
+}
+
+.visit_base_cont.show {
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+}
+
+.form_search_cont .form-control{
+    border: 0;
+    box-shadow: none;
+}
+.form_search_cont .glyphicon-search_bg,.form_search_cont .glyphicon-search_bg:active,.form_search_cont .glyphicon-search_bg.active,.form_search_cont .glyphicon-search_bg:visited{
+    border: 0;
+    background-color: #fff;
+    opacity: 0.8;
+}
+.form_search_cont .glyphicon-search_bg::before,.form_search_cont .glyphicon-search_bg::after{
+    display: none;
+}
+
+.form_list_cont .meet_people{
+    position: relative;
+    z-index: 2;
+}
+.form_search{
+    background: #f8f8f8;
+    padding: 10px ;
+    margin: 0;
+    border: 0;
+}
+
+.form_search .input-group{
+    border: 1px solid #e5e5e5;
+}
+
+
+.form_list_cont .meet_sign_bg{
+    right: 4px;
+    top: -4px;
+}
+.form_list_cont h3 {
+    margin-top: 0;
+}
+.pt63{
+    padding-top: 63px;
+}
+
+.form_fraction{
+    margin-left: 10px;
+}
+
+
+
+
+
+

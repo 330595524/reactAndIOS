@@ -1,0 +1,150 @@
+1:   可维护性的成本  升高
+2： 命名空间  
+3： 依赖管理          <script src = "a.js">
+4:   ...
+
+
+common    .js
+每一个文件都是一个模块   都会有自己的作用域
+
+exports      module    require
+
+
+a.js                   exports  === {}.a
+var a = "age";
+exports.a = a;
+
+b.js              exports  === {}
+var b = require("a.js");   //引包
+b.a     //age
+
+
+
+var obj = {a:"age"};
+obj .a   
+
+
+1： 怎么定义一个模块？
+2： 如何优雅的把模块的API暴露出去？    exports  
+3： 如何方便使用依赖的模块？                require
+
+//定义模块 
+a.js                      依赖前置
+define(["b.js","c.js"],function(b, c){
+     //逻辑了  b.age 
+    ...
+});
+
+
+
+b.js
+define(function(){
+   //逻辑代码  ...
+  var age = 30;
+  return  {    //接口对象
+      age 
+   }
+});
+
+
+依赖前置？       "懒加载的书写方式 用到了谁就加载谁"       异步加载
+
+模块部分 
+
+
+
+资源部分 
+
+
+
+
+//"当前模块绝对路径"  ？
+
+{"当前模块绝对路径": new Module()}
+
+
+
+
+
+a.js  依赖了  b.js       
+
+
+b.js  依赖了  c.js
+
+
+
+
+
+解析：a 依赖     b     解析  b  依赖    c是否还有依赖？   No
+
+加载  c    b    a
+
+
+
+
+
+a 依赖     b   ？      怎么知道的？
+
+
+
+//a.js                          "懒加载的书写方式 用到了谁就加载谁"          异步加载
+define(function(require, exports, module) {
+    var b =  require("b.js");
+    //逻辑代码   
+     ....
+   exports.a = xxxx
+   b.xxxxx
+});
+
+
+解析？  静态化    require("b.js");      提取      deps ["b.js"]
+
+
+function(require, exports, module) {
+    var b =  require("b.js");
+    //逻辑代码   
+     ....
+   exports.a = xxxx
+   b.xxxxx
+})
+
+
+
+parseDependencies(factory.toString());
+
+
+var REQUIRE_RE = /\brequire\s*\(\s*(["'])(.+?)\1\s*\)/g;
+
+
+
+\b    边界符
+require\((["'])(.+?)\1\)      //依赖
+
+\s*
+
+\1 反向引用
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

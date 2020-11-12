@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>中央空调详情页</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+		
+		<link href="fonts/iconfont.css" rel="stylesheet" />
+		<style type="text/css">
+			
+			.imgIcon{
+				height: 5rem;
+			}
+			.mui-content>.mui-table-view:first-child{
+				margin-top: 0;
+			}
+			.parentBox{
+				position: relative;
+			}
+			.supImg{
+				display: block;
+				position: absolute;
+				left: -6rem;
+				width: 5rem;
+				height: 5rem;
+
+			}
+			.pl100{
+				padding-left: 7.25rem;
+				padding-bottom: 1.875rem;
+				border-bottom: 0.0625rem;
+				border: 0;
+			}
+			.pl100:after{
+				display: none;
+			}
+			.footDetail{
+				padding-left: 0.625rem;
+				padding-bottom: 0.625rem;
+			}
+			.footDetail p{
+				font-size: 0.75rem;
+			}
+			.mt10{
+				margin-top: -0.625rem;
+			}
+			.mt20{
+				margin-top: -1.875rem;
+			}
+			.footContain{
+				padding: 0.625rem;
+			}
+			.footContain h3{
+				font-size: 1rem;
+				padding-left: 0.625rem;
+			}
+			.footContain img{
+				display: block;
+				width: 100vw;
+
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav home_head">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left colorW"></a>
+			<h1 class="mui-title title ">中央空调</h1>
+		</header>
+		
+		<div class="mui-content " style="background: #fff;">
+			
+			<ul class="mui-table-view">
+			    <li class="mui-table-view-cell pl100">
+					<div class="mui-table">
+					    <div class="mui-table-cell mui-col-xs-12 parentBox mui-clearfix">
+							<img src="images/package/package.jpg" class="supImg" />
+					       <h4 class="mui-ellipsis">美的 全直流变频 智能假装用中央空调</h4>
+					       <h5>简介：内容内容内容内容内容内容内容内容内容内容内</h5>
+
+						   	<button type="button" class="mui-btn mui-btn-myprimary mui-left btnS  ">收藏</button>
+					    </div>
+					</div>
+				</li>
+				<div class="footDetail mt20">
+					<p><span class="mui-icon mui-icon-phone"></span>400-11-000</p>
+					<p class="mt10"><span class="mui-icon mui-icon-location"></span>山西省太原市小店区城南一居底商一层</p>
+				</div>
+				<div class="footContain">
+					<h3>产品展示</h3>
+					<img src="images/package/detail.jpg" >
+				</div>
+			</ul>
+			
+		</div>
+		
+		
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

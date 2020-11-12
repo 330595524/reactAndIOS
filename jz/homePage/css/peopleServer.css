@@ -1,0 +1,44 @@
+.server_head_box{
+    position: relative;
+}
+.server_head_btns{
+    position: absolute;
+    bottom: -120px;
+    width: 1200px;
+    left: 50%;
+    margin-left: -600px;
+
+}
+.mr50{
+    margin-right: 42px;
+}
+.server_head_btns img{
+    display: inline-block;
+    width: 575px;
+    height: 224px;
+}
+.server_head_btns a{
+    display: inline-block;
+    box-shadow: 10px 10px 10px #eff6fe;
+    width: 575px;
+    height: 220px;
+}
+.pd120{
+    padding-top: 120px;
+}
+.server_head_cont{
+    position: absolute;
+    width: 730px;
+    height: 240px;
+    left: 50%;
+    top: 50%;
+    margin: -120px 0 0 -370px;
+    text-align: center;
+    color: #fff;
+}
+.server_head_cont h2{
+    font-size: 75px;
+}
+.server_head_cont p{
+    font-size: 26px;
+}

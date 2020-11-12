@@ -1,0 +1,165 @@
+i {
+	font-style: normal;
+}
+
+.red {
+	color: #FF0000;
+}
+
+.loginLogo {
+	display: block;
+	margin: 6.25rem auto 1.875rem;
+	width: 6.25rem;
+	height: 6.25rem;
+}
+
+.brdn {
+	border: 0;
+
+}
+
+.contCenter a {
+	font-size: 1.25rem;
+	vertical-align: middle;
+	color: #888;
+}
+
+.contCenter a.active {
+	color: #333333;
+}
+
+.contCenter span {
+	font-size: 1rem;
+}
+
+.pd30 {
+	margin: 0 2.5rem;
+}
+
+.mg20 {
+	margin: 0 1.25rem;
+}
+
+.login {
+	background: #66cccc;
+	color: #fff;
+	margin-left: 0.625rem;
+	margin-top: 1.25rem;
+	border-radius: 18.75rem;
+}
+
+.h100 {
+	background: #fff;
+
+}
+
+.h100:after {
+	background: transparent;
+}
+
+.iconfont.font20 {
+	font-size: 1.5rem;
+}
+
+.contCenter .mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+	color: #999;
+	display: inline-block;
+	width: 7.5rem;
+}
+
+.contCenter .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.brdn.mui-active {
+	color: #333;
+	border: 0;
+
+}
+
+.passwordCont {
+	position: relative;
+
+}
+
+.passwordCont .mui-icon-eye {
+	display: none;
+}
+
+.passwordCont .verificationCode {
+	width: 33%;
+	right: 0rem;
+	transform: translateY(-50%);
+	top: 50%;
+	position: absolute;
+	background: #fff;
+	color: #66cccc;
+	border: 0;
+}
+
+.passwordCont .verificationCode:active {
+	background: #999;
+	color: #66cccc;
+	border: 0;
+}
+
+.passwordCont .verificationCode.discolor {
+	color: #ccc;
+}
+
+.btn-finsh {
+	border-radius: 20rem;
+	color: #fff;
+	background: #66cccc;
+	border: 0;
+}
+
+.mui-btn-myprimary {
+	background: #66CCCC;
+	border: 0;
+	color: #fff;
+}
+
+.btnActive {
+	background: #ccc;
+}
+
+.btnS {
+	padding: 0.15rem 0.6rem;
+	font-size: 0.625rem;
+}
+
+.imgmgD {
+	border-radius: 50%;
+}
+
+.colorW {
+	color: #fff;
+}
+.colorb{
+	color: #333333;
+}
+
+.home_head {
+	overflow: hidden;
+	background: #66CCCC;
+	text-align: center;
+}
+
+.home_head .title {
+	color: #fff;
+}
+
+.btngz {
+	padding: 0.15rem 0.6rem;
+	font-size: 0.625rem;
+	margin-top: 0.325rem;
+}
+.backW{
+	color: #fff;
+}
+.backB{
+	color: #333333;
+}
+.hidden{
+	display: none;
+}
+.show{
+	display: block;
+}
