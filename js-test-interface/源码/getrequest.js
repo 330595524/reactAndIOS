@@ -31,13 +31,31 @@ myserver.prototype.sendMes = function (mouduleName,name,url,config) {
     var type = config.type|| 'get'
     var data = config.data || {}
     var self =  this;
+    var bindName = config.bindName || name
 // 请求处理前、请求处理后
-    var befor = function () {
+    var before = function (mes) {
         
     }
 
     var defaultFn =function (){
-        self.nowHandle[bindName]
+        self.nowHandle[bindName] = function (mes){
+            self.nowHandle[bindName] = mes.data
+        }
+    }
+
+    var success = config.success || defaultFn
+    var callback = function (res){
+        success(rees, defaultFn)
+    }
+
+    var state = {
+        get :function () {
+            var urlqs = url + '?' + qs.stringify(data)
+            service.get(urlqs).then(before).then(callback)
+        },
+        set :function () {
+            service.post(url,data).then(before).then(callback)
+        }
     }
     
 }
