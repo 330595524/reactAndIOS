@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>约瑟夫闭环-案例,循环连表</title>
+</head>
+
+<body>
+    <script>
+        function Node(element) {
+            this.element = element
+            this.next = null
+        }
+
+        function LList() {
+            this.head = new Node('head')
+            this.head.next = this.head
+            this.length = 0
+        }
+
+        LList.prototype.find = function (item) {
+            var currNode = this.head
+            while (currNode.element != item) {
+                currNode = currNode.next
+            }
+            return currNode
+        }
+        LList.prototype.findPrevius = function (item) {
+            var currNode = this.head
+            while (currNode != null && currNode.next.element != item) {
+                currNode = currNode.next
+            }
+            return currNode
+        }
+
+        LList.prototype.insert = function (newElement, item) {
+            const newNode = new Node(newElement);
+            var currNode = this.find(item)
+            newNode.next = currNode.next
+            currNode.next = newNode
+            this.length++
+        }
+        LList.prototype.display = function () {
+            var currNode = this.head
+            var result = []
+            while (currNode.next != null && currNode.next.element != 'head') {
+                result.push(currNode.next.element)
+                currNode = currNode.next
+
+            }
+            return result
+        }
+
+        LList.prototype.remove = function (item) {
+            var prevNode = this.findPrevius(item)
+            var currNode = this.find(item)
+            prevNode.next = currNode.next
+            this.length--
+        }
+
+
+        function killGame(num, step) {
+            var people = new LList()
+            people.insert(1, 'head')
+            for (let index = 1; index < num; index++) {
+                people.insert(index + 1, index)
+            }
+            console.log(people.display());
+            var iNow = 0
+            var dir = 'head'
+            function whileFn() {
+                if (people.length < step) return
+                iNow++;
+                dir = people.find(dir).next.element
+                if (dir == 'head') {
+                    dir = people.find(dir).next.element
+                }
+                if (iNow == step) {
+                    var removeDir = dir
+                    dir = people.findPrevius(dir).element
+                    people.remove(removeDir)
+                    iNow = 0
+                }
+                whileFn()
+            }
+            whileFn()
+            console.log('幸存的位置', people.display())
+        }
+
+        killGame(41, 2)
+
+    </script>
+</body>
+
+</html>

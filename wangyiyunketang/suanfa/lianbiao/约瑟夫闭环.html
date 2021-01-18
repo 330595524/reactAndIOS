@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>约瑟夫闭环</title>
+</head>
+
+<body>
+    <script>
+        function Node(element) {
+            this.element = element
+            this.next = null
+        }
+
+        function LList() {
+            this.head = new Node('head')
+        }
+
+        LList.prototype.find = function (item) {
+            var currNode = this.head
+            while (currNode.element != item) {
+                currNode = currNode.next
+            }
+            return currNode
+        }
+        LList.prototype.findPrevius = function (item) {
+            var currNode = this.head
+            while (currNode != null && currNode.next.element != item) {
+                currNode = currNode.next
+            }
+            return currNode
+        }
+
+        LList.prototype.insert = function (newElement, item) {
+            const newNode = new Node(newElement);
+            var currNode = this.find(item)
+            newNode.next = currNode.next
+            currNode.next = newNode
+        }
+        LList.prototype.display = function () {
+            var currNode = this.head
+            var result = []
+            while (currNode.next != null) {
+                result.push(currNode.next.element)
+                currNode = currNode.next
+
+            }
+            return result
+        }
+
+        LList.prototype.remove = function (item) {
+            var prevNode = this.findPrevius(item)
+            var currNode = this.find(item)
+            prevNode.next = currNode.next
+        }
+
+        var obj = new LList()
+        obj.insert('a', 'head')
+        obj.insert('b', 'a')
+        obj.insert('c', 'b')
+        obj.insert('d', 'a')
+        // console.log(obj.find('head'));
+        console.log(obj.display());
+        obj.remove('b')
+        console.log(obj.display());
+
+
+
+    </script>
+</body>
+
+</html>
