@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成器构造，无穷斐波那契数列，</title>
+</head>
+<body>
+    <script>
+        // [1,1,2,3,5,8,13,21,55]
+        function* fibonacci(params) {
+            let a = 1,b=1
+            yield a;yield b
+            while (true) {
+                const t = b  // 2
+                b=a+b; a = t  // b 3 , a=2
+                yield b
+            }
+        }
+const it = fibonacci()
+const feb10 = Array.from(
+    Array(10),it.next,it
+).map(x=>x.value)
+
+console.log(feb10);
+
+//数组展平
+
+
+function* flatten(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+            yield* flatten(arr[i])
+        } else {
+            yield arr[i]
+        }
+        
+    }    
+}
+
+console.log([...flatten([1,2,3,[3,4,5,[6,7]]])]);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数柯里化，难度2颗星</title>
+</head>
+<body>
+    <script>
+
+//  存变量时，可以用参数存
+
+        const curry = (func)=>{
+          const g =  (...allArgs)=>allArgs.length>=func.length?
+            func(...allArgs):
+           (...args)=>g(...allArgs,...args)
+           return g
+        }
+//  Y组合子
+// lambda 演算
+
+const y=function(le){
+    return function(f){
+        return f(f)
+    }(
+        function (f){
+            return le(
+                function (...x){
+                    return (f(f))(...x)
+                }
+            )
+        }
+    )
+}
+
+const curryY = (func)=>y( g=>(...allArgs)=>allArgs.length>=func.length?
+            func(...allArgs):
+           (...args)=>g(...allArgs,...args)
+        )
+
+
+
+
+        const f = curryY((a,b,c,d)=>{
+            console.log(a,b,c,d)
+        })
+        f(1)(2)(3)(4)
+       const c=  f(1)(2)(3)
+        c(5)
+
+
+
+
+
+    </script>
+</body>
+</html>

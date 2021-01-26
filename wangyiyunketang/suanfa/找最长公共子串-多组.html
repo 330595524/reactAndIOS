@@ -24,6 +24,7 @@
                }
             }
 
+            console.log(strArr);
             for (let i = 0; i < strArr.length; i++) {
                 //使用正则匹配
                 var wholeArr = [];
@@ -36,7 +37,9 @@
                     }
                     
                 }
-
+                console.log(wholeArr);
+                // 找到最长 的那个
+                // 因为每一项都一样
                 if(wholeArr.length == arr.length){
                     if(wholeArr[0].length>count){
                         count = wholeArr[0].length;

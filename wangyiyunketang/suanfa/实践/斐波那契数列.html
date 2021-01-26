@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>斐波那契数列</title>
+</head>
+<body>
+    <script>
+        function fibonacci(n) {
+            return Array(n).fill().reduce(
+                ([a,b],_)=>[b,a+b]
+            ,[0,1])[1]
+            
+        }
+
+        function fibo2(n) {
+            let [a,b] = [0,1]
+            for (let i = 0; i < n.length; i++) {
+                [a,b]=[b,a+b]
+                
+            }
+            return b
+        }
+    console.log(fibonacci(4)); 
+    console.log(fibo2(4)); 
+    </script> </body>
+</html>

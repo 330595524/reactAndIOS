@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背包问题,  贪心算法 </title>
+</head>
+
+<body>
+    <h1>
+        贪心算法，
+            在对问题求解时，总是做出在当前看来最好的选择，也就是说，不从整体最优上加以考虑，他所做出的是某种意义上的局部最优解
+    </h1>
+    <script>
+
+var M = 5
+var W = 16
+var arrP = [4,5,10,11,13]   // 价值
+var arrW = [3,4,7,8,9]  // 体积
+ 
+
+function show(M,W,arrP,arrW) {
+  var wholeArr = [];
+  var result =0
+   for (let i = 0; i < M; i++) {
+        wholeArr.push({p:arrP[i],w:arrW[i],r:arrP[i]/arrW[i]})
+   }
+   wholeArr.sort(function (a,b){ return b.r-a.r})
+   console.log(wholeArr)
+   for (let i = 0; i < wholeArr.length; i++) {
+     if (wholeArr[i].w<=W) {
+         result += wholeArr[i].p
+         W -= wholeArr[i].w
+     }
+       
+   }
+   return result
+   console.log(wholeArr)
+}
+console.log(show(M,W,arrP,arrW));
+
+
+// 部分背包问题比较适合贪心算法
+function show(M,W,arrP,arrW) {
+  var wholeArr = [];
+  var result =0
+   for (let i = 0; i < M; i++) {
+        wholeArr.push({p:arrP[i],w:arrW[i],r:arrP[i]/arrW[i]})
+   }
+   wholeArr.sort(function (a,b){ return b.r-a.r})
+   for (let i = 0; i < wholeArr.length; i++) {
+     if (wholeArr[i].w<=W) {
+         result += wholeArr[i].p
+         W -= wholeArr[i].w
+     }
+     else{
+         result += W/wholeArr[i].w*wholeArr[i].p
+         break;
+     }
+       
+   }
+   return result.toFixed(2)
+   console.log(wholeArr)
+}
+console.log(show(M,W,arrP,arrW));
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

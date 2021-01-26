@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom节点的绝对位置</title>
+</head>
+<body>
+    <script>
+// fn1
+function get_parentlayout(el) {
+    let layout ={
+        width:el.offsetWidth,
+        height:el.offsetHeight,
+        left:el.offsetLeft,
+        top:el.offsetTop,
+    }
+
+    if(el.offsetParent){
+        let parentlayout = get_parentlayout(el.offsetParent)  
+        layout.left +=parentlayout.left
+        layout.top +=parentlayout.top
+    }
+    
+    return layout
+}
+
+function get_p(el) {
+    let left =el.offsetLeft
+    let top = el.offsetLeft
+    let p = el.offsetParent
+    while (p) {
+      left +=  p.offsetLeft;
+      top +=p.offsetTop
+      p=p.offsetParent
+    } 
+    return {
+        width:el.offsetWidth,
+        height:el.offsetHeight,
+        left,
+        top, 
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

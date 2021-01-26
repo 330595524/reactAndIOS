@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>算法基础知识</title>
+</head>
+<body>
+    <script>
+        function solve(arr,N){
+            const s  = new Set([arr.shift()%N])
+            while(arr.length>0){
+                const ak = arr.pop()
+                s.add(ak)
+                s.forEach(t=>s.add((t+ak)%N))
+            }
+            return s.has(0) 
+        }
+        function solve2(arr,N){
+            const s  = new Set()
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr.length; j++) {
+                    const remain = arr.slice(i,j).reduce((x,y)=>x+y,0)%N;
+                    s.add(remain)
+                }
+                
+            }
+            return s.has(0) 
+        }
+
+console.log(solve2([3,5,8],13))
+    </script>
+</body>
+</html>

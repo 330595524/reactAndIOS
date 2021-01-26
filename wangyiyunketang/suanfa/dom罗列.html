@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打印dom</title>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <lu>
+                <li>23</li>
+                <li>444</li>
+                <li>22</li>
+                <li>56</li>
+                <li>78</li>
+                <li>00</li>
+                <li>444</li>
+                <li>445</li>
+            </lu>
+        </div>
+    </div>
+    <script>
+
+        function walk(node,func=()=>{}) {
+            if(node instanceof window.Node){
+                _walk(node,func)
+            }
+            return node
+        }
+
+
+        function _walk(node,func) {
+            if (func(node)!==false) {
+                node = node.firstChild;
+                while (node) {
+                    _walk(node,func)
+                    node = node.nextSibling
+                }
+            }
+        }
+
+        walk(document.getElementById('app'),node=>{
+            console.log(node)
+        })
+
+
+
+
+
+    </script>
+</body>
+</html>

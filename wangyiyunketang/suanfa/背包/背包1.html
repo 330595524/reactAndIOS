@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背包问题，动态规划算法</title>
+</head>
+
+<body>
+    <h1>
+        动态规划算法：
+            求解最优性质问题
+            计算所有的可能情况
+
+        贪心算法 
+    </h1>
+    <script>
+
+var M = 5
+var W = 16
+var arrP = [4,5,10,11,13]
+var arrW = [3,4,7,8,9]
+// 13+ 10  23 第三件+第5件
+// 13 + 3+ 4  22  
+
+function show(params) {
+    var result =[];
+    for (var i = 0; i <= M; i++) {
+        result[i] = [];
+         for (var j = 0; j <= W; j++) {
+            if (i==0) {
+                result[i][j] = 0
+            }else if (arrW[i-1] > j) {
+                // 下一次的前一个和上一次一样
+                result[i][j] = result[i-1][j]
+            }else{
+                result[i][j] =Math.max(arrP[i-1] + result[i-1][ j - arrW[i-1] ], result[i-1][j]) 
+            }
+         }
+    }
+   return result[i-1][j-1]
+}
+console.log(show(M,W,arrP,arrW));
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
