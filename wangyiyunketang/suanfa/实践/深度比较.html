@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深度比较</title>
+</head>
+
+<body>
+    <script>
+        function deepCompare(a,b) {
+            if(a!==null||typeof a !=='object'||b!==null||typeof b!=='object'){
+                return a ===b
+            }
+            const propsA = Object.getOwnPropertyDescriptors(a)
+
+            const propsB = Object.getOwnPropertyDescriptors(a)
+
+            if(Object.keys(propsA).length !== Object.keys(propsB).length){
+                return false
+            }
+            return Object.keys(propsA).every((key)=>deepCompare(a[key],b[key]))
+        }
+        let a = {a:1}
+        let b = {}
+        b['c'] = 1
+        console.log(deepCompare(a,b));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css选择器</title>
+    <div>
+        <div class="content">
+            <table>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</head>
+
+<body>
+    <script>
+        // 目标   function select (node,expr){}
+        // select (tree,'.content tr td') 
+
+        class DOMTree {
+            constructor(tag, className, children) {
+                this.tag = tag
+                this.className = className
+                this.children = children
+            }
+        }
+
+        const tree = new DOMTree('div', '', [
+            new DOMTree('div', 'content', [
+                new DOMTree('table', '', [
+                    new DOMTree('tr', '', [
+                        new DOMTree('td', '', [
+                            new DOMTree('text', '', null, 1)
+                        ]),
+                        new DOMTree('td', '', [
+                            new DOMTree('text', '', null, 2)
+                        ]),
+                        new DOMTree('td', '', [
+                            new DOMTree('text', '', null, 3)
+                        ])
+                    ])
+                ])
+            ])
+        ])
+
+        function * transverse(node) {
+            yield node
+            if(node.children){
+                for (let i = 0; i < node.children.length; i++) {
+                   yield *transverse(node.children[i]);
+                }
+            }
+        }
+
+        function findByclassName(node,className) {
+            return[...transverse(node)].filter(node=>node.className === className)
+        }
+
+        function findByclassName(node,tagName) {
+            return[...transverse(node)].filter(node=>node.tagName === tagName)
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

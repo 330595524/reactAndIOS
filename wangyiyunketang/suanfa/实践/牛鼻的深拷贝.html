@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>你不知道的 深拷贝</title>
+</head>
+
+<body>
+    <script>
+        function clone(obj) {
+            if (obj == null || typeof obj !== 'object') return obj
+            const newobj = new obj.constructor()
+            for (const key in Object.getOwnPropertyDescriptors(obj)){
+                newobj[key]= clone(obj[key])
+                }
+
+                return newobj
+            }
+
+            let a = {
+                a:{
+                    name:'xiaoming',
+                    age:{
+                        k:'23'
+                    },
+                    address:[1,2,3,4]
+                }
+            }
+            console.log(clone(a))
+    </script>
+</body>
+
+</html>
